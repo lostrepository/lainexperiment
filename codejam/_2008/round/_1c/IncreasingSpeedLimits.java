@@ -7,6 +7,8 @@
  */
 
 /*
+ * Date: 10/04/2015
+ * 
  * Code jam
  * Round 1C 2008
  * Problem C. Increasing Speed Limits
@@ -60,6 +62,7 @@
  * Sample
  * 
  * Input
+ * 
  * 2
  * 5 5 0 0 5
  * 1
@@ -115,7 +118,8 @@ public class IncreasingSpeedLimits {
         }
     }
     
-    private static long calcPolynomialTime(long[] A) {
+    @SuppressWarnings("unused")
+	private static long calcPolynomialTime(long[] A) {
         long[] C = new long[A.length];
         for (int i = 0; i < A.length; ++i) {
                 calc(A, C, i);
