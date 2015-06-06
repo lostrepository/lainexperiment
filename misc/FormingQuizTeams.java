@@ -72,44 +72,44 @@ import java.util.stream.IntStream;
 
 public class FormingQuizTeams {
 
-	static float split(int[] X, int[] Y, BitSet S, int n, float sum, Map<String, Float> M) {
-		if (n == X.length) {
-//			System.out.println(sum);
-			return sum;
-		}
-		if (S.get(n))
-			return split(X, Y, S, n + 1, sum, M);
-		String key = n + S.toString();
-		if (M.containsKey(key))
-			return sum + M.get(key);
-		float min = Float.MAX_VALUE;
-		S.set(n);
-		int i = 0;
-		while ((i = S.nextClearBit(i + 1)) != X.length) {
-			S.set(i);
-			float m = split(X, Y, S, n + 1, sum + (float)Point2D.distance(X[i], Y[i], X[n], Y[n]), M);
-			S.clear(i);
-			min = Math.min(m, min);
-		}
-		S.clear(n);
-		M.put(key, min - sum);
-		return min;
-	}
+    static float split(int[] X, int[] Y, BitSet S, int n, float sum, Map<String, Float> M) {
+        if (n == X.length) {
+//            System.out.println(sum);
+            return sum;
+        }
+        if (S.get(n))
+            return split(X, Y, S, n + 1, sum, M);
+        String key = n + S.toString();
+        if (M.containsKey(key))
+            return sum + M.get(key);
+        float min = Float.MAX_VALUE;
+        S.set(n);
+        int i = 0;
+        while ((i = S.nextClearBit(i + 1)) != X.length) {
+            S.set(i);
+            float m = split(X, Y, S, n + 1, sum + (float)Point2D.distance(X[i], Y[i], X[n], Y[n]), M);
+            S.clear(i);
+            min = Math.min(m, min);
+        }
+        S.clear(n);
+        M.put(key, min - sum);
+        return min;
+    }
 
-	public static void main(String[] args) throws FileNotFoundException
-	{
-		Scanner s = new Scanner(new File("/tmp/in"));
-		int t = 1;
-		while (s.hasNext()) {
-			int N = s.nextInt();
-			if (N == 0)
-				break;
-			int[] X = new int[N * 2];
-			int[] Y = new int[N * 2];
-			IntStream.range(0, N * 2).forEach((i) -> {s.next(); X[i] = s.nextInt(); Y[i] = s.nextInt();});
-			System.out.format("Case %d: %f\n", t++, split(X, Y, new BitSet(N * 2), 0, 0, new HashMap<>()));
-		}
-		s.close();
-	}
+    public static void main(String[] args) throws FileNotFoundException
+    {
+        Scanner s = new Scanner(new File("/tmp/in"));
+        int t = 1;
+        while (s.hasNext()) {
+            int N = s.nextInt();
+            if (N == 0)
+                break;
+            int[] X = new int[N * 2];
+            int[] Y = new int[N * 2];
+            IntStream.range(0, N * 2).forEach((i) -> {s.next(); X[i] = s.nextInt(); Y[i] = s.nextInt();});
+            System.out.format("Case %d: %f\n", t++, split(X, Y, new BitSet(N * 2), 0, 0, new HashMap<>()));
+        }
+        s.close();
+    }
 
 }

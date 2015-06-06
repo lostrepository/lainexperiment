@@ -69,17 +69,17 @@ import java.util.Scanner;
 
 public class SecurePasswordSystem {
 
-	private static boolean isSecure(int min, int max) {
-		long c = 0;
-		while (max >= min) {
-			c += Math.pow(10, max);
-			if (c > 1_000_000)
-				return true;
-			max--;
-		}
-		return false;
-	}
-	
+    private static boolean isSecure(int min, int max) {
+        long c = 0;
+        while (max >= min) {
+            c += Math.pow(10, max);
+            if (c > 1_000_000)
+                return true;
+            max--;
+        }
+        return false;
+    }
+    
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int T = scanner.nextInt();

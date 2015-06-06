@@ -59,14 +59,14 @@
  * 
  * Sample Input
  * 
- * 3
- * 3 1 2 3
- * 3 2 3 4
- * 3 3 4 5
- * 3
- * 1 2 3 4
- * 2 2 2 5
- * 3 3 2 3 4
+3
+3 1 2 3
+3 2 3 4
+3 3 4 5
+3
+1 2 3 4
+2 2 2 5
+3 3 2 3 4
  * 
  * Sample Output
  * 
@@ -91,91 +91,91 @@ import java.util.stream.IntStream;
 
 public class BigFileSystemSearch {
 
-	static Map<Integer, List<Integer>> intToFiles = new HashMap<>();
-	
-	static Map<Integer, Integer> fileToMatches(int[] A, boolean isAll) {
-		Map<Integer, Integer> fileToMatches = new HashMap<>();
-		Map<Integer, List<Integer>> cache = new HashMap<>();
-		for (int n: A) {
-			List<Integer> files = cache.get(n);
-			if (files == null) {
-				files = intToFiles.get(n);
-				if (files == null)
-					if (isAll)
-						return Collections.emptyMap();
-					else
-						continue;
-				files = new ArrayList<>(files);
-				cache.put(n, files);
-			}
-			if (files.isEmpty() && isAll)
-				return Collections.emptyMap();
-			Set<Integer> uniq = new HashSet<>();
-			Iterator<Integer> iter = files.iterator();
-			while (iter.hasNext()) {
-				Integer file = iter.next();
-				if (!uniq.contains(file)) {
-					uniq.add(file);
-					iter.remove();
-					fileToMatches.merge(file, 1, (c, i) -> c + i);
-				}
-			}			
-		}
-		return fileToMatches;
-	}
-	
-	static int queryAll(int[] A) {
-		Map<Integer, Integer> fileToMatches = fileToMatches(A, true);
-		return (int) fileToMatches.entrySet().stream().mapToInt((e) -> e.getValue() < A.length? 0: 1).sum();
-	}
-	
-	static int queryAny(int[] A) {
-		Map<Integer, Integer> fileToMatches = fileToMatches(A, false);
-		return fileToMatches.size();
-	}
-	
-	static int querySome(int[] A) {
-		Map<Integer, Integer> fileToMatches = fileToMatches(A, false);
-		return (int) fileToMatches.entrySet().stream().mapToInt((e) -> e.getValue() >= A.length? 0: 1).sum();
-	}
-	
+    static Map<Integer, List<Integer>> intToFiles = new HashMap<>();
+    
+    static Map<Integer, Integer> fileToMatches(int[] A, boolean isAll) {
+        Map<Integer, Integer> fileToMatches = new HashMap<>();
+        Map<Integer, List<Integer>> cache = new HashMap<>();
+        for (int n: A) {
+            List<Integer> files = cache.get(n);
+            if (files == null) {
+                files = intToFiles.get(n);
+                if (files == null)
+                    if (isAll)
+                        return Collections.emptyMap();
+                    else
+                        continue;
+                files = new ArrayList<>(files);
+                cache.put(n, files);
+            }
+            if (files.isEmpty() && isAll)
+                return Collections.emptyMap();
+            Set<Integer> uniq = new HashSet<>();
+            Iterator<Integer> iter = files.iterator();
+            while (iter.hasNext()) {
+                Integer file = iter.next();
+                if (!uniq.contains(file)) {
+                    uniq.add(file);
+                    iter.remove();
+                    fileToMatches.merge(file, 1, (c, i) -> c + i);
+                }
+            }            
+        }
+        return fileToMatches;
+    }
+    
+    static int queryAll(int[] A) {
+        Map<Integer, Integer> fileToMatches = fileToMatches(A, true);
+        return (int) fileToMatches.entrySet().stream().mapToInt((e) -> e.getValue() < A.length? 0: 1).sum();
+    }
+    
+    static int queryAny(int[] A) {
+        Map<Integer, Integer> fileToMatches = fileToMatches(A, false);
+        return fileToMatches.size();
+    }
+    
+    static int querySome(int[] A) {
+        Map<Integer, Integer> fileToMatches = fileToMatches(A, false);
+        return (int) fileToMatches.entrySet().stream().mapToInt((e) -> e.getValue() >= A.length? 0: 1).sum();
+    }
+    
     @SuppressWarnings({ "unchecked", "rawtypes" })
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int N = scanner.nextInt();
         scanner.nextLine();
         for (int i = 0; i < N; ++i) {
-        	int n = scanner.nextInt();
-        	for (int j = 0; j < n; ++j) {
-        		int v = scanner.nextInt();
-        		List files = intToFiles.get(v);
-        		if (files == null) {
-        			files = new ArrayList<>();
-        			intToFiles.put(v, files);
-        		}
-        		files.add(i);
-        	}
-        	scanner.nextLine();
+            int n = scanner.nextInt();
+            for (int j = 0; j < n; ++j) {
+                int v = scanner.nextInt();
+                List files = intToFiles.get(v);
+                if (files == null) {
+                    files = new ArrayList<>();
+                    intToFiles.put(v, files);
+                }
+                files.add(i);
+            }
+            scanner.nextLine();
         }
 //        System.out.println(intToFiles);
         int Q = scanner.nextInt();
         StringBuilder res = new StringBuilder();
         for (int i = 0; i < Q; ++i) {
-        	int T = scanner.nextInt();
-        	int K = scanner.nextInt();
-        	int[] A = new int[K];
-        	IntStream.range(0, K).forEach((j) -> A[j] = scanner.nextInt());
-        	switch (T) {
-        	case 1:
-        		res.append(queryAll(A)).append('\n');
-        		break;
-        	case 2:
-        		res.append(queryAny(A)).append('\n');
-        		break;
-        	case 3:
-        		res.append(querySome(A)).append('\n');
-        		break;
-        	}
+            int T = scanner.nextInt();
+            int K = scanner.nextInt();
+            int[] A = new int[K];
+            IntStream.range(0, K).forEach((j) -> A[j] = scanner.nextInt());
+            switch (T) {
+            case 1:
+                res.append(queryAll(A)).append('\n');
+                break;
+            case 2:
+                res.append(queryAny(A)).append('\n');
+                break;
+            case 3:
+                res.append(querySome(A)).append('\n');
+                break;
+            }
         }
         scanner.close();
         System.out.println(res);

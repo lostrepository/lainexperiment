@@ -34,22 +34,22 @@ import java.util.Map;
 public class IsIsomorphic {
 
     static boolean isIsomorphic(char[] a1, char[] a2) {
-    	Map<Character, Integer> m1 = new HashMap<>();
-    	Map<Character, Integer> m2 = new HashMap<>();
-    	if (a1.length != a2.length)
-    		return false;
-    	int c = 0;
-    	for (int i = 0; i < a1.length; ++i) {
-    		if (m1.containsKey(a1[i])) {
-    			if (m1.get(a1[i]) == m2.get(a2[i]))
-    				continue;
-    			return false;
-    		}
-    		m1.put(a1[i], c);
-    		m2.put(a2[i], c);
-    		c++;
-    	}
-    	return true;
+        Map<Character, Integer> m1 = new HashMap<>();
+        Map<Character, Integer> m2 = new HashMap<>();
+        if (a1.length != a2.length)
+            return false;
+        int c = 0;
+        for (int i = 0; i < a1.length; ++i) {
+            if (m1.containsKey(a1[i])) {
+                if (m1.get(a1[i]) == m2.get(a2[i]))
+                    continue;
+                return false;
+            }
+            m1.put(a1[i], c);
+            m2.put(a2[i], c);
+            c++;
+        }
+        return true;
     }
     
     public static void main(String[] args) {

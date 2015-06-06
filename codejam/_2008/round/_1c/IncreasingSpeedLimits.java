@@ -119,7 +119,7 @@ public class IncreasingSpeedLimits {
     }
     
     @SuppressWarnings("unused")
-	private static long calcPolynomialTime(long[] A) {
+    private static long calcPolynomialTime(long[] A) {
         long[] C = new long[A.length];
         for (int i = 0; i < A.length; ++i) {
                 calc(A, C, i);
@@ -201,7 +201,7 @@ public class IncreasingSpeedLimits {
         Node t = makeBST(S, 0, S.length - 1);
 //        print(t, 0);
         IntStream.range(0, A.length).forEach((i) -> {
-        	add(t, A[i], 0);/*System.out.println(SUM + " " + t.v);*/});
+            add(t, A[i], 0);/*System.out.println(SUM + " " + t.v);*/});
         return SUM;
     }
     
@@ -218,7 +218,7 @@ public class IncreasingSpeedLimits {
             Arrays.setAll(A, (i) -> scanner.nextLong());
             A = limits(n, m, X, Y, Z, A);
             System.out.format("Case #%d: %s\n", t, 
-            		calcLinearithmic(/*new long[]{1,2,1,2,3,3}*/A));
+                    calcLinearithmic(/*new long[]{1,2,1,2,3,3}*/A));
         }
         scanner.close();
     }
