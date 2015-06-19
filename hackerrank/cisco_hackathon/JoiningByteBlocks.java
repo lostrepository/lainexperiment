@@ -90,82 +90,68 @@ import java.util.stream.IntStream;
 
 public class JoiningByteBlocks {
 
-	static Map<String, Boolean> M1 = new HashMap<>();
-	
-	static boolean isPoly(String s) {
-		Boolean b = M1.get(s);
-		if (b != null)
-			return b;
-		int l = 0;
-		int r = s.length() - 1;
-		boolean res = true;
-		while (l < r) {
-			if (s.charAt(l++) != s.charAt(r--)) {
-				res = false;
-				break;
-			}
-		}
-		M1.put(s, res);
-		return res;
-	}
+    static boolean isPoly(String s) {
+        int l = 0;
+        int r = s.length() - 1;
+        while (l < r) {
+            if (s.charAt(l++) != s.charAt(r--))
+                return false;
+        }
+        return true;
+    }
 
-	static Map<BitSet, Integer> M2 = new HashMap<>(10000);
-	
-	static int cost(String[] a, BitSet s, int n) {
-		Integer r = M2.get(s);
-		if (r != null)
-			return r;
-//		System.out.println("a");
-		if (n >= a.length)
-			return 0;
-		if (s.isEmpty())
-			return 0;
-		if (!s.get(n))
-			return cost(a, s, n + 1);
-		int min = Integer.MAX_VALUE;
-		s.clear(n);
-//		if (isPoly(a[n])) {
-//			int c = cost(a, s, n + 1);
-//			if (c != Integer.MAX_VALUE)
-//				min = 1 + c;
-//		}
-		int iter = n + 1;
-		while ((iter = s.nextSetBit(iter)) != -1) {
-			int i = iter++;
-			if (a[n].charAt(0) != a[i].charAt(a[i].length() - 1) &&
-					a[i].charAt(0) != a[n].charAt(a[n].length() - 1))
-				continue;
-			if (!(isPoly(a[n] + a[i])))
-				continue;
-			s.clear(i);
-			int c = cost(a, s, n + 1);
-			if (c != Integer.MAX_VALUE)
-				min = Math.min(min, 1 + c);
-			s.set(i);
-		}
-		s.set(n);
-		M2.put((BitSet) s.clone(), min);
-		return min;
-	}
-	
+    static Map<String, Integer> M = new HashMap<>();
+    
+    static int cost(String[] a, BitSet s, int n) {
+        Integer r = M.get(s.toString());
+        if (r != null)
+            return r;
+//      System.out.println("a");
+        if (n >= a.length)
+            return 0;
+        if (!s.get(n))
+            return cost(a, s, n + 1);
+        if (s.isEmpty())
+            return 0;
+        int min = Integer.MAX_VALUE;
+        s.clear(n);
+        if (isPoly(a[n])) {
+            int c = cost(a, s, n + 1);
+            if (c != Integer.MAX_VALUE)
+                min = 1 + c;
+        }
+        int iter = 0;
+        while ((iter = s.nextSetBit(iter)) != -1) {
+            int i = iter++;
+            if (!(isPoly(a[n] + a[i]) || isPoly(a[i] + a[n])))
+                continue;
+            s.clear(i);
+            int c = cost(a, s, n + 1);
+            if (c != Integer.MAX_VALUE)
+                min = Math.min(min, 1 + c);
+            s.set(i);
+        }
+        s.set(n);
+        M.put(s.toString(), min);
+        return min;
+    }
+    
     public static void main(String[] args) throws FileNotFoundException {
 //        Scanner scanner = new Scanner(System.in);
         Scanner scanner = new Scanner(new File("/tmp/in"));
         StringBuilder res = new StringBuilder();
-        int T = 0;
-        while (T != 6 && scanner.hasNextInt()) {
-        	M2.clear();
-        	int N = scanner.nextInt();
-        	scanner.nextLine();
-        	String[] a = new String[N];
-        	IntStream.range(0, N).forEach((i) -> a[i] = scanner.nextLine());
-        	BitSet s = new BitSet(N);
-        	s.set(0, N);
-        	res.append(cost(a, s, 0)).append('\n');
-        	T++;
+        while (scanner.hasNext()) {
+            M.clear();
+            int N = scanner.nextInt();
+            scanner.nextLine();
+            String[] a = new String[N];
+            IntStream.range(0, N).forEach((i) -> a[i] = scanner.nextLine());
+            BitSet s = new BitSet(N);
+            s.set(0, N);
+            res.append(cost(a, s, 0)).append('\n');
         }
-        scanner.close();
         System.out.println(res);
+        scanner.close();
     }
-
+    
 }
