@@ -9,6 +9,10 @@
  * 
  * Date: 10/08/2015
  * 
+ * Hacker rank
+ * Problem: Jim and the Skyscrapers
+ * Status: accepted
+ * 
  * Jim has invented a new flying object called HZ42. HZ42 is like a broom and can 
  * only fly horizontally, independent of the environment. 
  * Let us describe the problem in one dimensional space. We have in total N 
