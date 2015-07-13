@@ -76,7 +76,7 @@
  * 
  */
 
-package hackerrank.cisco_hackathon;
+package hackerrank.hackathon.cisco;
 
 import java.util.ArrayList;
 import java.util.Collections;

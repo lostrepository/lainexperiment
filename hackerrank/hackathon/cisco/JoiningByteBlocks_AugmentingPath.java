@@ -78,7 +78,7 @@
  * 
  */
 
-package hackerrank.cisco_hackathon;
+package hackerrank.hackathon.cisco;
 
 import java.io.File;
 import java.io.FileNotFoundException;
