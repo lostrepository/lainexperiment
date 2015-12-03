@@ -34,16 +34,16 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.IntStream;
 
-@SuppressWarnings({ "rawtypes", "unchecked" })
 public class MatchingUnweightedBipartite_augmenting {
     
     static boolean[] visited;
     static int[] M;
     static List<Integer>[] G;
     
+    @SuppressWarnings("unchecked")
     static List<Integer>[] buildGraph(int[] x, int[] y, int l) {
-        List[] g = new List[l];
-        Arrays.setAll(g, (i) -> new ArrayList());
+        List<Integer>[] g = new List[l];
+        Arrays.setAll(g, (i) -> new ArrayList<>());
         IntStream.range(0, x.length).forEach((i) -> {
             g[x[i]].add(y[i]);
             g[y[i]].add(x[i]);
