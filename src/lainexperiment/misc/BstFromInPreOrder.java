@@ -1,5 +1,4 @@
 /* 
- * LynX Source Materials
  *
  * This source file is a part of lainexperiment project.
  * Description for it can be found in ReadMe.txt.
