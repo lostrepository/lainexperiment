@@ -54,7 +54,7 @@
 26
  * 
  */
-package lainexperiment.atlascodechallenge;
+package lainexperiment.devdraft.atlascodechallenge;
 
 import java.io.FileNotFoundException;
 import java.util.Arrays;

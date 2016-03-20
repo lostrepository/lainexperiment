@@ -42,7 +42,7 @@ Ya0Uaa9aaaaaaaaaaaaaa
  * 
  */
 
-package lainexperiment.imdb.codility;
+package lainexperiment.codility.imdb;
 
 import static org.junit.Assert.assertTrue;
 

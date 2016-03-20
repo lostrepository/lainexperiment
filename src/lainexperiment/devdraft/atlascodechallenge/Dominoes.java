@@ -49,7 +49,7 @@
  * have a domino. On the second line, output the same data for left cascade distances.
  * 
  */
-package lainexperiment.atlascodechallenge;
+package lainexperiment.devdraft.atlascodechallenge;
 
 import java.io.FileNotFoundException;
 import java.util.Arrays;

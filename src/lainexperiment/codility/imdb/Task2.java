@@ -38,7 +38,7 @@
  * 
  */
 
-package lainexperiment.imdb.codility;
+package lainexperiment.codility.imdb;
 
 import java.util.stream.IntStream;
 import static org.junit.Assert.assertTrue;
