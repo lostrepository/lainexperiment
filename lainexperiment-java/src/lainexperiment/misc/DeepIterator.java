@@ -27,44 +27,58 @@ package lainexperiment.misc;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.function.Supplier;
+import java.util.stream.Stream;
 
 public class DeepIterator {
 
-    static class DIterator<V> {
-        Iterator<?>[] iters;
+    @SuppressWarnings({"rawtypes"})
+    static class DIterator {
+       
+        List<Iterator> iters = new LinkedList<>();
+        Supplier<Iterator> tail = () -> iters.get(iters.size() - 1);
+        Object next;
         
-        DIterator(List<?> list, int n) {
-            iters = new Iterator[n];
-            iters[0] = list.iterator();
-            for (int i = 1; i < n; ++i) {
-                iters[i] = ((List<?>)iters[i - 1].next()).iterator();
-            }
-        }
-
-        @SuppressWarnings("unchecked")
-        V next() {
-            return (V)iters[iters.length - 1].next();
+        DIterator(List list) {
+            iters.add(list.iterator());
+            next = expandTail();
         }
         
+        // immutable operation
         boolean hasNext() {
-            if (iters[iters.length - 1].hasNext())
-                return true;
-            return update(iters.length - 1);
+            return next != null;
         }
 
-        private boolean update(int n) {
-            if (n == -1)
-                return false;
-            if (iters[n].hasNext()) {
-                if (n != iters.length - 1)
-                    iters[n + 1] = ((List<?>)iters[n].next()).iterator();
-                return true;
+        Object next() {
+            if (next == null) return null;
+            Object cur = next;
+            if (tail.get().hasNext())
+                next = tail.get().next();
+            else
+                next = update();
+            return cur;
+        }
+
+        private Object update() {
+            if (iters.isEmpty()) return null;
+            if (tail.get().hasNext()) {
+                return expandTail();
             }
-            boolean has = update(n - 1);
-            if (!has)
-                return false;
-            return update(n);
+            iters.remove(iters.size() - 1);
+            return update();
+        }
+        
+        private Object expandTail() {
+            while (tail.get().hasNext()) {
+                Object obj = tail.get().next();
+                if (obj instanceof List)
+                    iters.add(((List)obj).iterator());
+                else
+                    return obj;
+            }
+            return null;
         }
     }
     
@@ -87,9 +101,11 @@ public class DeepIterator {
     
     public static void main(String[] args) {
         List<?> l = makeNestedList(0, 2);
-        DIterator<Integer> di = new DIterator<>(l, 3);
-        while (di.hasNext())
-            System.out.println(di.next());
+        DIterator di = new DIterator(Arrays.asList(new Integer[]{1, 2, 3}));
+        di = new DIterator(Arrays.asList(new Integer[]{1, 2, 3}));
+        Stream.generate(di::next).peek(System.out::println).anyMatch(v -> v == null);
+        di = new DIterator(l);
+        Stream.generate(di::next).peek(System.out::println).anyMatch(v -> v == null);
     }
 
 }
