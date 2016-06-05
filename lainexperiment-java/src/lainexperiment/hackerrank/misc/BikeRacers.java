@@ -126,10 +126,9 @@ public class BikeRacers {
     static int binarySearch(int s, int e, IntFunction<Integer> cmp) {
         if (e - s < 0) return -1;
         int m = (s + e) / 2;
-        if (cmp.apply(m) < 0)
+        int r = cmp.apply(m);
+        if (r < 0)
             return binarySearch(m + 1, e, cmp);
-        if (cmp.apply(m) > 0)
-            return binarySearch(s, m - 1, cmp);
         int res = binarySearch(s, m - 1, cmp);
         return res == -1? m: res;
     }
