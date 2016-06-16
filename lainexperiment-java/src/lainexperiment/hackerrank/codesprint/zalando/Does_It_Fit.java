@@ -63,7 +63,7 @@ NO
 YES
  * 
  */
-package lainexperiment.hackerrank.zalandocodesprint;
+package lainexperiment.hackerrank.codesprint.zalando;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
