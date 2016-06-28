@@ -58,8 +58,6 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import lainexperiment.Utils;
-
 public class Dominoes {
 
     static int N;
@@ -69,6 +67,15 @@ public class Dominoes {
     static class Node {
         Node l, r;
         int s, e, m;
+    }
+
+    static void reverse(int[] a) {
+        for(int i = 0; i < a.length / 2; i++)
+        {
+            int temp = a[i];
+            a[i] = a[a.length - i - 1];
+            a[a.length - i - 1] = temp;
+        }
     }
 
     static Node makeIntervalTree(int[] a, int s, int e) 
@@ -137,9 +144,9 @@ public class Dominoes {
                 collect(Collectors.joining(" "));
         int[] res = solve();
         System.out.println(f.apply(res));
-        Utils.reverse(D);
+        reverse(D);
         res = solve();
-        Utils.reverse(res);
+        reverse(res);
         System.out.println(f.apply(res));
         scanner.close();
     }

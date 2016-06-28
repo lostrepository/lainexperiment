@@ -69,6 +69,9 @@ public class Test1 {
         }
     }
     
+    /*
+     * Non java 8 implementation version
+     */
     static void bfs(final Point p)
     {
         Operator fn = new Operator() {

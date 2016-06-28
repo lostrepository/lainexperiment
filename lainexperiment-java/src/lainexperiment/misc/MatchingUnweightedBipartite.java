@@ -48,8 +48,8 @@ public class MatchingUnweightedBipartite {
     static boolean[] exposedY;
     static List<Integer>[] G;
     
-    static List<Integer>[] buildGraph(int[] x, int[] y, int l) {
-        List[] g = new List[l];
+    static List<Integer>[] buildGraph(int[] x, int[] y, int maxNumOfNodes) {
+        List[] g = new List[maxNumOfNodes];
         Arrays.setAll(g, (i) -> new ArrayList());
         IntStream.range(0, x.length).forEach((i) -> {
             g[x[i]].add(y[i]);

@@ -71,6 +71,19 @@ import java.util.stream.IntStream;
 
 public class Mousetrap {
     
+    /*
+     * Returns perfect sequence for numbers 1..n
+     * Perfect sequence means that numbers can be deleted 
+     * in increasing order.
+     * For example, 4 numbers organized as 1, 4, 2, 3, are in 
+     * perfect order since numbers can be removed in the order 
+     * 1, 2, 3, 4:
+     * - del 1 counting 1: 4, 2, 3
+     * - del 2 counting 2: 3, 4
+     * - del 3 counting 3: 4
+     * - del 4 counting 4:
+     * Another example for 5 numbers is 1, 3, 2, 5, 4.
+     */
     static Integer[] perfect(int n) {
         Integer[] a = new Integer[n];
         int[] next = new int[n];
