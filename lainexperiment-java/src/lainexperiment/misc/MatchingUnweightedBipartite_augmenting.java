@@ -31,7 +31,6 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class MatchingUnweightedBipartite_augmenting {
     
@@ -39,14 +38,14 @@ public class MatchingUnweightedBipartite_augmenting {
     static int[] M;
     static List<Integer>[] G;
     
-    @SuppressWarnings("unchecked")
-    static List<Integer>[] buildGraph(int[] x, int[] y, int l) {
-        List<Integer>[] g = new List[l];
-        Arrays.setAll(g, (i) -> new ArrayList<>());
-        IntStream.range(0, x.length).forEach((i) -> {
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    static List<Integer>[] buildGraph(int[] x, int[] y, int maxNumOfNodes) {
+        List[] g = new List[maxNumOfNodes];
+        Arrays.setAll(g, (i) -> new ArrayList());
+        for (int i = 0; i < x.length; i++) {
             g[x[i]].add(y[i]);
             g[y[i]].add(x[i]);
-        });
+        }
         return g;
     }
     

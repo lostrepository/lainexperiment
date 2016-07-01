@@ -44,25 +44,27 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Scanner;
-import java.util.stream.IntStream;
 
 public class SingleShortestPath {
 
     static List<Integer>[] G;
     static List<Integer>[] W;
     
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings({ "unchecked" })
     static void buildGraph(int[] from, int[] to, int[] w, int maxNumOfNodes) {
         G = new List[maxNumOfNodes];
         W = new List[maxNumOfNodes];
-        Arrays.setAll(G, i -> new ArrayList());
-        Arrays.setAll(W, i -> new ArrayList());
-        IntStream.range(0, from.length).forEach((i) -> {
+        int capacity = 100;
+        for (int i = 0; i < G.length; i++) {
+            G[i] = new ArrayList<>(capacity);
+            W[i] = new ArrayList<>(capacity);
+        }
+        for (int i = 0; i < from.length; i++) {
             G[from[i]].add(to[i]);
             G[to[i]].add(from[i]);
             W[from[i]].add(w[i]);
             W[to[i]].add(w[i]);
-        });
+        }
     }
 
     static int dijkstra(int src)

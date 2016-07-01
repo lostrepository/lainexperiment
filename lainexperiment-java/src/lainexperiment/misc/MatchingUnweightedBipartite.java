@@ -32,36 +32,37 @@
 
 package lainexperiment.misc;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
-import java.util.stream.IntStream;
 
-import static org.junit.Assert.assertEquals;
-
-@SuppressWarnings({ "rawtypes", "unchecked" })
 public class MatchingUnweightedBipartite {
     
     static int[] M; // M[y] = x
     static boolean[] exposedY;
     static List<Integer>[] G;
     
+    @SuppressWarnings("serial")
+    static class IntSet extends HashSet<Integer> {}
+    
+    @SuppressWarnings({ "rawtypes", "unchecked" })
     static List<Integer>[] buildGraph(int[] x, int[] y, int maxNumOfNodes) {
         List[] g = new List[maxNumOfNodes];
         Arrays.setAll(g, (i) -> new ArrayList());
-        IntStream.range(0, x.length).forEach((i) -> {
+        for (int i = 0; i < x.length; i++) {
             g[x[i]].add(y[i]);
             g[y[i]].add(x[i]);
-        });
+        }
         return g;
     }
     
     static void augment(int x) {
-        Set S = new HashSet<>();
+        IntSet S = new IntSet();
         S.add(x);
-        Set T = new HashSet<>();
+        IntSet T = new IntSet();
         int y = 0;
         while ((y = nextVertex(S, T)) != -1) {
             if (exposedY[y]) {
@@ -75,7 +76,7 @@ public class MatchingUnweightedBipartite {
         }
     }
     
-    static void updateMatching(Set S, Set T, int x, int y, boolean merge) 
+    static void updateMatching(IntSet S, IntSet T, int x, int y, boolean merge) 
     {
         int k = -1;
         for (int v: G[y]) {
@@ -94,7 +95,7 @@ public class MatchingUnweightedBipartite {
             throw new RuntimeException();
     }
 
-    static int nextVertex(Set<Integer> S, Set T) 
+    static int nextVertex(IntSet S, IntSet T) 
     {
         for (int x: S) {
             for (int y: G[x]) {
