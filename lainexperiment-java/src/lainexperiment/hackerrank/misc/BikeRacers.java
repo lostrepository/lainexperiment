@@ -62,7 +62,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
-import java.util.function.IntFunction;
+import java.util.function.IntUnaryOperator;
 
 public class BikeRacers {
 
@@ -123,13 +123,20 @@ public class BikeRacers {
         return 1;
     }
     
-    static int binarySearch(int s, int e, IntFunction<Integer> cmp) {
+    /*
+     * Applies lambda for values in range s..e.
+     * Lambda return codes:
+     *  negative - current value is small
+     *  0 or positive - current value is big
+     *  Returns latest big value encountered.
+     */
+    static int binarySearch(int s, int e, IntUnaryOperator oper) {
         if (e - s < 0) return -1;
         int m = (s + e) / 2;
-        int r = cmp.apply(m);
+        int r = oper.applyAsInt(m);
         if (r < 0)
-            return binarySearch(m + 1, e, cmp);
-        int res = binarySearch(s, m - 1, cmp);
+            return binarySearch(m + 1, e, oper);
+        int res = binarySearch(s, m - 1, oper);
         return res == -1? m: res;
     }
 

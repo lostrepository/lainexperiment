@@ -57,20 +57,27 @@ package lainexperiment.hackerrank.codesprint.zalando;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
 import java.util.Scanner;
-import java.util.function.LongFunction;
+import java.util.function.LongUnaryOperator;
 
 public class Processing_Time_Inside_a_Warehouse {
 
     static long[] M;
     static long N;
     
-    static long binarySearch(long s, long e, LongFunction<Integer> cmp) {
+    /*
+     * Applies lambda for values in range s..e.
+     * Lambda return codes:
+     *  negative - current value is small
+     *  0 or positive - current value is big
+     *  Returns latest big value encountered.
+     */
+    static long binarySearch(long s, long e, LongUnaryOperator oper) {
         if (e - s < 0) return -1;
         long m = (s + e) / 2;
-        int r = cmp.apply(m);
+        long r = oper.applyAsLong(m);
         if (r < 0)
-            return binarySearch(m + 1, e, cmp);
-        long res = binarySearch(s, m - 1, cmp);
+            return binarySearch(m + 1, e, oper);
+        long res = binarySearch(s, m - 1, oper);
         return res == -1? m: res;
     }
     
