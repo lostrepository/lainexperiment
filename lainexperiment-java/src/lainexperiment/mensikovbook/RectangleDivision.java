@@ -48,19 +48,19 @@ public class RectangleDivision {
         return y * 2 + 1;
     }
 
-    static void fillObject(int y, int x) {
+    static void floodFill(int y, int x) {
         M[y][x] = FILL;
         if (x + 1 < M[y].length && M[y][x + 1] == 0) {
-            fillObject(y, x + 1);
+            floodFill(y, x + 1);
         }
         if (x - 1 >= 0 && M[y][x - 1] == 0) {
-            fillObject(y, x - 1);
+            floodFill(y, x - 1);
         }
         if (y + 1 < M.length && M[y + 1][x] == 0) {
-            fillObject(y + 1, x);
+            floodFill(y + 1, x);
         }
         if (y - 1 >= 0 && M[y - 1][x] == 0) {
-            fillObject(y - 1, x);
+            floodFill(y - 1, x);
         }
     }
     
@@ -93,7 +93,7 @@ public class RectangleDivision {
         for (int y = 0; y < M.length; ++y) {
             for (int x = 0; x < M[y].length; ++x) {
                 if (M[y][x] == 0) {
-                    fillObject(y, x);
+                    floodFill(y, x);
                     ++c;
                 }
             }
