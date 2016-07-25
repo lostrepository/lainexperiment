@@ -35,7 +35,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.Stack;
 import java.util.function.IntBinaryOperator;
 
-public class Task1 {
+public class Task1_Stack_machine_calculator {
 
     private static final int MAX = 1 << 13;
 
@@ -75,7 +75,7 @@ public class Task1 {
     }
     
     public static int solve(String S) {
-        return new Task1().solution(S);
+        return new Task1_Stack_machine_calculator().solution(S);
     }
     
     public static void main(String[] args) {

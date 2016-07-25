@@ -41,7 +41,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 
-public class Task2 {
+public class Task2_Extreme_numbers {
 
     public int solution(int[] A) {
         if (A.length == 0) return -1;
@@ -59,7 +59,7 @@ public class Task2 {
     }
     
     public static int solve(int[] A) {
-        return new Task2().solution(A);
+        return new Task2_Extreme_numbers().solution(A);
     }
     
     public static void main(String[] args) {

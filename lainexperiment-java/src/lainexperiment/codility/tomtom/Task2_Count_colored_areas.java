@@ -41,7 +41,7 @@ package lainexperiment.codility.tomtom;
 
 import static org.junit.Assert.assertEquals;
 
-public class Task2 {
+public class Task2_Count_colored_areas {
 
     private static int countObjects(int[][] A) {
         int cnt = 0;
@@ -67,7 +67,7 @@ public class Task2 {
     }
 
     public static int solve(int[][] A) {
-        return new Task2().solution(A);
+        return new Task2_Count_colored_areas().solution(A);
     }
     
     public static void main(String[] args) {

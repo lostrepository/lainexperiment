@@ -34,56 +34,65 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 
-public class Task3 {
+public class Task3_K_complimentary_pairs {
    
     public int solution(int K, int[] A) {
         Arrays.sort(A);
         int c = 0;
         for (int i = 0; i < A.length; i++) {
             int b = K - A[i];
-            int[] r = find(A, b, 0, A.length - 1);
-            if (r == null) continue;
+            int l = binSearch(A, b, 0, A.length - 1);
+            if (l == -1 || A[l] != b) continue;
 //            System.out.println(A[i] + " " + b);
-            c += (r[1] - r[0]) + 1;
+            int r = binSearch(A, b + 1, 0, A.length - 1);
+            if (r == -1) 
+                r = A.length - 1;
+            else
+                r--;
+            c += (r - l) + 1;
         }
         return c;
     }
 
-    private int[] find(int[] a, int v, int s, int e)
+    /*
+     * Use binary search to find index where elements v
+     * begins or index of the first element bigger than v. 
+     * Search range is [s, e].
+     * If all elements are less than v -1 is returned.
+     */
+    static int binSearch(int[] a, int v, int s, int e)
     {
         if (e < s)
-            return null;
+            return -1;
         if (e == s) {
-            if (a[e] == v)
-                return new int[]{s, s};
+            if (a[e] >= v)
+                return s;
             else
-                return null;
+                return -1;
         }
         int m = (e - s) / 2 + s;
         if (a[m] < v)
-            return find(a, v, m + 1, e);
-        if (a[m] > v)
-            return find(a, v, s, m - 1);
-        if (a[m] != v) 
-            return null;
-        int[] l = null;
-        if (m != 0)
-            l = find(a, v, s, m - 1);
-        if (l == null)
-            l = new int[]{m, m};
-        int[] r = null;
-        if (m != a.length - 1)
-            r = find(a, v, m + 1, e);
-        if (r == null)
-            r = new int[]{m, m};
-        return new int[]{l[0], r[1]};
+            return binSearch(a, v, m + 1, e);
+        else {
+            int p = binSearch(a, v, s, m - 1);
+            return p == -1? m: p;
+        }
     }
-
+    
     public static int solve(int K, int[] A) {
-        return new Task3().solution(K, A);
+        return new Task3_K_complimentary_pairs().solution(K, A);
     }
     
     public static void main(String[] args) {
+        int[] a = new int[]{1, 1, 3, 3, 4, 4, 4, 5};
+        assertEquals(2, binSearch(a, 3, 0, a.length - 1));
+        assertEquals(0, binSearch(a, 1, 0, a.length - 1));
+        assertEquals(0, binSearch(a, -1, 0, a.length - 1));
+        assertEquals(4, binSearch(a, 4, 0, a.length - 1));
+        assertEquals(-1, binSearch(a, 7, 0, a.length - 1));
+        assertEquals(2, binSearch(a, 2, 0, a.length - 1));
+        assertEquals(7, binSearch(a, 5, 0, a.length - 1));
+        
         assertEquals(7, solve(6, new int[]{1, 8, -3, 0, 1, 3, -2, 4, 5}));
         assertEquals(4, solve(6, new int[]{6, 0, 0}));
         assertEquals(0, solve(6, new int[]{4, 0, 0}));

@@ -33,7 +33,7 @@ package lainexperiment.codility.tomtom;
 
 import static org.junit.Assert.assertEquals;
 
-public class Task1 {
+public class Task1_Fix_a_bug {
 
     public int solution(int n) {
         int[] d = new int[30];
@@ -61,7 +61,7 @@ public class Task1 {
     }
     
     public static int solve(int S) {
-        return new Task1().solution(S);
+        return new Task1_Fix_a_bug().solution(S);
     }
     
     public static void main(String[] args) {

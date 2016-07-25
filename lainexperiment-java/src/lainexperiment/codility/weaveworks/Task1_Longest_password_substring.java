@@ -46,7 +46,7 @@ package lainexperiment.codility.weaveworks;
 
 import static org.junit.Assert.assertEquals;
 
-public class Task1 {
+public class Task1_Longest_password_substring {
 
     public int solution(String S) {
         int s = 0;
@@ -73,7 +73,7 @@ public class Task1 {
     }
     
     public static int solve(String S) {
-        return new Task1().solution(S);
+        return new Task1_Longest_password_substring().solution(S);
     }
     
     public static void main(String[] args) {

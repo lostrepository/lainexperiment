@@ -43,7 +43,7 @@ package lainexperiment.codility.imdb;
 import java.util.stream.IntStream;
 import static org.junit.Assert.assertTrue;
 
-public class Task2 {
+public class Task2_Calculate_number_of_full_weeks {
 
     static final int DAYS_IN_WEEK = 7;
     static final int[] DAYS_IN_MONTH_NON_LEAP = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};

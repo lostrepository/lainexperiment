@@ -46,7 +46,7 @@ package lainexperiment.codility.imdb;
 
 import static org.junit.Assert.assertTrue;
 
-public class Task1 {
+public class Task1_Longest_password_substring {
 
     static public int solution(String S) {
         int max = 0;
