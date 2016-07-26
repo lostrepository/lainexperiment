@@ -75,6 +75,7 @@ public class Points_in_a_plane {
     }
     
     static long fac(int n) {
+        if (n <= 1) return 1;
         //System.out.println(n);
         return LongStream.range(1, n + 1).reduce((r, i) -> {
             r *= i;

@@ -22,6 +22,7 @@ import java.util.stream.IntStream;
 public class CalculateFactorialsModK {
 
     static Object fac(int n) {
+        if (n <= 1) return 1;
         return IntStream.range(1, n + 1).reduce((r, i) -> {
             r *= i;
             return r % 10_000_007;
