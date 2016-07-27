@@ -94,7 +94,7 @@ public class Task1_Battleship {
         assertEquals("1,0", solve(6, "1A 1D", "1A 1B 1C 1D"));
         assertEquals("0,0", solve(6, "1A 1D", "2A 2B 2C 2D"));
         assertEquals("0,1", solve(6, "1A 1D", "2A 2B 2C 1D"));
-        assertEquals("0,0", solve(6, "11A 11D", "2A 2B 2C 11D"));
+        assertEquals("0,1", solve(6, "11A 11D", "2A 2B 2C 11D"));
     }
     
 }
