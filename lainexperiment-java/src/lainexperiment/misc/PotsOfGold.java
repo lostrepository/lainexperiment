@@ -35,10 +35,9 @@ package lainexperiment.misc;
 
 import static java.lang.Math.max;
 import static java.lang.Math.min;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Stack;
-
-import static org.junit.Assert.assertEquals;
 
 public class PotsOfGold {
 

@@ -75,13 +75,13 @@
  */
 package lainexperiment.hackerrank.codesprint.blackrock;
 
+import static java.math.BigInteger.ZERO;
+
 import java.io.FileNotFoundException;
 import java.math.BigInteger;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
-
-import static java.math.BigInteger.*;
 
 public class Portfolio_Manager {
 

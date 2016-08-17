@@ -27,6 +27,7 @@
 package lainexperiment.misc;
 
 import static org.junit.Assert.assertEquals;
+
 import java.util.function.IntFunction;
 
 public class MedianFromTwoArrays {

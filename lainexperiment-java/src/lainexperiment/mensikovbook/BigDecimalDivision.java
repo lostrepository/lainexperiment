@@ -25,8 +25,9 @@
 
 package lainexperiment.mensikovbook;
 
-import java.math.BigInteger;
 import static org.junit.Assert.assertEquals;
+
+import java.math.BigInteger;
 
 public class BigDecimalDivision {
 

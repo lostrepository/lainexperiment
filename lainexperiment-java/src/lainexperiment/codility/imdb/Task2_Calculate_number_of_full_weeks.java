@@ -40,8 +40,9 @@
 
 package lainexperiment.codility.imdb;
 
-import java.util.stream.IntStream;
 import static org.junit.Assert.assertTrue;
+
+import java.util.stream.IntStream;
 
 public class Task2_Calculate_number_of_full_weeks {
 

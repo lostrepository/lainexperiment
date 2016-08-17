@@ -28,11 +28,11 @@
 
 package lainexperiment.misc;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
-
-import static org.junit.Assert.assertEquals;
 
 public class SplitTheString {
 

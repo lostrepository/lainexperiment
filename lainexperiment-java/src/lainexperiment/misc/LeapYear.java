@@ -6,6 +6,9 @@ package lainexperiment.misc;
  *
  */
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 /*
  * Date: 01/08/2016
  * 
@@ -24,8 +27,6 @@ false
  */
 
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class LeapYear {
 

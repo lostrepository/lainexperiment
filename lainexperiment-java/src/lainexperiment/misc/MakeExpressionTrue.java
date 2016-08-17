@@ -27,7 +27,8 @@
 package lainexperiment.misc;
 
 import static java.util.stream.IntStream.range;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.stream.Collectors;
 
