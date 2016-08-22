@@ -61,6 +61,51 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+class DisjointSet {
+    
+    int[] disjointSet;
+
+    DisjointSet(int size) {
+        BT = new int[size];
+        disjointSet = new int[size];
+        for (int i = 0; i < disjointSet.length; i++)
+            disjointSet[i] = i;
+    }
+    
+    /*
+     * Connects j to root of i.
+     * If i and j are in same group false is returned.
+     */
+    int[] BT;
+    boolean connect(int j, int i) {
+        int c = 0;
+        while (disjointSet[i] != i) {
+            BT[c++] = i;
+            i = disjointSet[i];
+        }
+        while (disjointSet[j] != j) {
+            int t = j;
+            j = disjointSet[j];
+            disjointSet[t] = i;
+        }
+        disjointSet[j] = i;
+        for (int k = 0; k < c; k++)
+            disjointSet[BT[k]] = i;
+        return i != j;
+    }
+
+    boolean isConnected(int i, int j) {
+        return getRoot(i) == getRoot(j);
+    }
+    
+    int getRoot(int i) {
+        while (disjointSet[i] != i) {
+            i = disjointSet[i];
+        }
+        return i;
+    }
+}
+
 public class Roads_in_HackerLand {
 
     @SuppressWarnings("serial")
@@ -129,34 +174,14 @@ public class Roads_in_HackerLand {
             W[u].add(w);
         }
     }
-
-    static int[] BT = new int[100_000];
-    static boolean unite(int[] disjoinSet, int i, int j) {
-        int c = 0;
-        while (disjoinSet[i] != i) {
-            BT[c++] = i;
-            i = disjoinSet[i];
-        }
-        while (disjoinSet[j] != j) {
-            int t = j;
-            j = disjoinSet[j];
-            disjoinSet[t] = i;
-        }
-        disjoinSet[j] = i;
-        for (int k = 0; k < c; k++)
-            disjoinSet[BT[k]] = i;
-        return i != j;
-    }
     
     static List<Pair<Integer, Edge>> kruskalMst() {
         Arrays.sort(E, (p1, p2) -> p1.getKey() - p2.getKey());
-        int[] d = new int[G.length];
-        for (int i = 0; i < d.length; i++)
-            d[i] = i;
+        DisjointSet ds = new DisjointSet(100_000);
         List<Pair<Integer, Edge>> mst = new ArrayList<>(G.length);
         for (Pair<Integer, Edge> p: E) {
             Edge e = p.getValue();
-            if (!unite(d, e.getKey(), e.getValue()))
+            if (!ds.connect(e.getValue(), e.getKey()))
                 continue;
             mst.add(p);
         }
