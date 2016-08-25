@@ -63,7 +63,7 @@ YES
  *
  */
 
-package lainexperiment.hackerrank.hackathon.hack101nov;
+package lainexperiment.hackerrank.hackathon.hack101._2015.nov;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;

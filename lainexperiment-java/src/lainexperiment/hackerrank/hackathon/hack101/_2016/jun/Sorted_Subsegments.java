@@ -47,7 +47,7 @@
  *
  */
 
-package lainexperiment.hackerrank.hackathon.hack101jun2016;
+package lainexperiment.hackerrank.hackathon.hack101._2016.jun;
 
 import java.io.FileNotFoundException;
 import java.util.Arrays;
