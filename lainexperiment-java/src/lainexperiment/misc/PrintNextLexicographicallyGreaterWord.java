@@ -25,35 +25,44 @@
 
 package lainexperiment.misc;
 
+import static java.lang.Math.abs;
+import static java.util.Arrays.binarySearch;
 import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 
 public class PrintNextLexicographicallyGreaterWord {
-
-    static char[] next(char[] a) {
-        if (a.length == 1) {
-            return "no answer".toCharArray();
+    
+    static void swap(char[] a, int i, int j) {
+        char tmp = a[i];
+        a[i] = a[j];
+        a[j] = tmp;
+    }
+    
+    static char[] nextLexicographic(char[] a) {
+        int i = a.length - 2;
+        while (i >= 0) {
+            if (a[i] < a[i + 1])
+                break;
+            i--;
         }
-        for (int i = a.length - 2; i >= 0; --i) {
-            for (int j = a.length - 1; j >= i; --j) {
-                if (a[i] < a[j]) {
-                    char tmp = a[i];
-                    a[i] = a[j];
-                    a[j] = tmp;
-                    Arrays.sort(a, i + 1, a.length);
-                    return a;
-                }
-            }
-        }
-        return "no answer".toCharArray();
+        if (i < 0)
+            return a;
+        Arrays.sort(a, i + 1, a.length);
+        int p = binarySearch(a, i + 1, a.length, (char)(a[i] + 1));
+        if (p < 0)
+            p = abs(p) - 1;
+        swap(a, i, p);
+        return a;
     }
 
     public static void main(String[] args) {
-        char[] a = null;
-        
-        a = next("1421".toCharArray());
-        assertEquals("2114", String.valueOf(a));
+        assertEquals("2114", String.valueOf(nextLexicographic("1421".toCharArray())));
+        assertEquals("ba", String.valueOf(nextLexicographic("ab".toCharArray())));
+        assertEquals("bb", String.valueOf(nextLexicographic("bb".toCharArray())));
+        assertEquals("hegf", String.valueOf(nextLexicographic("hefg".toCharArray())));
+        assertEquals("bacd", String.valueOf(nextLexicographic("adcb".toCharArray())));
+        assertEquals("adbc", String.valueOf(nextLexicographic("acdb".toCharArray())));
     }
 
 }
