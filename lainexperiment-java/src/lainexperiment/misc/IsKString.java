@@ -46,9 +46,8 @@ public class IsKString {
             return false;
         if (l == a.length - 1)
             return false;
-        if (l > a.length - l)
-            l = a.length - l;
-        if (a.length % l > 0)
+        l = a.length - l;
+        if (a.length % l != 0)
             return false;
         for (int i = 0, k = 0; i < a.length; i++) {
             if (a[i] != a[k])
