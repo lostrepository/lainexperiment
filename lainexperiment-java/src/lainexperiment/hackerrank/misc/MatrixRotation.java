@@ -77,14 +77,14 @@ public class MatrixRotation {
     static int H, W;
     static long R;
     
-    static void rotate(int f) {
-        int h = H - 2 * f;
-        int w = W - 2 * f;
+    static void rotate(int frameNum) {
+        int h = H - 2 * frameNum;
+        int w = W - 2 * frameNum;
         int len = 2 * (h + w - 2);
         int r = (int)(R % len);
         for (int i = 0; i < len; ++i) {
-            Point from = next(f, h, w, 0, i);
-            Point to = next(f, h, w, r, i);
+            Point from = next(frameNum, h, w, 0, i);
+            Point to = next(frameNum, h, w, r, i);
             B[to.x][to.y] = A[from.x][from.y];
 //            for (int m = 0; m < H; ++m)
 //                System.out.println(Arrays.toString(B[m]));

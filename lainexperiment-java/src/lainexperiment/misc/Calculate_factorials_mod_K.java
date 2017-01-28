@@ -19,7 +19,7 @@ package lainexperiment.misc;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-public class CalculateFactorialsModK {
+public class Calculate_factorials_mod_K {
 
     static Object fac(int n) {
         if (n <= 1) return 1;

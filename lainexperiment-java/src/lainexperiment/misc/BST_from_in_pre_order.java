@@ -36,7 +36,7 @@ package lainexperiment.misc;
 
 import java.util.stream.IntStream;
 
-public class BstFromInPreOrder {
+public class BST_from_in_pre_order {
     
     static class Node {
         Node l, r;

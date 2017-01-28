@@ -34,7 +34,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 
-public class ArrangeTheLettersKDistanceAppart {
+public class Arrange_the_letters_K_distance_appart {
 
     static boolean arrange(char[] a, int K) {
         int k = 0;
