@@ -28,7 +28,7 @@ false
 
 import org.junit.Test;
 
-public class LeapYear {
+public class Leap_year {
 
     public static boolean isLeap(int year) {
         if (year % 400 == 0)

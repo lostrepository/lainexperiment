@@ -31,7 +31,7 @@ package lainexperiment.misc;
 import java.util.Arrays;
 import java.util.stream.IntStream;
 
-public class FillMatrixInZigZagOrder {
+public class Fill_matrixIn_zig_zag_order {
 
     static int C = 1;
     

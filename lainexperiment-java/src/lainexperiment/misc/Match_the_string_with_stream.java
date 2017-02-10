@@ -31,7 +31,7 @@ import java.io.StringReader;
 
 import org.junit.Assert;
 
-public class MatchTheStringWithStream {
+public class Match_the_string_with_stream {
 
     static boolean match(Reader s, int i, char[] p, 
             StringBuilder b) throws IOException 

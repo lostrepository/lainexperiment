@@ -32,7 +32,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.function.Predicate;
 
-public class IsKString {
+public class Is_K_string {
 
     static boolean iskstring(char[] a) {
         int l = 0;

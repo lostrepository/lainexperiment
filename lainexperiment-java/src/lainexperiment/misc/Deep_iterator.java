@@ -31,7 +31,7 @@ import java.util.List;
 import java.util.Stack;
 import java.util.stream.Stream;
 
-public class DeepIterator {
+public class Deep_iterator {
 
     @SuppressWarnings({"rawtypes"})
     static class DIterator {

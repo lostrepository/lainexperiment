@@ -32,7 +32,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.stream.IntStream;
 
-public class ElementsWithMinDistance {
+public class Elements_with_min_distance {
 
     static int findMinDist(int[][] a) {
         class Entry {

@@ -24,7 +24,7 @@
 
 package lainexperiment.misc;
 
-public class FloatToString {
+public class Float_to_string {
 
     static String floatToString(float f) {
         StringBuilder buf = new StringBuilder();

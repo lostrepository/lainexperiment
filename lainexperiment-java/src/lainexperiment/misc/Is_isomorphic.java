@@ -30,7 +30,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.HashMap;
 import java.util.Map;
 
-public class IsIsomorphic {
+public class Is_isomorphic {
 
     static boolean isIsomorphic(char[] a1, char[] a2) {
         Map<Character, Integer> m1 = new HashMap<>();

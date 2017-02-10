@@ -27,7 +27,7 @@
 
 package lainexperiment.misc;
 
-public class MinNumberOfJumps {
+public class Min_number_of_jumps {
     
     static int minJumps(int[] a, int n) {
         if (n >= a.length)

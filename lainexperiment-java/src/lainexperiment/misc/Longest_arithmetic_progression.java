@@ -29,7 +29,7 @@
 
 package lainexperiment.misc;
 
-public class LongestArithmeticProgression {
+public class Longest_arithmetic_progression {
     
     static int count(int[] a, int d, int i) {
         int j = i;

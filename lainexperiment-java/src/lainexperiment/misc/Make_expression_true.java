@@ -32,7 +32,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.stream.Collectors;
 
-public class MakeExpressionTrue {
+public class Make_expression_true {
     
     static int i;
     

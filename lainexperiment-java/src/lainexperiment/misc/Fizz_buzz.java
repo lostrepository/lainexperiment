@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
 import org.junit.Test;
 
 
-public class FizzBuzz {
+public class Fizz_buzz {
 
     private static final String FIZZ = "Fizz";
     private static final String BUZZ = "Buzz";

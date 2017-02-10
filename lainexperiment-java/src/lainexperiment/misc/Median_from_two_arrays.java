@@ -30,7 +30,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.function.IntFunction;
 
-public class MedianFromTwoArrays {
+public class Median_from_two_arrays {
     
     static int median(int[] a1, int[] a2, int s, int e, int k)
     {

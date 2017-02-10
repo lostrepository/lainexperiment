@@ -29,7 +29,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 
-public class GenerateLargestNumber {
+public class Generate_largest_number {
 
     static int compare(int a, int b) {
         a = Integer.parseInt(new StringBuilder(String.valueOf(a)).reverse().toString());
@@ -60,12 +60,12 @@ public class GenerateLargestNumber {
         a = new int[]{92, 99, 95, 96, 9};
         assertEquals("[99, 9, 96, 95, 92]", 
                 Arrays.toString(Arrays.stream(a).boxed().
-                        sorted(GenerateLargestNumber::compare).toArray()));
+                        sorted(Generate_largest_number::compare).toArray()));
 
         a = new int[]{5, 8, 32, 65, 8765};
         assertEquals("[8, 8765, 65, 5, 32]", 
                 Arrays.toString(Arrays.stream(a).boxed().
-                        sorted(GenerateLargestNumber::compare).toArray()));
+                        sorted(Generate_largest_number::compare).toArray()));
         
     }
 

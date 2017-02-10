@@ -69,7 +69,7 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
-public class FormingQuizTeams {
+public class Forming_quiz_teams {
 
     static float split(int[] X, int[] Y, BitSet S, int n, float sum, Map<String, Float> M) {
         if (n == X.length) {

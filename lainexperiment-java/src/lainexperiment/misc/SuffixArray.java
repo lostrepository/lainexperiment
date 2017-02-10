@@ -56,15 +56,15 @@ public class SuffixArray {
     char[] A;
     // maps suffixes of the input array A to their
     // positions in SA
-    int[] ASA;
+    int[] RANK;
     // suffix array
     int[] SA;
     
     SuffixArray(char[] a) {
         A = a;
-        ASA = new int[a.length];
+        RANK = new int[a.length];
         suffixArray(a, 1);
-        SA = invertedIndex(ASA);
+        SA = invertedIndex(RANK);
     }
     
     private int[] invertedIndex(int[] a) {
@@ -127,13 +127,13 @@ public class SuffixArray {
         if (n >= A.length * 2) {
             return;
         }
-        Prefix[] P = new Prefix[ASA.length];
-        for (int i = 0; i < ASA.length; ++i) {
+        Prefix[] P = new Prefix[RANK.length];
+        for (int i = 0; i < RANK.length; ++i) {
             Prefix p = new Prefix();
-            p.a = ASA[i];
+            p.a = RANK[i];
             int j = i + n / 2;
             if (j < A.length)
-                p.b = n == 1? A[i]: ASA[j];
+                p.b = n == 1? A[i]: RANK[j];
             else
                 p.b = -i;
             p.p = i;
@@ -144,10 +144,10 @@ public class SuffixArray {
         int b = P[0].b;
         int c = 0;
         for (int i = 0; i < P.length; ++i) {
-            ASA[P[i].p] = c;
+            RANK[P[i].p] = c;
             if (P[i].a == a && P[i].b == b)
                 continue;
-            ASA[P[i].p] = ++c;
+            RANK[P[i].p] = ++c;
             a = P[i].a;
             b = P[i].b;
         }
@@ -158,29 +158,29 @@ public class SuffixArray {
         SuffixArray sa = null;
         
         sa = new SuffixArray("banana".toCharArray());
-        assertEquals("[3, 2, 5, 1, 4, 0]", Arrays.toString(sa.ASA));
+        assertEquals("[3, 2, 5, 1, 4, 0]", Arrays.toString(sa.RANK));
         assertEquals("[1, 2]", Arrays.toString(sa.find("an".toCharArray())));
         assertEquals("[3, 3]", Arrays.toString(sa.find("b".toCharArray())));
         assertEquals("[3, 3]", Arrays.toString(sa.find("ba".toCharArray())));
         assertEquals("[4, 5]", Arrays.toString(sa.find("n".toCharArray())));
         
         sa = new SuffixArray("bobocel".toCharArray());
-        assertEquals("[0, 5, 1, 6, 2, 3, 4]", Arrays.toString(sa.ASA));
+        assertEquals("[0, 5, 1, 6, 2, 3, 4]", Arrays.toString(sa.RANK));
         
         sa = new SuffixArray("mississippi".toCharArray());
-        assertEquals("[4, 3, 10, 8, 2, 9, 7, 1, 6, 5, 0]", Arrays.toString(sa.ASA));
+        assertEquals("[4, 3, 10, 8, 2, 9, 7, 1, 6, 5, 0]", Arrays.toString(sa.RANK));
         
         sa = new SuffixArray("aaaaaaa".toCharArray());
-        assertEquals("[6, 5, 4, 3, 2, 1, 0]", Arrays.toString(sa.ASA));
+        assertEquals("[6, 5, 4, 3, 2, 1, 0]", Arrays.toString(sa.RANK));
         
         sa = new SuffixArray("attcatg".toCharArray());
-        assertEquals("[1, 6, 4, 2, 0, 5, 3]", Arrays.toString(sa.ASA));
+        assertEquals("[1, 6, 4, 2, 0, 5, 3]", Arrays.toString(sa.RANK));
         
         sa = new SuffixArray("aacbaada".toCharArray());
-        assertEquals("[1, 3, 6, 5, 2, 4, 7, 0]", Arrays.toString(sa.ASA));
+        assertEquals("[1, 3, 6, 5, 2, 4, 7, 0]", Arrays.toString(sa.RANK));
         
         sa = new SuffixArray("aadcaabe".toCharArray());
-        System.out.println(Arrays.toString(sa.ASA));
+        System.out.println(Arrays.toString(sa.RANK));
     }
 
 }

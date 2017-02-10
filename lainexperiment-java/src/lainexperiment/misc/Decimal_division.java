@@ -36,7 +36,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.HashSet;
 import java.util.Set;
 
-public class DecimalDivision {
+public class Decimal_division {
 
     private static String decimalDiv(int n, int d, Set<Integer> s, boolean isDec) {
         if (n == 0)
