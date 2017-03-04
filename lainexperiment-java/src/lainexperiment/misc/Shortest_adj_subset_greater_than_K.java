@@ -28,7 +28,7 @@ package lainexperiment.misc;
 
 import static org.junit.Assert.assertEquals;
 
-public class ShortestAdjSubsetWhichGreaterThanK {
+public class Shortest_adj_subset_greater_than_K {
 
     static int length(int[] a, int k) {
         int sum = 0;

@@ -37,7 +37,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class ShortPathToGuard {
+public class Short_path_to_guard {
 
     static int[][] A;
     static int B = -2, G = -1, X = Integer.MAX_VALUE;

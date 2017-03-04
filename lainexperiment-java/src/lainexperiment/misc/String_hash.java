@@ -35,7 +35,7 @@ import java.util.Set;
  * Supports composed hash codes. Based on modular
  * hash function.
  */
-public class StringHash {
+public class String_hash {
     
     // to decrease collisions must be prime
     private static final long M1 = 4294967291L;
@@ -56,26 +56,26 @@ public class StringHash {
         }
     }
     
-    StringHash() {
+    String_hash() {
     }
     
-    StringHash(String s) {
+    String_hash(String s) {
         this(s.toCharArray());
     }
     
-    StringHash(char[] a) {
+    String_hash(char[] a) {
         add(a, 0, a.length);
     }
 
-    StringHash(char[] a, int s) {
+    String_hash(char[] a, int s) {
         add(a, s, a.length);
     }
 
-    StringHash(char[] a, int s, int e) {
+    String_hash(char[] a, int s, int e) {
         add(a, s, e);
     }
     
-    StringHash(StringHash sh) {
+    String_hash(String_hash sh) {
         h1 = sh.h1;
         h2 = sh.h2;
         len = sh.len;
@@ -85,18 +85,18 @@ public class StringHash {
         h1 = h2 = len = 0;
     }
     
-    StringHash add(String s) {
+    String_hash add(String s) {
         return add(s.toCharArray(), 0, s.length());
     }
     
-    StringHash add(StringHash sh) {
+    String_hash add(String_hash sh) {
         h1 = (Long.remainderUnsigned(h1 * P1[sh.len], M1) + sh.h1) % M1;
         h2 = (Long.remainderUnsigned(h2 * P2[sh.len], M2) + sh.h2) % M2;
         len += sh.len;
         return this;
     }
     
-    StringHash add(char[] a, int s, int e) {
+    String_hash add(char[] a, int s, int e) {
         for (int i = s; i < e; i++) {
             int v = a[i] - 'a';
             h1 = ((h1 * 25) % M1 + v) % M1;
@@ -113,7 +113,7 @@ public class StringHash {
     static void fill(String s, Set<Long> set) {
         if (s.length() == 10) {
 //            System.out.println(s);
-            long h = new StringHash(s).getHashCode();
+            long h = new String_hash(s).getHashCode();
             if (set.contains(h)) {
                 throw new RuntimeException("Collission");
             }
@@ -126,34 +126,34 @@ public class StringHash {
     }
 
     public static void main(String[] args) {
-        StringHash.init(1200);
+        String_hash.init(1200);
         
-        assertEquals(new StringHash("abcd").getHashCode(),
-                new StringHash("ab").add(new StringHash("c")).add("d").getHashCode());
+        assertEquals(new String_hash("abcd").getHashCode(),
+                new String_hash("ab").add(new String_hash("c")).add("d").getHashCode());
         
-        assertEquals(new StringHash("abc").getHashCode(),
-                new StringHash("ab").add(new StringHash("c")).getHashCode());
+        assertEquals(new String_hash("abc").getHashCode(),
+                new String_hash("ab").add(new String_hash("c")).getHashCode());
         
-        assertEquals(new StringHash("abcd").getHashCode(),
-                new StringHash("ab").add(new StringHash("cd")).getHashCode());
+        assertEquals(new String_hash("abcd").getHashCode(),
+                new String_hash("ab").add(new String_hash("cd")).getHashCode());
         
-        assertEquals(new StringHash("aaaaaaaaaaaaaaaaaabbbbbbbbb").getHashCode(),
-                new StringHash("aaaaaaaaaaaaaaaaaa").add(new StringHash("bbbbbbbbb")).getHashCode());
+        assertEquals(new String_hash("aaaaaaaaaaaaaaaaaabbbbbbbbb").getHashCode(),
+                new String_hash("aaaaaaaaaaaaaaaaaa").add(new String_hash("bbbbbbbbb")).getHashCode());
         
         String s = String.format("%1200s", "").replace(' ', 'j');
-        assertEquals(new StringHash(s).getHashCode(),
-                new StringHash(s.substring(0, 433)).add(new StringHash(s.substring(433))).getHashCode());
+        assertEquals(new String_hash(s).getHashCode(),
+                new String_hash(s.substring(0, 433)).add(new String_hash(s.substring(433))).getHashCode());
         
-        StringHash sh = new StringHash("abcd");
-        assertEquals(new StringHash(sh).add("efg").getHashCode(),
+        String_hash sh = new String_hash("abcd");
+        assertEquals(new String_hash(sh).add("efg").getHashCode(),
                 sh.add("efg").getHashCode());
 
-        sh = new StringHash(s.substring(0, 200));
-        assertEquals(new StringHash(sh).add(new StringHash(s.substring(200))).getHashCode(),
+        sh = new String_hash(s.substring(0, 200));
+        assertEquals(new String_hash(sh).add(new String_hash(s.substring(200))).getHashCode(),
                 sh.add(s.substring(200)).getHashCode());
 
-        sh = new StringHash(s.substring(0, 200));
-        assertEquals(new StringHash(sh).add(new StringHash(s.substring(200, 800)).add(s.substring(800))).getHashCode(),
+        sh = new String_hash(s.substring(0, 200));
+        assertEquals(new String_hash(sh).add(new String_hash(s.substring(200, 800)).add(s.substring(800))).getHashCode(),
             sh.add(s.substring(200)).getHashCode());
         
 //        Set<Long> set = new HashSet<>();

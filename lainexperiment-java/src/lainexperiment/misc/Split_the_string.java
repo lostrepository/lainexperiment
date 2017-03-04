@@ -34,7 +34,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
 
-public class SplitTheString {
+public class Split_the_string {
 
     static String split(char[] a, Set<String> d) {
         Stack<Integer> t = new Stack<>();

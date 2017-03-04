@@ -24,7 +24,7 @@
 
 package lainexperiment.misc;
 
-public class TrimTheString {
+public class Trim_the_string {
 
     static String trim(char[] a) {
         int k = 0;

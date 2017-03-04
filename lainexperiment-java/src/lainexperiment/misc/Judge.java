@@ -57,7 +57,7 @@ public class Judge {
 
     public static void main(String[] args) throws FileNotFoundException {
         Scanner scanner = System.getProperty("local") == null? 
-                new Scanner(System.in): new Scanner(SingleShortestPath.class.getResourceAsStream("Judge.in"));
+                new Scanner(System.in): new Scanner(Single_shortest_path.class.getResourceAsStream("Judge.in"));
         int n = scanner.nextInt();
         int m = scanner.nextInt();
         scanner.nextLine();

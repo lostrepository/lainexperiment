@@ -31,7 +31,7 @@ package lainexperiment.misc;
 
 import static org.junit.Assert.assertEquals;
 
-public class SkipTheNumbers {
+public class Skip_the_numbers {
 
     static String skip(int max, int[] skip) {
         int j = 0;

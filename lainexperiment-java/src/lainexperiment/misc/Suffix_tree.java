@@ -38,7 +38,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SuffixTree {
+public class Suffix_tree {
 
     static class Edge {
         // suffix from the original string [s, e)

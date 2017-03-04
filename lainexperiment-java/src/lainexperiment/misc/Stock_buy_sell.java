@@ -29,7 +29,7 @@ package lainexperiment.misc;
 
 import static org.junit.Assert.assertEquals;
 
-public class StockBuySell {
+public class Stock_buy_sell {
 
     static int maxProfit(int[] a) {
         int s = 0;

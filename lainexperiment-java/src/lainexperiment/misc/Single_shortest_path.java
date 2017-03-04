@@ -45,7 +45,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class SingleShortestPath {
+public class Single_shortest_path {
 
     static List<Integer>[] G;
     static List<Integer>[] W;
@@ -98,7 +98,7 @@ public class SingleShortestPath {
 
     public static void main(String[] args) throws FileNotFoundException {
         Scanner scanner = System.getProperty("local") == null? 
-                new Scanner(System.in): new Scanner(SingleShortestPath.class.getResourceAsStream("SingleShortestPath.in"));
+                new Scanner(System.in): new Scanner(Single_shortest_path.class.getResourceAsStream("SingleShortestPath.in"));
         int n = scanner.nextInt();
         int m = scanner.nextInt();
         int s = scanner.nextInt();

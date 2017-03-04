@@ -34,7 +34,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 
-public class SuffixArray {
+public class Suffix_array {
 
     static class Prefix implements Comparable<Prefix> {
         // a - index of the previous group
@@ -60,7 +60,7 @@ public class SuffixArray {
     // suffix array
     int[] SA;
     
-    SuffixArray(char[] a) {
+    Suffix_array(char[] a) {
         A = a;
         RANK = new int[a.length];
         suffixArray(a, 1);
@@ -155,31 +155,31 @@ public class SuffixArray {
     }
     
     public static void main(String[] args) {
-        SuffixArray sa = null;
+        Suffix_array sa = null;
         
-        sa = new SuffixArray("banana".toCharArray());
+        sa = new Suffix_array("banana".toCharArray());
         assertEquals("[3, 2, 5, 1, 4, 0]", Arrays.toString(sa.RANK));
         assertEquals("[1, 2]", Arrays.toString(sa.find("an".toCharArray())));
         assertEquals("[3, 3]", Arrays.toString(sa.find("b".toCharArray())));
         assertEquals("[3, 3]", Arrays.toString(sa.find("ba".toCharArray())));
         assertEquals("[4, 5]", Arrays.toString(sa.find("n".toCharArray())));
         
-        sa = new SuffixArray("bobocel".toCharArray());
+        sa = new Suffix_array("bobocel".toCharArray());
         assertEquals("[0, 5, 1, 6, 2, 3, 4]", Arrays.toString(sa.RANK));
         
-        sa = new SuffixArray("mississippi".toCharArray());
+        sa = new Suffix_array("mississippi".toCharArray());
         assertEquals("[4, 3, 10, 8, 2, 9, 7, 1, 6, 5, 0]", Arrays.toString(sa.RANK));
         
-        sa = new SuffixArray("aaaaaaa".toCharArray());
+        sa = new Suffix_array("aaaaaaa".toCharArray());
         assertEquals("[6, 5, 4, 3, 2, 1, 0]", Arrays.toString(sa.RANK));
         
-        sa = new SuffixArray("attcatg".toCharArray());
+        sa = new Suffix_array("attcatg".toCharArray());
         assertEquals("[1, 6, 4, 2, 0, 5, 3]", Arrays.toString(sa.RANK));
         
-        sa = new SuffixArray("aacbaada".toCharArray());
+        sa = new Suffix_array("aacbaada".toCharArray());
         assertEquals("[1, 3, 6, 5, 2, 4, 7, 0]", Arrays.toString(sa.RANK));
         
-        sa = new SuffixArray("aadcaabe".toCharArray());
+        sa = new Suffix_array("aadcaabe".toCharArray());
         System.out.println(Arrays.toString(sa.RANK));
     }
 

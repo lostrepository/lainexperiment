@@ -30,7 +30,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 
-public class SortNumberInParticularOrder {
+public class Sort_number_in_particular_order {
 
     static void sort(int[] a, int[] b) {
         for (int i = 0; i < a.length; ++i) {
