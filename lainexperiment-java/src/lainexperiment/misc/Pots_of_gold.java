@@ -39,7 +39,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.Stack;
 
-public class PotsOfGold {
+public class Pots_of_gold {
 
     static int[] max = new int[2];
     

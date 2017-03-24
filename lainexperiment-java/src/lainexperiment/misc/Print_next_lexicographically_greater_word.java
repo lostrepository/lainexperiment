@@ -31,7 +31,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 
-public class PrintNextLexicographicallyGreaterWord {
+public class Print_next_lexicographically_greater_word {
     
     static void swap(char[] a, int i, int j) {
         char tmp = a[i];

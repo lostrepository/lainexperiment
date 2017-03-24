@@ -27,7 +27,7 @@ package lainexperiment.misc;
 
 import static org.junit.Assert.assertEquals;
 
-public class CompressTheString {
+public class Compress_the_string {
 
     static int compress(char[] a) {
         int k = 0;

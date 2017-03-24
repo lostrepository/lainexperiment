@@ -26,7 +26,7 @@ package lainexperiment.misc;
 
 import static org.junit.Assert.assertEquals;
 
-public class PrintNumberName {
+public class Print_number_name {
 
     static String name(int i, int base) {
         if (i == 0) return "";

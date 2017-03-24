@@ -30,7 +30,7 @@
 
 package lainexperiment.misc;
 
-public class PrintMatrixDiagonally {
+public class Print_matrix_diagonally {
 
     static void print(int[][] a) {
         for (int r = 0; r < a.length; ++r) {

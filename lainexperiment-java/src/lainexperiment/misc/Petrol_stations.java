@@ -35,7 +35,7 @@ import static org.junit.Assert.assertEquals;
 
 import java.io.FileNotFoundException;
 
-public class PetrolStations {
+public class Petrol_stations {
 
     static int petrol(int[] d, int[] p) {
         int c = 0;

@@ -31,7 +31,7 @@
 
 package lainexperiment.misc;
 
-public class CountStrips {
+public class Count_strips {
 
     static void fill(char[][] a, char c, int i, int j, int di, int dj) {
         while (j < a[0].length && i < a.length && a[i][j] != '.') {
