@@ -69,7 +69,7 @@
  * 
  */
 
-package lainexperiment.codejam._2008.qualification;
+package lainexperiment.codejam.qualification._2008;
 
 import java.io.File;
 import java.io.FileNotFoundException;
