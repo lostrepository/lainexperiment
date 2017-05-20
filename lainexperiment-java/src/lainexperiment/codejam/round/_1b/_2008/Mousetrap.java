@@ -62,7 +62,7 @@
  * 
  */
 
-package lainexperiment.codejam._2008.round._1b;
+package lainexperiment.codejam.round._1b._2008;
 
 import java.io.File;
 import java.io.FileNotFoundException;
