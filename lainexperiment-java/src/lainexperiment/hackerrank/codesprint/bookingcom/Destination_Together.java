@@ -62,7 +62,7 @@ import java.util.stream.LongStream;
 
 public class Destination_Together {
     
-    static long fac(int n) {
+    static long factorial(int n) {
         if (n <= 1) return 1;
         //System.out.println(n);
         return LongStream.range(1, n + 1)
@@ -76,7 +76,7 @@ public class Destination_Together {
         int n = scanner.nextInt();
         int m = scanner.nextInt();
         int c = scanner.nextInt();
-        System.out.println(fac((n - c) + (m - c) + c - 1));
+        System.out.println(factorial((n - c) + (m - c) + c - 1));
         scanner.close();
     }
     

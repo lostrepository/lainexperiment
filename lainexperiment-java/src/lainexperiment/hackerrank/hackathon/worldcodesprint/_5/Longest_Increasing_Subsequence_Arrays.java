@@ -96,7 +96,7 @@ class LongUnaryOperatorMemoizer implements LongUnaryOperator {
 
 public class Longest_Increasing_Subsequence_Arrays {
     
-    static final int MOD = 1000000007;
+    static final int MOD = 1_000_000_007;
     static final long[] facMod = new long[500_000];
     static final long[] mulInvMod = new long[500_000];
     
@@ -121,7 +121,7 @@ public class Longest_Increasing_Subsequence_Arrays {
     /*
      * Unordered combinations of m things out of n
      */
-    static long unorderedMod(int n, int m) {
+    static long unorderedCombinations(int n, int m) {
         return ((facMod[n] * mulInvMod[m]) % MOD) * mulInvMod[n - m] % MOD;
     }
     
@@ -161,12 +161,12 @@ public class Longest_Increasing_Subsequence_Arrays {
         for (int lenY = maxNonM; lenY > 0; lenY--) {
             long numOfWaysAssignY = powBaseM.applyAsLong(lenY);
             long numOfWaysAssignX = powBaseM_.applyAsLong(maxNonM - lenY);
-            long numOfArrangementsForX = unorderedMod(N - lenY - 1, maxNonM - lenY);
+            long numOfArrangementsForX = unorderedCombinations(N - lenY - 1, maxNonM - lenY);
             C += ((numOfWaysAssignY * numOfWaysAssignX) % MOD) * numOfArrangementsForX % MOD;
             C %= MOD;
         }
         // without Y
-        long numOfArrangementsForX = unorderedMod(N - 1, maxNonM);
+        long numOfArrangementsForX = unorderedCombinations(N - 1, maxNonM);
         C += powBaseM_.applyAsLong(maxNonM) * numOfArrangementsForX % MOD;
         C %= MOD;
         System.out.println(C);

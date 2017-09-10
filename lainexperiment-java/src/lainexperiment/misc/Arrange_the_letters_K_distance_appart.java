@@ -65,7 +65,7 @@ public class Arrange_the_letters_K_distance_appart {
         return true;
     }
     
-    private static void swap(char[] a, int i, int k) {
+    static void swap(char[] a, int i, int k) {
         char t = a[i];
         a[i] = a[k];
         a[k] = t;

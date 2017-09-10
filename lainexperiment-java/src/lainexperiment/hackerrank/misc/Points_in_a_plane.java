@@ -63,6 +63,7 @@ import java.util.stream.LongStream;
 
 public class Points_in_a_plane {
 
+    static final int MOD = 1_000_000_007;
     static int[] X, Y;
     static int[] M = new int[2<<16];
     static int[] C = new int[2<<16];
@@ -74,11 +75,11 @@ public class Points_in_a_plane {
                         true: false;
     }
     
-    static long fac(int n) {
+    static long factorial(int n) {
         if (n <= 1) return 1;
         //System.out.println(n);
         return LongStream.range(1, n + 1)
-                .reduce((r, i) -> r * i % 1000000007)
+                .reduce((r, i) -> r * i % MOD)
                 .getAsLong();
     }
 
@@ -136,7 +137,7 @@ public class Points_in_a_plane {
         M[all] = 0;
         C[all] = 1;
         count(0);
-        System.out.format("%d %d\n", M[0], fac(M[0]) * C[0] % 1000000007);
+        System.out.format("%d %d\n", M[0], factorial(M[0]) * C[0] % MOD);
     }
     
     public static void main(String[] args) throws FileNotFoundException {

@@ -60,7 +60,7 @@ import static java.util.stream.IntStream.range;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class The_Great_XOR {
+public class Task2_The_Great_XOR {
  
     static long count(int[] a, int i, boolean isGreater) {
         if (i == a.length) return isGreater? 1: 0;
@@ -75,13 +75,14 @@ public class The_Great_XOR {
     }
     
     public static void main(String[] args) throws FileNotFoundException {
-        String inputFile = The_Great_XOR.class.getSimpleName() + ".in";
-        Scanner scanner = System.getProperty("local") == null?
-            new Scanner(System.in): new Scanner(The_Great_XOR.class.getResourceAsStream(inputFile));
+        String inputFile = Task2_The_Great_XOR.class.getSimpleName() + ".in";
+        boolean useResource = true;
+        Scanner scanner = !useResource?
+            new Scanner(System.in): new Scanner(Task2_The_Great_XOR.class.getResourceAsStream(inputFile));
         while (scanner.hasNext()) {
             range(0, scanner.nextInt())
                 .mapToLong(i -> scanner.nextLong())
-                .map(The_Great_XOR::count)
+                .map(Task2_The_Great_XOR::count)
                 .forEach(System.out::println);
         }
         scanner.close();

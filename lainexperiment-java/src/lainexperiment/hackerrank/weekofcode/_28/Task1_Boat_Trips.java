@@ -57,12 +57,13 @@ import static java.util.stream.IntStream.generate;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Boat_Trips {
+public class Task1_Boat_Trips {
  
     public static void main(String[] args) throws FileNotFoundException {
-        String inputFile = Boat_Trips.class.getSimpleName() + ".in";
-        Scanner scanner = System.getProperty("local") == null?
-            new Scanner(System.in): new Scanner(Boat_Trips.class.getResourceAsStream(inputFile));
+        String inputFile = Task1_Boat_Trips.class.getSimpleName() + ".in";
+        boolean useResource = true;
+        Scanner scanner = !useResource?
+            new Scanner(System.in): new Scanner(Task1_Boat_Trips.class.getResourceAsStream(inputFile));
         while (scanner.hasNext()) {
             int n = scanner.nextInt();
             int c = scanner.nextInt();

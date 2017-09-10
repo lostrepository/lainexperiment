@@ -55,7 +55,7 @@ import java.util.stream.Collectors;
 public class Task4_Unexpected_Problem {
 
     static String S;
-    static long M, MOD = 1000000007;
+    static long M, MOD = 1_000_000_007;
 
     static int iskstring(char[] a) {
         int l = 0;

@@ -21,7 +21,7 @@ import java.util.stream.IntStream;
 
 public class Calculate_factorials_mod_K {
 
-    static Object fac(int n) {
+    static Object factorial(int n) {
         if (n <= 1) return 1;
         return IntStream.range(1, n + 1).reduce((r, i) -> {
             r *= i;
@@ -31,7 +31,7 @@ public class Calculate_factorials_mod_K {
 
     static void printFactorials() {
         System.out.println(
-                IntStream.range(1, 101).mapToObj((i) -> String.valueOf(fac(i))).collect(Collectors.joining(", "))
+                IntStream.range(1, 101).mapToObj((i) -> String.valueOf(factorial(i))).collect(Collectors.joining(", "))
         );
     }
     
