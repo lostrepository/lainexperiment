@@ -64,9 +64,9 @@ import java.util.stream.IntStream;
 
 public class Sliding_window_maximum {
 
+    static int K;
     static SortedSet<Integer> bst = new TreeSet<>();
     static Queue<Integer> q = new LinkedList<>();
-    static int K;
     static int MAX;
 
     static void add(int n) {
@@ -80,16 +80,15 @@ public class Sliding_window_maximum {
         if (MAX < n) MAX = n;
     }
 
-    static int max() {
+    static int getMax() {
         return MAX;
     }
 
     public static void main(String[] args) {
         Class<?> clazz = Sliding_window_maximum.class;
         String inputFile = clazz.getSimpleName() + ".in";
-        Scanner scanner = System.getProperty("local") == null?
-            new Scanner(System.in): 
-                new Scanner(clazz.getResourceAsStream(inputFile));
+        Scanner scanner = System.getProperty("local") == null ? new Scanner(System.in): 
+            new Scanner(clazz.getResourceAsStream(inputFile));
         int t = scanner.nextInt();
         for (int i = 0; i < t; i++) {
             int n = scanner.nextInt();
@@ -97,7 +96,7 @@ public class Sliding_window_maximum {
             IntStream.generate(scanner::nextInt)
                 .limit(n)
                 .peek(Sliding_window_maximum::add)
-                .map(ii -> max())
+                .map(ii -> getMax())
                 .skip(K - 1)
                 .forEach(out::println);
         }
