@@ -26,6 +26,8 @@
  */
 package lainexperiment.mensikovbook;
 
+import static org.junit.Assert.assertTrue;
+
 public class PrintAllSums 
 {
 
@@ -43,11 +45,13 @@ public class PrintAllSums
     }
     
     static void findSums(int n) {
+        assertTrue(n != 0);
         findSumsDp(n, 1, "");
     }
     
     public static void main(String[] args) {
         findSums(4);
+        findSums(0);
     }
 
 }
