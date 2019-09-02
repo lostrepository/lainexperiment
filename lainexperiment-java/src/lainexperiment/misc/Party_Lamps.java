@@ -135,12 +135,10 @@ public class Party_Lamps {
         return (i & 1) == 1;
     }
     
-    static void printAllStates(int num, int c, BitSet buf) {
-        if (num == 4) {
-            if (c > C) return;
-            if (isOdd(C) && !isOdd(c))
-                return;
-            if (!isOdd(C) && isOdd(c))
+    static void printAllStates(int button, int numOfPresses, BitSet buf) {
+        if (button == 4) {
+            if (numOfPresses > C) return;
+            if (isOdd(C) != isOdd(numOfPresses))
                 return;
             if (matches(L, buf) && !M.contains(buf)) {
                 M.add((BitSet) buf.clone());
@@ -148,10 +146,10 @@ public class Party_Lamps {
             }
             return;
         }
-        printAllStates(num + 1, c, buf);
-        toggleSwitch(num, buf);
-        printAllStates(num + 1, c + 1, buf);
-        toggleSwitch(num, buf);
+        printAllStates(button + 1, numOfPresses, buf);
+        toggleSwitch(button, buf);
+        printAllStates(button + 1, numOfPresses + 1, buf);
+        toggleSwitch(button, buf);
     }
 
     private static void toggleSwitch(int num, BitSet buf) {
