@@ -10,9 +10,13 @@ import java.util.Set;
  * Vertex of a graph
  */
 public class V implements Iterable<V> {
+
+    public enum Color { W, G, B };
+
     public Set<V> adj = new HashSet<>();
     public boolean visited;
     public int id, w;
+    public Color color;
 
     public V(int id) { this.id = id; }
 
