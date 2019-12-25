@@ -35,7 +35,7 @@
  * 
  */
 
-package lainexperiment.misc;
+package lainexperiment.misc.graphs;
 
 import lainexperiment.utils.G;
 import lainexperiment.utils.N;

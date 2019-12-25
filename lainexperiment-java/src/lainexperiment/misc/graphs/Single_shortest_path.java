@@ -35,7 +35,7 @@
  * 
  */
 
-package lainexperiment.misc;
+package lainexperiment.misc.graphs;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
