@@ -45,7 +45,7 @@ public class Is_K_string {
         if (l == 0)
             return false;
         if (l == a.length - 1)
-            return false;
+            return true;
         l = a.length - l;
         if (a.length % l != 0)
             return false;
@@ -61,7 +61,7 @@ public class Is_K_string {
     
     public static void main(String[] args) {
         assertEquals(iskstring("a".toCharArray()), false);
-        assertEquals(iskstring("aaa".toCharArray()), false);
+        assertEquals(iskstring("aaa".toCharArray()), true);
         assertEquals(iskstring("abab".toCharArray()), true);
         assertEquals(iskstring("ababc".toCharArray()), false);
         assertEquals(iskstring("ababcababcababc".toCharArray()), true);
