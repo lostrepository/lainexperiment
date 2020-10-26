@@ -1,8 +1,7 @@
-/**
- * 
- */
-/**
- * @author lynx
+/* 
+ *
+ * This source file is a part of lainexperiment project.
+ * Description for it can be found in ReadMe.txt.
  *
  */
 module lainexperiment {
@@ -56,4 +55,5 @@ module lainexperiment {
 
     requires java.desktop;
     requires junit;
+    requires org.junit.jupiter.params;
 }
