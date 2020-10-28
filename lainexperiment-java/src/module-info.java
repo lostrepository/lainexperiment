@@ -56,4 +56,5 @@ module lainexperiment {
     requires java.desktop;
     requires junit;
     requires org.junit.jupiter.params;
+    requires org.junit.jupiter.api;
 }
