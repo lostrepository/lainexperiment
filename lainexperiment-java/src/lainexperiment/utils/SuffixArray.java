@@ -53,29 +53,29 @@ public class SuffixArray {
         }
     }
 
-    /*
+    /**
      * Input array
      */
-    char[] A;
+    public char[] A;
 
-    /*
+    /**
      * RANK[i] = Rank of the suffix which starts at A[i]
      * 
      * It basically maps suffixes of the input array A to their
      * positions in suffix array (lexicographic order).
      */
-    int[] RANK;
+    public int[] RANK;
     
-    /*
+    /**
      * Suffix array
      * 
      * SA[i] = index of the suffix in A which lexicographic
      * position is i. SA[0] will point to the first suffix
      * in A which is lexicographic smaller than others.
      */
-    int[] SA;
+    public int[] SA;
 
-    /*
+    /**
      * Ctor which builds suffix array for input array
      */
     public SuffixArray(char[] a) {
