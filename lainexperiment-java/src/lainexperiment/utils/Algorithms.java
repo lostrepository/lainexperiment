@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.function.LongUnaryOperator;
 import java.util.stream.Stream;
 
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -23,20 +24,21 @@ public class Algorithms {
 
     /**
      * @param func unary function which accepts values in the
-     * range s..e and returns following codes:
+     * range [s..e) and returns following codes:
      *  
-     *   negative - current value is small
-     *   0 or positive - current value is big
+     *   positive - current number is big - go left
+     *   negative or 0 - current value is small so it can be
+     *   answer but we try to look for even better - got right
      *  
-     *  @return latest big value encountered.
+     *  @return biggest smallest value encountered or -1
      */
-    static long bisection(long s, long e, LongUnaryOperator oper) {
-        if (e - s < 0) return -1;
+    public static long bisection(long s, long e, LongUnaryOperator oper) {
+        if (s > e) return -1;
         long m = (s + e) / 2;
         long r = oper.applyAsLong(m);
-        if (r < 0)
-            return bisection(m + 1, e, oper);
-        long res = bisection(s, m - 1, oper);
+        if (r > 0)
+            return bisection(s, m - 1, oper);
+        long res = bisection(m + 1, e, oper);
         return res == -1? m: res;
     }
     
@@ -54,15 +56,27 @@ public class Algorithms {
     void testBisection(int[] a) {
         for (int i = 0; i < a.length; i++) {
             final int v = a[i];
-            assertEquals(i, bisection(0, a.length, k -> a[(int) k] - v));
+            assertEquals(i, bisection(0, a.length - 1, k -> a[(int) k] - v));
         }
+    }
+
+    @Test
+    void testBisection2() {
+        int[] a = new int[]{1,1,3,4,5,10};
+        int[] v = new int[1];
+        v[0] = 3;
+        assertEquals(2, bisection(0, a.length, k -> a[(int) k] - v[0]));
+        v[0] = 7;
+        assertEquals(4, bisection(4, a.length, k -> a[(int) k] - v[0]));
+        v[0] = 0;
+        assertEquals(-1, bisection(4, a.length, k -> a[(int) k] - v[0]));
     }
 
     /**
      * Merge sort implementation. It uses aux storage and merges everything
      * inplace into input list.
      */
-    static <T extends Comparable<T>> void mergeSort(ArrayList<T> a) {
+    public static <T extends Comparable<T>> void mergeSort(ArrayList<T> a) {
         if (a.size() < 2) return;
         int m = a.size() / 2;
         ArrayList<T> l = new ArrayList<>(a.subList(0, m));
