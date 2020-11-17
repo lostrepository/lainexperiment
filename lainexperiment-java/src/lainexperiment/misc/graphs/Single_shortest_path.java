@@ -38,80 +38,58 @@
 package lainexperiment.misc.graphs;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Scanner;
 
+import lainexperiment.utils.G;
+import lainexperiment.utils.V;
+
 public class Single_shortest_path {
 
-    static List<Integer>[] G;
-    static List<Integer>[] W;
-    
-    @SuppressWarnings({ "unchecked" })
-    static void buildGraph(int[] from, int[] to, int[] w, int maxNumOfNodes) {
-        G = new List[maxNumOfNodes];
-        W = new List[maxNumOfNodes];
-        int capacity = 100;
-        for (int i = 0; i < G.length; i++) {
-            G[i] = new ArrayList<>(capacity);
-            W[i] = new ArrayList<>(capacity);
-        }
-        for (int i = 0; i < from.length; i++) {
-            G[from[i]].add(to[i]);
-            G[to[i]].add(from[i]);
-            W[from[i]].add(w[i]);
-            W[to[i]].add(w[i]);
-        }
-    }
-
-    static int dijkstra(int src)
+    int dijkstra(G g, V src)
     {
-        int[] d = new int[G.length];
-        Arrays.fill(d, Integer.MAX_VALUE);
-        boolean[] visited = new boolean[G.length];
-        d[src] = 0;
-        Queue<Integer> q = new PriorityQueue<>(G.length, (v, u) -> d[v] - d[u]);
+        Queue<V> q = new PriorityQueue<>(g.size(), (v, u) -> v.d - u.d);
+        src.d = 0;
         q.add(src);
         while (!q.isEmpty()) {
-            int v = q.poll();
-            List<Integer> adj = G[v];
-            for (int i = 0; i < adj.size(); ++i) {
-                int u = adj.get(i);
-                if (visited[u]) continue;
-                if (d[v] + W[v].get(i) < d[u]) {
-                    q.remove(u);
-                    d[u] = d[v] + W[v].get(i);
-                    q.add(u);
-                }
-            }
-            visited[v] = true;
+            V v = q.poll();
+            // iterate over adjacent vertices
+            for (V u: v)
+                relax(v, u, q);
         }
-        return Arrays.stream(d).sum();
+        return g.vertices.stream()
+                .mapToInt(V::distance)
+                .sum();
     }
     
-    static void solve(int s) {
-        System.out.println(dijkstra(s));
+    void relax(V v, V u, Queue<V> q) 
+    {
+        if (v.d + v.weight(u) < u.d) {
+            u.d = v.d + v.weight(u);
+            u.p = v;
+            if (!u.visited) q.add(u);
+            u.visited = true;
+        }
     }
-
+    
     public static void main(String[] args) throws FileNotFoundException {
         Scanner scanner = System.getProperty("local") == null? 
-                new Scanner(System.in): new Scanner(Single_shortest_path.class.getResourceAsStream("SingleShortestPath.in"));
+                new Scanner(System.in): new Scanner(Single_shortest_path.class.getResourceAsStream(
+                    "SingleShortestPath.in"));
         int n = scanner.nextInt();
         int m = scanner.nextInt();
         int s = scanner.nextInt();
-        int[] x = new int[m];
-        int[] y = new int[m];
-        int[] w = new int[m];
+        G g = new G(n);
         for (int i = 0; i < m; i++) {
-            x[i] = scanner.nextInt() - 1;
-            y[i] = scanner.nextInt() - 1;
-            w[i] = scanner.nextInt();
+            int v = scanner.nextInt() - 1;
+            int u = scanner.nextInt() - 1;
+            int w = scanner.nextInt();
+            g.connect(v, u, w, false);
         }
-        buildGraph(x, y, w, n);
-        solve(s - 1);
+//        System.out.println(g);
+        int r =new Single_shortest_path().dijkstra(g, g.get(s - 1));
+        System.out.println(r);
         scanner.close();
     }
 
