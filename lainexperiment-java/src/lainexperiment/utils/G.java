@@ -19,6 +19,21 @@ public class G implements Iterable<V> {
 
     public List<V> vertices;
 
+    /**
+     * Creates unconnected graph with n vertices
+     */
+    public G(int n) {
+        this.vertices = range(0, n)
+                .mapToObj(V::new)
+                .collect(toList());
+    }
+
+    /**
+     * G g = new G(new int[][] {
+     *       {2, 4, 3},
+     *       {1, 0, 4},
+     *       {1, 4}});
+     */
     public G(int[][] adjList) {
         this.vertices = range(0, adjList.length)
                 .mapToObj(V::new)
@@ -37,6 +52,18 @@ public class G implements Iterable<V> {
     public void color(Color c) { stream().forEach(v -> v.color = c); }
     
     public Stream<V> stream() { return vertices.stream(); }
+
+    public void connect(int from, int to, boolean isDirected) {
+        connect(from, to, 0, isDirected);
+    }
+
+    public void connect(int from, int to, int weight, boolean isDirected) {
+        V v = get(from);
+        V u = get(to);
+        v.add(u, weight);
+        if (!isDirected)
+            u.add(v, weight);
+    }
 
     @Override
     public Iterator<V> iterator() {
