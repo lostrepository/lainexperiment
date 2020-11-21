@@ -1,8 +1,16 @@
-package lainexperiment.utils;
+/* 
+ *
+ * This source file is a part of lainexperiment project.
+ * Description for it can be found in ReadMe.txt.
+ *
+ */
+package lainexperiment.utils.tree;
 
 import static java.util.stream.Collectors.joining;
 
 import java.util.Collections;
+
+import lainexperiment.utils.N;
 
 /**
  * N-ary tree

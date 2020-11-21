@@ -39,8 +39,8 @@ package lainexperiment.misc.graphs;
 
 import lainexperiment.utils.G;
 import lainexperiment.utils.N;
-import lainexperiment.utils.T;
 import lainexperiment.utils.V;
+import lainexperiment.utils.tree.T;
 
 public class Find_random_spanning_tree {
 
