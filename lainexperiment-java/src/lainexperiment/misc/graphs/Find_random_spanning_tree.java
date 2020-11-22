@@ -5,7 +5,15 @@
  *
  */
 
-/*
+package lainexperiment.misc.graphs;
+
+import lainexperiment.utils.G;
+import lainexperiment.utils.N;
+import lainexperiment.utils.V;
+import lainexperiment.utils.tree.T;
+
+/**
+ * <pre>{@code
  * Date: 07/12/2019
  * 
  * Problem
@@ -33,15 +41,8 @@
   1
    3
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc.graphs;
-
-import lainexperiment.utils.G;
-import lainexperiment.utils.N;
-import lainexperiment.utils.V;
-import lainexperiment.utils.tree.T;
-
 public class Find_random_spanning_tree {
 
     static N<Integer> buildTree(V v) {

@@ -5,7 +5,14 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.function.IntFunction;
+
+/**
+ * <pre>{@code
  * Date: 10/01/2015
  *
  * Problem
@@ -22,14 +29,8 @@
  * 
  * 65
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static org.junit.Assert.assertEquals;
-
-import java.util.function.IntFunction;
-
 public class Median_from_two_arrays {
     
     static int median(int[] a1, int[] a2, int s, int e, int k)

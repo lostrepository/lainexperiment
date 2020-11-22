@@ -4,7 +4,15 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.codility.imdb;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * 
  * Date: 05/08/2015
  * 
@@ -36,14 +44,8 @@
 7
 3
  * 
+ * }</pre>
  */
-
-package lainexperiment.codility.imdb;
-
-import static org.junit.Assert.assertTrue;
-
-import java.util.stream.IntStream;
-
 public class Task2_Calculate_number_of_full_weeks {
 
     static final int DAYS_IN_WEEK = 7;

@@ -4,8 +4,18 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
+package lainexperiment.mensikovbook;
 
-/*
+import java.awt.Point;
+import java.io.FileNotFoundException;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.Scanner;
+import java.util.function.Function;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * Date: 12/03/2016
  * 
  * Problem
@@ -26,17 +36,8 @@
  * 
 4
  * 
+ * }</pre>
  */
-package lainexperiment.mensikovbook;
-
-import java.awt.Point;
-import java.io.FileNotFoundException;
-import java.util.PriorityQueue;
-import java.util.Queue;
-import java.util.Scanner;
-import java.util.function.Function;
-import java.util.stream.IntStream;
-
 public class Pipelines {
 
     static Point A, B;

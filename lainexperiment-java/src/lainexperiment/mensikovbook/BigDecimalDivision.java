@@ -5,7 +5,14 @@
  *
  */
 
-/*
+package lainexperiment.mensikovbook;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.math.BigInteger;
+
+/**
+ * <pre>{@code
  * Date: 13/10/2015
  * 
  * Problem
@@ -21,14 +28,8 @@
  * 
 12345678901234567
  * 
+ * }</pre>
  */
-
-package lainexperiment.mensikovbook;
-
-import static org.junit.Assert.assertEquals;
-
-import java.math.BigInteger;
-
 public class BigDecimalDivision {
 
     private static String div(int[] a, int b) {

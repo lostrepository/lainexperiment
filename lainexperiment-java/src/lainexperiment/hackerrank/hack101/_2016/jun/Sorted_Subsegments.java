@@ -4,48 +4,6 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
- * 
- * Date: 12/07/2016
- * 
- * Hacker rank
- * 101 Hack Jun 2016
- * Problem: Sorted Subsegments
- * Status: accepted
- * 
- * Consider an array A = [a0, .., aN] of n integers. We perform q 
- * queries of the following type on A:
- * - Sort all the elements in the subsegment al..ar
- * Given A, can you find and print the value at index k (where 
- * 0 <= k <= n) after performing q queries? 
- * 
- * Input Format
- * 
- * The first line contains three positive space-separated integers 
- * describing the respective values of n (the number of integers in A),
- * q (the number of queries), and k (an index in A).
- * The next line contains space-separated integers describing the 
- * respective values of a0, .., aN-1.
- * Each line j of the q subsequent lines contain two space-separated 
- * integers describing the respective lj and rj values for query j.
- * 
- * Output Format
- * 
- * Print a single integer denoting the value ak after processing all q
- * queries.
- * 
- * Sample Input
- * 
-3 1 1
-3 2 1
-0 1
- *
- * Sample Output
- * 
-3
- *
- *
- */
 
 package lainexperiment.hackerrank.hack101._2016.jun;
 
@@ -177,6 +135,50 @@ class BitSorter {
     
 }
 
+/**
+ * <pre>{@code
+ * 
+ * Date: 12/07/2016
+ * 
+ * Hacker rank
+ * 101 Hack Jun 2016
+ * Problem: Sorted Subsegments
+ * Status: accepted
+ * 
+ * Consider an array A = [a0, .., aN] of n integers. We perform q 
+ * queries of the following type on A:
+ * - Sort all the elements in the subsegment al..ar
+ * Given A, can you find and print the value at index k (where 
+ * 0 <= k <= n) after performing q queries? 
+ * 
+ * Input Format
+ * 
+ * The first line contains three positive space-separated integers 
+ * describing the respective values of n (the number of integers in A),
+ * q (the number of queries), and k (an index in A).
+ * The next line contains space-separated integers describing the 
+ * respective values of a0, .., aN-1.
+ * Each line j of the q subsequent lines contain two space-separated 
+ * integers describing the respective lj and rj values for query j.
+ * 
+ * Output Format
+ * 
+ * Print a single integer denoting the value ak after processing all q
+ * queries.
+ * 
+ * Sample Input
+ * 
+3 1 1
+3 2 1
+0 1
+ *
+ * Sample Output
+ * 
+3
+ *
+ *
+ * }</pre>
+ */
 public class Sorted_Subsegments {
 
     static long[] N;

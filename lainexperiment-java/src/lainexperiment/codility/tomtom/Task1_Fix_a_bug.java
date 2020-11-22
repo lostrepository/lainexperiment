@@ -4,7 +4,13 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.codility.tomtom;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+/**
+ * <pre>{@code
  * 
  * Date: 20/07/2016
  * 
@@ -27,12 +33,8 @@
  * 
 4
  * 
+ * }</pre>
  */
-
-package lainexperiment.codility.tomtom;
-
-import static org.junit.Assert.assertEquals;
-
 public class Task1_Fix_a_bug {
 
     public int solution(int n) {

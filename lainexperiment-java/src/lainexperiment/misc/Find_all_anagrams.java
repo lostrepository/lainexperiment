@@ -5,7 +5,19 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+
+/**
+ * <pre>{@code
  * Date: 18/12/2016
  * 
  * Problem
@@ -21,19 +33,8 @@ abdcghbaabcdij bcda
  * 
 0, 8
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static org.junit.Assert.assertEquals;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
-import org.junit.Test;
-
 public class Find_all_anagrams {
 
     static List<Integer> indices(String haystack, String needle) {

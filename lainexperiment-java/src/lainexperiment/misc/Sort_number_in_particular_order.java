@@ -5,7 +5,14 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.Arrays;
+
+/**
+ * <pre>{@code
  * Date: 01/02/2015
  * 
  * Problem
@@ -22,14 +29,8 @@
  * 
  * 9, 5, 17, 1
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static org.junit.Assert.assertTrue;
-
-import java.util.Arrays;
-
 public class Sort_number_in_particular_order {
 
     static void sort(int[] a, int[] b) {

@@ -4,7 +4,16 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.worldcodesprint._7;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+/**
+ * <pre>{@code
  * 
  * Date: 24/09/2016
  * 
@@ -43,15 +52,8 @@
  * 
 3
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.worldcodesprint._7;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 public class Task1_Sock_Merchant {
 
     public static void main(String[] args) throws FileNotFoundException {

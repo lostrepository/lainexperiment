@@ -5,7 +5,16 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static java.lang.Math.abs;
+import static java.util.Arrays.binarySearch;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.Arrays;
+
+/**
+ * <pre>{@code
  * Date: 28/01/2015
  * 
  * Problem
@@ -21,16 +30,8 @@
  * 
  * 2114
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static java.lang.Math.abs;
-import static java.util.Arrays.binarySearch;
-import static org.junit.Assert.assertEquals;
-
-import java.util.Arrays;
-
 public class Print_next_lexicographically_greater_word {
     
     static void swap(char[] a, int i, int j) {

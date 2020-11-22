@@ -4,7 +4,21 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.codility.challenges.olx;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
+
+import static java.util.stream.Collectors.toList;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.IntStream;
+
+import lainexperiment.utils.Algorithms;
+
+/**
+ * <pre>{@code
  * 
  * Date: 14/11/2020
  * 
@@ -45,20 +59,8 @@ capacity = [6, 5, 8],
  * 
  * Rick can mix all juices in the 2nd glass.
  * 
+ * }</pre>
  */
-
-package lainexperiment.codility.challenges.olx;
-
-import static org.junit.Assert.assertEquals;
-import org.junit.jupiter.api.Test;
-
-import static java.util.stream.Collectors.toList;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.IntStream;
-
-import lainexperiment.utils.Algorithms;
-
 public class Task1 {
 
     public int solution(int[] juice, int[] capacity) {

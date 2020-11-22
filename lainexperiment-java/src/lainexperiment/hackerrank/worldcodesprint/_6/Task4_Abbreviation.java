@@ -4,7 +4,14 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.worldcodesprint._6;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 27/08/2016
  * 
@@ -48,13 +55,8 @@ ABC
 YES
  *
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.worldcodesprint._6;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Task4_Abbreviation {
 
     static char[] FROM, TO;

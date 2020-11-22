@@ -4,7 +4,19 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.hackerrank.misc;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+import org.junit.jupiter.api.Test;
+
+import lainexperiment.utils.SuffixArray;
+
+/**
+ * <pre>{@code
  * Date: 11/11/2020
  *
  * Hacker rank
@@ -54,18 +66,8 @@ dbac
  * 
 c
  * 
+ * }</pre>
  */
-package lainexperiment.hackerrank.misc;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
-import org.junit.jupiter.api.Test;
-
-import lainexperiment.utils.SuffixArray;
-
 public class Ashton_and_String {
 
     char solve(String str, int k) {

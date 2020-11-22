@@ -4,7 +4,19 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._12;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 15/05/2016
  * 
@@ -49,18 +61,8 @@
  * 
 1 2 3 4
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._12;
-
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Queue;
-import java.util.Scanner;
-
 public class FavouriteSequence {
     
     static final int SIZE = 100000;

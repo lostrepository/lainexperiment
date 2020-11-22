@@ -4,7 +4,14 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.hackerrank.codesprint.blackrock;
+
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * Date: 12/06/2016
  *
  * Hacker rank
@@ -49,13 +56,8 @@ aaaa
 0
 6
  * 
+ * }</pre>
  */
-package lainexperiment.hackerrank.codesprint.blackrock;
-
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Scanner;
-
 public class Perfect_Separating {
     
     static long M[] = new long[50];

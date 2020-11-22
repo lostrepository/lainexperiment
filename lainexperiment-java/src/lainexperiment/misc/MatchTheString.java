@@ -5,7 +5,15 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * <pre>{@code
  * Date: 17/01/2015
  * 
  * Problem
@@ -25,15 +33,8 @@
  * 1
  * 0
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static org.junit.Assert.assertEquals;
-
-import java.util.HashMap;
-import java.util.Map;
-
 public class MatchTheString {
 
     private static boolean matches(char[] a, int ai, char[] p, int pi, 

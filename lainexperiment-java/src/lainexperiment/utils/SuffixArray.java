@@ -4,7 +4,15 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.utils;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.Arrays;
+
+/**
+ * <pre>{@code
  * 
  * Date: 04/07/2015
  * 
@@ -26,14 +34,8 @@ banana
  * 
 4, 3, 6, 2, 5, 1
  * 
+ * }</pre>
  */
-
-package lainexperiment.utils;
-
-import static org.junit.Assert.assertEquals;
-
-import java.util.Arrays;
-
 public class SuffixArray {
 
     static private class Prefix implements Comparable<Prefix> {

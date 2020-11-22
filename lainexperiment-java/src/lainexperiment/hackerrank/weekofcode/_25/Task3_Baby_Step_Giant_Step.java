@@ -4,7 +4,17 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._25;
+
+import static java.lang.Math.ceil;
+import static java.lang.Math.min;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 01/11/2016
  * 
@@ -51,16 +61,8 @@
 0
 3
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._25;
-
-import static java.lang.Math.ceil;
-import static java.lang.Math.min;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Task3_Baby_Step_Giant_Step {
 
     static long A, B, D;

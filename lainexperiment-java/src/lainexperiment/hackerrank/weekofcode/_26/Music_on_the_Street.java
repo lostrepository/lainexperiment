@@ -4,7 +4,16 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._26;
+
+import static java.util.stream.LongStream.generate;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 01/12/2016
  * 
@@ -62,15 +71,8 @@
  * 
 -2
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._26;
-
-import static java.util.stream.LongStream.generate;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Music_on_the_Street {
 
     static long[] A;

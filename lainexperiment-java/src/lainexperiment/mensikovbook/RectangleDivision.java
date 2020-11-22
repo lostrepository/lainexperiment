@@ -5,7 +5,15 @@
  *
  */
 
-/*
+package lainexperiment.mensikovbook;
+
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * Date: 19/06/2016
  * 
  * Problem
@@ -24,15 +32,8 @@
  * 
 6
  * 
+ * }</pre>
  */
-
-package lainexperiment.mensikovbook;
-
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.stream.IntStream;
-
 public class RectangleDivision {
 
     static int[] RX, RY;

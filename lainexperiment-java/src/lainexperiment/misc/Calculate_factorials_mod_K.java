@@ -5,20 +5,21 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * Date: 13/08/2015
  * 
  * Problem
  * 
  * Print factorials up to 100 mod 10 000 007.
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-
 public class Calculate_factorials_mod_K {
 
     static Object factorial(int n) {

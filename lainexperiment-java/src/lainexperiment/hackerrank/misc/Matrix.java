@@ -4,7 +4,19 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.hackerrank.misc;
+
+import static java.lang.Math.min;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * Date: 24/05/2016
  *
  * Hacker rank
@@ -59,18 +71,8 @@
  * 
 10
  * 
+ * }</pre>
  */
-package lainexperiment.hackerrank.misc;
-
-import static java.lang.Math.min;
-
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-import java.util.stream.IntStream;
-
 public class Matrix {
 
     static class Node {

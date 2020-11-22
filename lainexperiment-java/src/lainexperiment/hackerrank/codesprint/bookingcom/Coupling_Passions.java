@@ -4,7 +4,26 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.codesprint.bookingcom;
+
+import static java.lang.Math.acos;
+import static java.lang.Math.cos;
+import static java.lang.Math.sin;
+import static java.lang.Math.toRadians;
+
+import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
+/**
+ * <pre>{@code
  * 
  * Date: 06/08/2016
  * 
@@ -102,25 +121,8 @@ biarritz 43.480120 -1.555580 6 surfing nightlife beach food wine walking
  * 
 biarritz sagres
  * 
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.codesprint.bookingcom;
-
-import static java.lang.Math.acos;
-import static java.lang.Math.cos;
-import static java.lang.Math.sin;
-import static java.lang.Math.toRadians;
-
-import java.io.FileNotFoundException;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
-
 public class Coupling_Passions {
     
     static Map<String, Integer> P = new HashMap<>();

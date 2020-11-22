@@ -4,7 +4,17 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.misc;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
+/**
+ * <pre>{@code
  * 
  * Date: 01/12/2015
  * 
@@ -52,16 +62,8 @@
  * 
 13 754 2769 1508
  * 
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.misc;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.stream.Collectors;
-
 public class SherlockAndQueries {
 
     static long[] A, B, C;

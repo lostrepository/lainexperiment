@@ -5,7 +5,12 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+/**
+ * <pre>{@code
  * Date: 07/02/2015
  * 
  * Problem
@@ -21,12 +26,8 @@
  * 
  * F2OFIGHTERS
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static org.junit.Assert.assertEquals;
-
 public class Compress_the_string {
 
     static int compress(char[] a) {

@@ -4,7 +4,18 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._26;
+
+import static java.lang.Math.sqrt;
+import static java.util.Arrays.fill;
+import static java.util.stream.IntStream.range;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 05/12/2016
  * 
@@ -45,17 +56,8 @@
  * 
 3
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._26;
-
-import static java.lang.Math.sqrt;
-import static java.util.Arrays.fill;
-import static java.util.stream.IntStream.range;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Twins {
 
     static boolean[] PRIMES;

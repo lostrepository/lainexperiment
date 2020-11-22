@@ -4,8 +4,16 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
+package lainexperiment.mensikovbook;
 
-/*
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+/**
+ * <pre>{@code
  * Date: 15/03/2016
  * 
  * Problem
@@ -36,15 +44,8 @@
 100
 120
  * 
+ * }</pre>
  */
-package lainexperiment.mensikovbook;
-
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
-
 public class DoubleGrid {
 
     static int W1, W2, H1, H2, Dx, Dy;

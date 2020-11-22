@@ -4,7 +4,15 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.codility.po;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.Arrays;
+
+/**
+ * <pre>{@code
  * 
  * Date: 25/07/2016
  * 
@@ -33,14 +41,8 @@
  * 
 3
  * 
+ * }</pre>
  */
-
-package lainexperiment.codility.po;
-
-import static org.junit.Assert.assertEquals;
-
-import java.util.Arrays;
-
 public class Task3_Extreme_numbers {
 
     public int solution(int[] A) {

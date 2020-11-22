@@ -4,7 +4,15 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.codility.cimpress;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.Arrays;
+
+/**
+ * <pre>{@code
  * 
  * Date: 29/06/2016
  * 
@@ -26,14 +34,8 @@ K = 6
  * 
 7
  * 
+ * }</pre>
  */
-
-package lainexperiment.codility.cimpress;
-
-import static org.junit.Assert.assertEquals;
-
-import java.util.Arrays;
-
 public class Task3_K_complimentary_pairs {
    
     public int solution(int K, int[] A) {

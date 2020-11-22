@@ -5,15 +5,13 @@
  *
  */
 package lainexperiment.utils.tree;
-
 import static java.util.stream.Collectors.joining;
-
 import java.util.Collections;
-
 import lainexperiment.utils.N;
-
 /**
+ * <pre>{@code
  * N-ary tree
+ * }</pre>
  */
 public class T<V> {
     public N<V> root;

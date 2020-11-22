@@ -6,6 +6,16 @@
  */
 
 /*
+ * This is linear time solution. It will traverse the input array 
+ * twice and would not touch any letters more than two times.
+ */
+
+package lainexperiment.misc;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+/**
+ * <pre>{@code
  * Date: 08/11/2015
  * 
  * Problem
@@ -25,17 +35,8 @@ abcdefg1234567
  * 
 a1b2c3d4e5f6g7
  * 
+ * }</pre>
  */
-
-/*
- * This is linear time solution. It will traverse the input array 
- * twice and would not touch any letters more than two times.
- */
-
-package lainexperiment.misc;
-
-import static org.junit.Assert.assertEquals;
-
 public class Shuffle {
     
     static int next(int from, int mid, int len) {

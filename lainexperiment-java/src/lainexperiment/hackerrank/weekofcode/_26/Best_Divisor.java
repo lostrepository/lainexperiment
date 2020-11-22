@@ -4,7 +4,17 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._26;
+
+import static java.lang.Math.min;
+import static java.util.stream.IntStream.rangeClosed;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 06/12/2016
  * 
@@ -40,16 +50,8 @@
  * 
 6
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._26;
-
-import static java.lang.Math.min;
-import static java.util.stream.IntStream.rangeClosed;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Best_Divisor {
 
     static int N;

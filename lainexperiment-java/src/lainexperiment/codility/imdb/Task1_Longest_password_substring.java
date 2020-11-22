@@ -4,7 +4,13 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.codility.imdb;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+/**
+ * <pre>{@code
  * 
  * Date: 05/08/2015
  * 
@@ -40,12 +46,8 @@ Ya0Uaa9aaaaaaaaaaaaaa
 1
 3
  * 
+ * }</pre>
  */
-
-package lainexperiment.codility.imdb;
-
-import static org.junit.Assert.assertTrue;
-
 public class Task1_Longest_password_substring {
 
     static public int solution(String S) {

@@ -4,8 +4,13 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
+package lainexperiment.mensikovbook;
 
-/*
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * Date: 15/12/2015
  * 
  * Problem
@@ -22,12 +27,8 @@ bbabab
  * 
 3
  * 
+ * }</pre>
  */
-package lainexperiment.mensikovbook;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class FiboStrings {
 
     static int N;

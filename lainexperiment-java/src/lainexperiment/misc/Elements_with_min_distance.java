@@ -5,7 +5,15 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import java.util.Arrays;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * Date: 14/02/2015
  * 
  * Problem
@@ -23,15 +31,8 @@
  * 
  * 2
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import java.util.Arrays;
-import java.util.PriorityQueue;
-import java.util.Queue;
-import java.util.stream.IntStream;
-
 public class Elements_with_min_distance {
 
     static int findMinDist(int[][] a) {

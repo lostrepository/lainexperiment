@@ -4,14 +4,6 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
- * 
- * Date: 30/06/2018
- * 
- * Given set of strings S and a query string T. Print those strings in S
- * which are similar to T.
- * 
- */
 
 package lainexperiment.misc;
 
@@ -25,6 +17,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+/**
+ * <pre>{@code
+ * 
+ * Date: 30/06/2018
+ * 
+ * Given set of strings S and a query string T. Print those strings in S
+ * which are similar to T.
+ * 
+ * }</pre>
+ */
 public class Locality_sensitive_hashing {
 
     // hashband -> list of keys

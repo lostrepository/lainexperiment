@@ -5,18 +5,15 @@
  *
  */
 package lainexperiment.utils.tree;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import java.util.TreeSet;
-
 import org.junit.jupiter.api.Test;
-
 import lainexperiment.utils.Ival;
-
 /**
+ * <pre>{@code
  * Interval tree.
  * Does not support ivals overlap.
+ * }</pre>
  */
 public class IvalTree {
 

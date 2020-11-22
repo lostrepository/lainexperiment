@@ -5,7 +5,10 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+/**
+ * <pre>{@code
  * Date: 14/01/2015
  * 
  * Problem
@@ -27,10 +30,8 @@
  * 
  * 5
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
 public class Count_strips {
 
     static void fill(char[][] a, char c, int i, int j, int di, int dj) {

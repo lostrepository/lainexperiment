@@ -4,7 +4,16 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.hack101._2016.jun;
+
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+/**
+ * <pre>{@code
  * 
  * Date: 21/06/2016
  * 
@@ -47,15 +56,8 @@
 4
  *
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.hack101._2016.jun;
-
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Scanner;
-
-
 public class Easy_GCD {
 
     static int[] N;

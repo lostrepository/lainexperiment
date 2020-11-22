@@ -4,7 +4,18 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._25;
+
+import static java.util.stream.LongStream.generate;
+
+import java.io.FileNotFoundException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 01/11/2016
  * 
@@ -58,17 +69,8 @@
  * 
 Second
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._25;
-
-import static java.util.stream.LongStream.generate;
-
-import java.io.FileNotFoundException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-
 public class Task4_Stone_Division {
 
     static long N;

@@ -4,7 +4,20 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.codejam.qualification._2017;
+
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * Date: 08/04/2017
  *
  * Code jam 2017
@@ -70,19 +83,8 @@ Case #3: 1 1
 Case #4: 0 0
 Case #5: 500 499
  * 
+ * }</pre>
  */
-
-package lainexperiment.codejam.qualification._2017;
-
-import java.io.IOException;
-import java.nio.file.Paths;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.PriorityQueue;
-import java.util.Queue;
-import java.util.Scanner;
-
 public class ProblemC_Bathroom_Stalls {
     
     static Map<Long, Pair> M = new HashMap<>();

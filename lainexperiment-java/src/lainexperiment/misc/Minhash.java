@@ -4,13 +4,6 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
- * 
- * Date: 30/06/2018
- * 
- * Given a string calculate minhash for it.
- * 
- */
 
 package lainexperiment.misc;
 
@@ -24,6 +17,15 @@ import java.util.Set;
 import java.util.function.Supplier;
 import java.util.stream.IntStream;
 
+/**
+ * <pre>{@code
+ * 
+ * Date: 30/06/2018
+ * 
+ * Given a string calculate minhash for it.
+ * 
+ * }</pre>
+ */
 public class Minhash {
     private static final int NUMPERM = 128;
     private static final int BANDSIZE = 4;

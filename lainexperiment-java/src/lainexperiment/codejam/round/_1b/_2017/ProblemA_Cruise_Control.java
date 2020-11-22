@@ -4,7 +4,18 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.codejam.round._1b._2017;
+
+import static java.util.stream.IntStream.range;
+
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.nio.file.Paths;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * Date: 22/04/2017
  *
  * Code jam 2017
@@ -88,17 +99,8 @@ Case #1: 101.000000
 Case #2: 100.000000
 Case #3: 33.333333
  * 
+ * }</pre>
  */
-package lainexperiment.codejam.round._1b._2017;
-
-import static java.util.stream.IntStream.range;
-
-import java.io.IOException;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.nio.file.Paths;
-import java.util.Scanner;
-
 public class ProblemA_Cruise_Control {
     
     public static void main(String[] args) throws IOException {

@@ -4,7 +4,15 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.codejam.round._1a._2017;
+
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * Date: 07/06/2017
  *
  * Code jam 2017
@@ -87,14 +95,8 @@ Case #3:
 CA
 KE
  * 
+ * }</pre>
  */
-
-package lainexperiment.codejam.round._1a._2017;
-
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Scanner;
-
 public class ProblemA_Alphabet_Cake {
     
     static char[][] A;

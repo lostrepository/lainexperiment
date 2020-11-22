@@ -4,7 +4,21 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.hackerrank.amazon;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
+
+/**
+ * <pre>{@code
  * Date: 01/05/2016
  *
  * Amazon challange
@@ -22,20 +36,8 @@
  * Social network it is user's friends and friends of his friends.
  * Provided helper functions are getAttendedCoursesForUser, getDirectFriendsForUser.
  * 
+ * }</pre>
  */
-package lainexperiment.hackerrank.amazon;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Queue;
-import java.util.Set;
-
 public class Test2 {
     
     static Map<String, Integer> M = new HashMap<>(); 

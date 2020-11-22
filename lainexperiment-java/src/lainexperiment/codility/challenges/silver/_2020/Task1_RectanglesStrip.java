@@ -4,7 +4,19 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.codility.challenges.silver._2020;
+
+import static java.util.stream.Collectors.counting;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.Comparator;
+import java.util.Map;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * 
  * Date: 18/10/2020
  * 
@@ -48,18 +60,8 @@
  * - arrays A and B both consist of N integers;
  * - each element of arrays A, B is an integer within the range [1..1,000,000,000].
  * 
+ * }</pre>
  */
-
-package lainexperiment.codility.challenges.silver._2020;
-
-import static java.util.stream.Collectors.counting;
-import static org.junit.Assert.assertEquals;
-
-import java.util.Comparator;
-import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-
 public class Task1_RectanglesStrip {
 
     public int solution(int[] A, int[] B) {

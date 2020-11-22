@@ -5,7 +5,21 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static java.lang.String.format;
+
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.Scanner;
+import java.util.SortedMap;
+import java.util.TreeMap;
+
+/**
+ * <pre>{@code
  * Date: 28/05/2018
  * 
  * Problem
@@ -58,21 +72,8 @@ x1=3 x2=5 h=4
 x1=5 x2=6 h=2
 x1=6 x2=7 h=1
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static java.lang.String.format;
-
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.PriorityQueue;
-import java.util.Queue;
-import java.util.Scanner;
-import java.util.SortedMap;
-import java.util.TreeMap;
-
 public class Skyline {
 
     static class BoundingBox

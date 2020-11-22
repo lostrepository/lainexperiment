@@ -4,7 +4,16 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._23;
+
+import static java.util.stream.IntStream.range;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 17/09/2016
  * 
@@ -50,15 +59,8 @@
 No
 Yes
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._23;
-
-import static java.util.stream.IntStream.range;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Task1_Gears_of_War {
 
     public static void main(String[] args) throws FileNotFoundException {

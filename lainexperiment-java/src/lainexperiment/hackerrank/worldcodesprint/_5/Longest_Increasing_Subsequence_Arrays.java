@@ -4,7 +4,41 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.worldcodesprint._5;
+
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.function.LongUnaryOperator;
+
+class LongUnaryOperatorMemoizer implements LongUnaryOperator {
+    
+    long[] cache;
+    LongUnaryOperator oper;
+    
+    public LongUnaryOperatorMemoizer(LongUnaryOperator oper, int size) {
+        this.oper = oper;
+        this.cache = new long[size];
+    }
+    
+    public LongUnaryOperatorMemoizer(LongUnaryOperator oper, long[] cache) {
+        this.oper = oper;
+        this.cache = cache;
+    }
+    
+    @Override
+    public long applyAsLong(long t) {
+        int i = (int)t;
+        if (cache[i] == 0)
+            cache[i] = oper.applyAsLong(t);
+        return cache[i];
+    }
+    
+}
+
+/**
+ * <pre>{@code
  * 
  * Date: 30/07/2016
  * 
@@ -60,40 +94,8 @@
 9
  *
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.worldcodesprint._5;
-
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.function.LongUnaryOperator;
-
-class LongUnaryOperatorMemoizer implements LongUnaryOperator {
-    
-    long[] cache;
-    LongUnaryOperator oper;
-    
-    public LongUnaryOperatorMemoizer(LongUnaryOperator oper, int size) {
-        this.oper = oper;
-        this.cache = new long[size];
-    }
-    
-    public LongUnaryOperatorMemoizer(LongUnaryOperator oper, long[] cache) {
-        this.oper = oper;
-        this.cache = cache;
-    }
-    
-    @Override
-    public long applyAsLong(long t) {
-        int i = (int)t;
-        if (cache[i] == 0)
-            cache[i] = oper.applyAsLong(t);
-        return cache[i];
-    }
-    
-}
-
 public class Longest_Increasing_Subsequence_Arrays {
     
     static final int MOD = 1_000_000_007;

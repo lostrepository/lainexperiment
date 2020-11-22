@@ -5,7 +5,18 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import java.util.Optional;
+import java.util.function.IntUnaryOperator;
+import java.util.stream.IntStream;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+
+/**
+ * <pre>{@code
  * Date: 09/02/2019
  * 
  * Problem
@@ -29,18 +40,8 @@
  * 
 610
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import java.util.Optional;
-import java.util.function.IntUnaryOperator;
-import java.util.stream.IntStream;
-
-import org.junit.Assert;
-import org.junit.Test;
-
-
 public class Find_nth_Fibonacci_number {
 
     static int[] tmp = new int[2];
@@ -100,7 +101,7 @@ public class Find_nth_Fibonacci_number {
 //        fibo = new int[] {13, 55};
 //        idx = new int[] {7, 10};
 //        System.out.println(distance(20));
-        Assert.assertEquals(610, nth_fibo(3, 2, 8, 21, 15));
-        Assert.assertEquals(832040, nth_fibo(3, 2, 25, 75025, 30));
+        Assertions.assertEquals(610, nth_fibo(3, 2, 8, 21, 15));
+        Assertions.assertEquals(832040, nth_fibo(3, 2, 25, 75025, 30));
     }
 }

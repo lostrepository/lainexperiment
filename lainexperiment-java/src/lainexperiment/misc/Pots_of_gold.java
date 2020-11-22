@@ -5,7 +5,16 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static java.lang.Math.max;
+import static java.lang.Math.min;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.Stack;
+
+/**
+ * <pre>{@code
  * Date: 14/05/2016
  * 
  * Problem
@@ -29,16 +38,8 @@
  * 
 177
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static java.lang.Math.max;
-import static java.lang.Math.min;
-import static org.junit.Assert.assertEquals;
-
-import java.util.Stack;
-
 public class Pots_of_gold {
 
     static int[] max = new int[2];

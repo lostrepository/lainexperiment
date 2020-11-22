@@ -4,7 +4,13 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.codility.po;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+/**
+ * <pre>{@code
  * 
  * Date: 25/07/2016
  * 
@@ -33,12 +39,8 @@
  * 
 3
  * 
+ * }</pre>
  */
-
-package lainexperiment.codility.po;
-
-import static org.junit.Assert.assertEquals;
-
 public class Task1_Square_numbers {
 
     public int solution(int A, int B) {

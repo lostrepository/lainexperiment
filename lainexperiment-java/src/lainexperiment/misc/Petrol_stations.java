@@ -5,7 +5,14 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.io.FileNotFoundException;
+
+/**
+ * <pre>{@code
  * Date: 16/05/2016
  * 
  * Problem
@@ -27,14 +34,8 @@
  * 
 0
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static org.junit.Assert.assertEquals;
-
-import java.io.FileNotFoundException;
-
 public class Petrol_stations {
 
     static int petrol(int[] d, int[] p) {

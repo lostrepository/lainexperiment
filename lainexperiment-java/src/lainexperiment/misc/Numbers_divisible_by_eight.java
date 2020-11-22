@@ -5,7 +5,16 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+import static java.lang.Math.max;
+import static java.lang.Math.pow;
+
+/**
+ * <pre>{@code
  * Date: 24/03/2017
  * 
  * Problem
@@ -25,16 +34,8 @@
  * 
 3
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
-import static java.lang.Math.max;
-import static java.lang.Math.pow;
-
 public class Numbers_divisible_by_eight {
     
     static int append(int n, int a) {

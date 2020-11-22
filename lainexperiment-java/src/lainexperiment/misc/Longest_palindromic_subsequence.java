@@ -5,7 +5,15 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static java.lang.Math.max;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
+/**
+ * <pre>{@code
  * Date: 10/04/2017
  * 
  * Problem
@@ -24,15 +32,8 @@ banana
  * 
 5
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static java.lang.Math.max;
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Test;
-
 public class Longest_palindromic_subsequence {
 
     static int maxPalin(char[] A) {

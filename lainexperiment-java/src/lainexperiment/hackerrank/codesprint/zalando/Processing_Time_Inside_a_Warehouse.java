@@ -4,7 +4,15 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.hackerrank.codesprint.zalando;
+
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.function.LongUnaryOperator;
+
+/**
+ * <pre>{@code
  * Date: 04/06/2016
  *
  * Hacker rank
@@ -51,14 +59,8 @@
  * 
 4
  * 
+ * }</pre>
  */
-package lainexperiment.hackerrank.codesprint.zalando;
-
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.function.LongUnaryOperator;
-
 public class Processing_Time_Inside_a_Warehouse {
 
     static long[] M;

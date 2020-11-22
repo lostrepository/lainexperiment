@@ -5,7 +5,21 @@
  *
  */
 
-/*
+package lainexperiment.misc.graphs;
+
+import static lainexperiment.utils.V.Color.B;
+import static lainexperiment.utils.V.Color.G;
+import static lainexperiment.utils.V.Color.W;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
+
+import lainexperiment.utils.G;
+import lainexperiment.utils.V;
+
+/**
+ * <pre>{@code
  * Date: 25/12/2019
  * 
  * Problem
@@ -21,7 +35,6 @@
  * 
 2
 2 3
-
 4
 1 2 0
  * 
@@ -29,21 +42,8 @@
  * 
 true
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc.graphs;
-
-import static lainexperiment.utils.V.Color.B;
-import static lainexperiment.utils.V.Color.G;
-import static lainexperiment.utils.V.Color.W;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
-import org.junit.Test;
-
-import lainexperiment.utils.G;
-import lainexperiment.utils.V;
-
 public class Find_cycle_in_a_graph {
 
     static boolean findCycle(G g) {

@@ -5,7 +5,19 @@
  *
  */
 
-/*
+package lainexperiment.codejam.qualification._2008;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * Code jam
  * Qualification Round 2008
  * Problem B. Train Timetable
@@ -67,19 +79,8 @@
  * Case #1: 2 2
  * Case #2: 2 0
  * 
+ * }</pre>
  */
-
-package lainexperiment.codejam.qualification._2008;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
-import java.util.stream.IntStream;
-
 public class TrainTimetable {
 
     static class Trip {

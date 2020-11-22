@@ -4,7 +4,14 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.devdraft.atlascodechallenge;
+
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * Date: 03/12/2015
  *
  * Atlas Code Challenge
@@ -53,13 +60,8 @@
 12
 26
  * 
+ * }</pre>
  */
-package lainexperiment.devdraft.atlascodechallenge;
-
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Scanner;
-
 public class LeftOrRight {
 
     static int N;

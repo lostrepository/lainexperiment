@@ -5,7 +5,18 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.awt.Point;
+import java.util.LinkedList;
+import java.util.Queue;
+
+import org.junit.jupiter.api.Test;
+
+/**
+ * <pre>{@code
  * Date: 18/12/2016
  * 
  * Problem
@@ -19,25 +30,14 @@
 0, 0, 0, 0
 1, 0, 1, 0
 1, 0, 0, 0
-
 room: 1, 3
  * 
  * Output
  * 
 4
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static org.junit.Assert.assertEquals;
-
-import java.awt.Point;
-import java.util.LinkedList;
-import java.util.Queue;
-
-import org.junit.Test;
-
 public class Shortest_path_to_room {
 
     public static int bfs(int[][] maze, int rows, int columns, int exitRow, int exitCol)

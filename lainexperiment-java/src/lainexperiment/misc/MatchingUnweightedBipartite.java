@@ -6,6 +6,21 @@
  */
 
 /*
+ * Modified version of Hungarian algorithm for bipartite unweighted graphs. Should be
+ * easy to extend for weighted graphs by adding relabeling routine.
+ */
+
+package lainexperiment.misc;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+
+/**
+ * <pre>{@code
  * Date: 31/05/2015
  * 
  * Problem
@@ -23,22 +38,8 @@
  * 
  * 3
  * 
+ * }</pre>
  */
-
-/*
- * Modified version of Hungarian algorithm for bipartite unweighted graphs. Should be
- * easy to extend for weighted graphs by adding relabeling routine.
- */
-
-package lainexperiment.misc;
-
-import static org.junit.Assert.assertEquals;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-
 public class MatchingUnweightedBipartite {
     
     static int[] M; // M[y] = x

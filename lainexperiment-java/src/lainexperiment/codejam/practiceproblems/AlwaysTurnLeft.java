@@ -5,7 +5,22 @@
  *
  */
 
-/*
+package lainexperiment.codejam.practiceproblems;
+
+import java.awt.Point;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.AbstractMap.SimpleEntry;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Scanner;
+
+
+/**
+ * <pre>{@code
  * Date: 10/04/2014
  * 
  * Code jam
@@ -107,22 +122,8 @@
  * Case #2:
  * 3
  * 
+ * }</pre>
  */
-
-package lainexperiment.codejam.practiceproblems;
-
-import java.awt.Point;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.AbstractMap.SimpleEntry;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Scanner;
-
-
 public class AlwaysTurnLeft {
 
     static enum Direction {

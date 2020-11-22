@@ -5,7 +5,10 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+/**
+ * <pre>{@code
  * Date: 11/01/2015
  *
  * Problem
@@ -23,10 +26,8 @@
  * 
  * 3 (1, 3, 8, 9)
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
 public class Min_number_of_jumps {
     
     static int minJumps(int[] a, int n) {

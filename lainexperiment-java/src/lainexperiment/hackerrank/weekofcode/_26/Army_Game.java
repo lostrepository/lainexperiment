@@ -4,7 +4,17 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._26;
+
+import static java.lang.Math.max;
+import static java.lang.Math.min;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 30/11/2016
  * 
@@ -41,16 +51,8 @@
  * 
 1
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._26;
-
-import static java.lang.Math.max;
-import static java.lang.Math.min;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Army_Game {
  
     static int c(int n) {

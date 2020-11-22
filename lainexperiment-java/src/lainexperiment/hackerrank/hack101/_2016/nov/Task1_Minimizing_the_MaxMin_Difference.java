@@ -4,7 +4,18 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.hack101._2016.nov;
+
+import static java.lang.Math.min;
+import static java.util.Arrays.sort;
+import static java.util.stream.LongStream.generate;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 17/11/2016
  * 
@@ -46,17 +57,8 @@
 3
 7
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.hack101._2016.nov;
-
-import static java.lang.Math.min;
-import static java.util.Arrays.sort;
-import static java.util.stream.LongStream.generate;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Task1_Minimizing_the_MaxMin_Difference {
     
     static long[] A;

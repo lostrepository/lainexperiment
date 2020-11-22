@@ -4,7 +4,14 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.hackerrank.misc;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * Date: 08/11/2020
  *
  * Hacker rank
@@ -78,13 +85,8 @@
 6
 1
  * 
+ * }</pre>
  */
-package lainexperiment.hackerrank.misc;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-import java.util.stream.IntStream;
-
 public class Insertion_Sort_Advanced_Analysis {
 
     long R = 0;

@@ -5,7 +5,10 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+/**
+ * <pre>{@code
  * Date: 14/02/2015
  * 
  * Problem
@@ -20,10 +23,8 @@
  * 
  * 33.3333333333333333333323333320
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
 public class Float_to_string {
 
     static String floatToString(float f) {

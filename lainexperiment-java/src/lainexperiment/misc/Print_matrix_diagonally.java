@@ -5,7 +5,10 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+/**
+ * <pre>{@code
  * Date: 07/02/2015
  * 
  * Problem
@@ -26,10 +29,8 @@
  * 6 8
  * 9 
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
 public class Print_matrix_diagonally {
 
     static void print(int[][] a) {

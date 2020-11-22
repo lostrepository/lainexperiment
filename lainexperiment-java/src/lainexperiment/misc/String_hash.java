@@ -5,7 +5,18 @@
  *
  */
 
+package lainexperiment.misc;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.Set;
+
 /*
+ * Supports composed hash codes. Based on modular
+ * hash function.
+ */
+/**
+ * <pre>{@code
  * Date: 11/01/2015
  *
  * Problem
@@ -23,17 +34,7 @@
  * 
  * none
  * 
- */
-
-package lainexperiment.misc;
-
-import static org.junit.Assert.assertEquals;
-
-import java.util.Set;
-
-/*
- * Supports composed hash codes. Based on modular
- * hash function.
+ * }</pre>
  */
 public class String_hash {
     

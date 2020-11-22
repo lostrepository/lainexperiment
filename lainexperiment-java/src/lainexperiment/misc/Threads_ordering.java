@@ -19,20 +19,15 @@
  * 
  */
 package lainexperiment.misc;
-
 import java.util.concurrent.ForkJoinPool;
 import java.util.concurrent.Semaphore;
-
 public class Threads_ordering {
-
     Semaphore s2 = new Semaphore(1);
     Semaphore s3 = new Semaphore(1);
-
     void m1() {
         System.out.print("1");
         s2.release();
     }
-
     void m2() {
         try {
             s2.acquire();
@@ -43,7 +38,6 @@ public class Threads_ordering {
         System.out.print("2");
         s3.release();
     }
-
     void m3() {
         try {
             s3.acquire();
@@ -53,7 +47,6 @@ public class Threads_ordering {
         }
         System.out.println("3");
     }
-
     public static void main(String[] args) throws InterruptedException {
         var v = new Threads_ordering();
         v.s2.acquire();
@@ -65,5 +58,4 @@ public class Threads_ordering {
             Thread.sleep(100);
         }
     }
-
 }

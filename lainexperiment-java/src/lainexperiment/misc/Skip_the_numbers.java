@@ -5,7 +5,12 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+/**
+ * <pre>{@code
  * Date: 24/01/2015
  * 
  * Problem
@@ -25,12 +30,8 @@
  * 0126789
  * 02678
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static org.junit.Assert.assertEquals;
-
 public class Skip_the_numbers {
 
     static String skip(int max, int[] skip) {

@@ -4,7 +4,16 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._27;
+
+import static java.lang.Math.min;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 19/12/2016
  * 
@@ -48,15 +57,8 @@
  * 
 0
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._27;
-
-import static java.lang.Math.min;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Task1_Drawing_Book {
  
     public static void main(String[] args) throws FileNotFoundException {

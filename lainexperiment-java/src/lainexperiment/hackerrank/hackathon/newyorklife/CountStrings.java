@@ -4,7 +4,14 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.hackathon.newyorklife;
+
+import org.junit.jupiter.api.Assertions;
+
+
+/**
+ * <pre>{@code
  * 
  * Date: 13/08/2015
  * 
@@ -52,13 +59,8 @@ v=29
  * The two strings "bc" and "cb" have a value of 2^2 + 3^2 = 13
  * All six the permutation of "bcd" have value 29.
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.hackathon.newyorklife;
-
-import org.junit.Assert;
-
-
 public class CountStrings {
 
     static int[] NSQR = new int[26];
@@ -89,8 +91,8 @@ public class CountStrings {
     }
     
     public static void main(String[] args) {
-        Assert.assertEquals(2, countStrings(2, 13));
-        Assert.assertEquals(6, countStrings(3, 29));
+        Assertions.assertEquals(2, countStrings(2, 13));
+        Assertions.assertEquals(6, countStrings(3, 29));
     }
     
 }

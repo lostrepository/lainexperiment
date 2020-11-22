@@ -4,7 +4,14 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.hackerrank.codesprint.zalando;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * Date: 04/06/2016
  *
  * Hacker rank
@@ -62,13 +69,8 @@ YES
 NO
 YES
  * 
+ * }</pre>
  */
-package lainexperiment.hackerrank.codesprint.zalando;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-import java.util.stream.IntStream;
-
 public class Does_It_Fit {
 
     static int W, H;

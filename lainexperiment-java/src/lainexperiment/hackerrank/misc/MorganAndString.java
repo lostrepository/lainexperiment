@@ -5,6 +5,25 @@
  *
  */
 /*
+ * This implementation passed all test cases but after reading the
+ * editorial I found that it is broken. It will fail for the test
+ * case like:
+ * 
+1
+BAABECL
+BAABECA
+ * 
+ * This problem should be solved with suffix arrays as in editorial. 
+ */
+package lainexperiment.hackerrank.misc;
+
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * Date: 24/05/2016
  *
  * Hacker rank
@@ -51,25 +70,8 @@ DADADD
 DAJACKNIEL
 AABABACABACABA
  * 
+ * }</pre>
  */
-/*
- * This implementation passed all test cases but after reading the
- * editorial I found that it is broken. It will fail for the test
- * case like:
- * 
-1
-BAABECL
-BAABECA
- * 
- * This problem should be solved with suffix arrays as in editorial. 
- */
-package lainexperiment.hackerrank.misc;
-
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.stream.IntStream;
-
 public class MorganAndString {
 
     static void update(char[] a, char[] b, int[] d) {

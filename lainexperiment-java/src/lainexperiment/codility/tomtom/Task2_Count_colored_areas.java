@@ -4,7 +4,13 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.codility.tomtom;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+/**
+ * <pre>{@code
  * 
  * Date: 20/07/2016
  * 
@@ -35,12 +41,8 @@
  * 
 11
  * 
+ * }</pre>
  */
-
-package lainexperiment.codility.tomtom;
-
-import static org.junit.Assert.assertEquals;
-
 public class Task2_Count_colored_areas {
 
     private static int countObjects(int[][] A) {

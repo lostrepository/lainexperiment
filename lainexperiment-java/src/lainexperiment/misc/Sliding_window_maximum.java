@@ -5,7 +5,19 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static java.lang.System.out;
+
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+import java.util.SortedSet;
+import java.util.TreeSet;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * Date: 27/01/2019
  * 
  * Problem
@@ -49,19 +61,8 @@
 7
 10
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static java.lang.System.out;
-
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
-import java.util.SortedSet;
-import java.util.TreeSet;
-import java.util.stream.IntStream;
-
 public class Sliding_window_maximum {
 
     static int K;

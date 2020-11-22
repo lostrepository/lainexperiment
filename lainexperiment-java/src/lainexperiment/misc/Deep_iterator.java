@@ -5,7 +5,17 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Stack;
+import java.util.stream.Stream;
+
+/**
+ * <pre>{@code
  * Date: 14/02/2015
  * 
  * Problem
@@ -20,17 +30,8 @@
  * 
  * none
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Stack;
-import java.util.stream.Stream;
-
 public class Deep_iterator {
 
     @SuppressWarnings({"rawtypes"})

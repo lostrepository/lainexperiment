@@ -5,7 +5,19 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import java.awt.geom.Point2D;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.BitSet;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * Date: 24/03/2015
  * 
  * Problem
@@ -56,19 +68,8 @@
  * Case 1: 118.40
  * Case 2: 1.41
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import java.awt.geom.Point2D;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.BitSet;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.stream.IntStream;
-
 public class Forming_quiz_teams {
 
     static float split(int[] X, int[] Y, BitSet S, int n, float sum, Map<String, Float> M) {

@@ -4,7 +4,30 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.hack101._2016.aug;
+
+import static java.util.Arrays.setAll;
+import static java.util.Arrays.stream;
+import static java.util.function.Function.identity;
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.summingInt;
+import static java.util.stream.IntStream.range;
+
+import java.io.FileNotFoundException;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+/**
+ * <pre>{@code
  * 
  * Date: 24/08/2016
  * 
@@ -56,29 +79,8 @@
 2 1 3 5 4
  *
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.hack101._2016.aug;
-
-import static java.util.Arrays.setAll;
-import static java.util.Arrays.stream;
-import static java.util.function.Function.identity;
-import static java.util.stream.Collectors.groupingBy;
-import static java.util.stream.Collectors.summingInt;
-import static java.util.stream.IntStream.range;
-
-import java.io.FileNotFoundException;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.PriorityQueue;
-import java.util.Queue;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.TreeSet;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 public class Next_Topological_Ordering {
     
     static List<Set<Integer>> G;

@@ -4,8 +4,12 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
+package lainexperiment.mensikovbook;
 
-/*
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+/**
+ * <pre>{@code
  * Date: 05/10/2015
  * 
  * Problem
@@ -23,11 +27,8 @@
 1 + 1 + 1 + 1
 2 + 2
  * 
+ * }</pre>
  */
-package lainexperiment.mensikovbook;
-
-import static org.junit.Assert.assertTrue;
-
 public class PrintAllSums 
 {
 

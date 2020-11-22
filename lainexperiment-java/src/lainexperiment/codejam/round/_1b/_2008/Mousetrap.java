@@ -5,7 +5,15 @@
  *
  */
 
-/*
+package lainexperiment.codejam.round._1b._2008;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * Code jam
  * Round 1B 2008
  * Problem C. Mousetrap
@@ -60,15 +68,8 @@
  * Case #1: 1 3 2 5 4
  * Case #2: 2 8 13 4
  * 
+ * }</pre>
  */
-
-package lainexperiment.codejam.round._1b._2008;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-import java.util.stream.IntStream;
-
 public class Mousetrap {
     
     /*

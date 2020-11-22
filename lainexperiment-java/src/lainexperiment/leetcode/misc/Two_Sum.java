@@ -5,7 +5,20 @@
  *
  */
 
-/*
+package lainexperiment.leetcode.misc;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+
+/**
+ * <pre>{@code
  * Date: 18/10/2020
  * 
  * Problem: Two Sum
@@ -37,20 +50,8 @@ nums = [3,2,4], target = 6
  * 
 [1,2]
  * 
+ * }</pre>
  */
-
-package lainexperiment.leetcode.misc;
-
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertNull;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-
-import org.junit.Test;
-
 public class Two_Sum {
 
     private int[] find2sum(int[] a, int s) {

@@ -5,7 +5,16 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import java.io.IOException;
+import java.io.Reader;
+import java.io.StringReader;
+
+import org.junit.jupiter.api.Assertions;
+
+/**
+ * <pre>{@code
  * Date: 19/04/2015
  * 
  * Problem
@@ -21,16 +30,8 @@
  * 
  * true
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import java.io.IOException;
-import java.io.Reader;
-import java.io.StringReader;
-
-import org.junit.Assert;
-
 public class Match_the_string_with_stream {
 
     static boolean match(Reader s, int i, char[] p, 
@@ -68,7 +69,7 @@ public class Match_the_string_with_stream {
     }
     
     public static void main(String[] args) throws IOException {
-        Assert.assertTrue(match("ABC ABCDAB ABCDABCDABDE".toCharArray(), "ABCDABD".toCharArray()));
+        Assertions.assertTrue(match("ABC ABCDAB ABCDABCDABDE".toCharArray(), "ABCDABD".toCharArray()));
     }
 
 }

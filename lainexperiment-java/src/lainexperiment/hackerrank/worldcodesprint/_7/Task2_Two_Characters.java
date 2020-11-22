@@ -4,7 +4,23 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.worldcodesprint._7;
+
+import static java.lang.Math.abs;
+import static java.lang.Math.max;
+import static java.lang.Math.min;
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.mapping;
+import static java.util.stream.Collectors.toList;
+import static java.util.stream.IntStream.range;
+
+import java.io.FileNotFoundException;
+import java.util.List;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 24/09/2016
  * 
@@ -44,22 +60,8 @@ beabeefeab
  * 
 5
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.worldcodesprint._7;
-
-import static java.lang.Math.abs;
-import static java.lang.Math.max;
-import static java.lang.Math.min;
-import static java.util.stream.Collectors.groupingBy;
-import static java.util.stream.Collectors.mapping;
-import static java.util.stream.Collectors.toList;
-import static java.util.stream.IntStream.range;
-
-import java.io.FileNotFoundException;
-import java.util.List;
-import java.util.Scanner;
-
 public class Task2_Two_Characters {
 
     static boolean isAlternating(List<Integer> a, List<Integer> b) 

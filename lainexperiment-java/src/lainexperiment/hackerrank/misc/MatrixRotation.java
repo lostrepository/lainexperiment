@@ -4,7 +4,16 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.misc;
+
+import java.awt.Point;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 24/09/2015
  * 
@@ -47,15 +56,8 @@
 5 6 10 16
 9 13 14 15
  * 
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.misc;
-
-import java.awt.Point;
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Scanner;
-
 public class MatrixRotation {
 
     static Point next(int f, int h, int w, int d, int i) {

@@ -4,7 +4,18 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.worldcodesprint._6;
+
+import static java.lang.Math.max;
+import static java.util.Arrays.setAll;
+import static java.util.stream.IntStream.generate;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 27/08/2016
  * 
@@ -52,17 +63,8 @@
 414
  *
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.worldcodesprint._6;
-
-import static java.lang.Math.max;
-import static java.util.Arrays.setAll;
-import static java.util.stream.IntStream.generate;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Task3_Flipping_the_Matrix {
 
     static int[][] M;

@@ -4,7 +4,17 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.misc;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.math.BigInteger;
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * 
  * Date: 20/06/2015
  * 
@@ -50,16 +60,8 @@
 -100000000000000 can be fitted in:
 * long
  * 
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.misc;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.math.BigInteger;
-import java.util.Scanner;
-import java.util.stream.IntStream;
-
 public class JavaDatatypes {
 
     static void printTypes(BigInteger n, StringBuilder buf) {

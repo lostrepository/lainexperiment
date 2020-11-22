@@ -4,7 +4,20 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.worldcodesprint._8;
+
+import static java.lang.Math.min;
+import static java.util.stream.Stream.generate;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
+/**
+ * <pre>{@code
  * 
  * Date: 17/12/2016
  * 
@@ -77,19 +90,8 @@
 4
 12
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.worldcodesprint._8;
-
-import static java.lang.Math.min;
-import static java.util.stream.Stream.generate;
-
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.stream.Collectors;
-
 public class Task3_Roads_and_Libraries {
 
     static List<List<Integer>> G;

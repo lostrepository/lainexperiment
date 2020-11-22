@@ -4,7 +4,19 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.hackathon.countercode2015;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * 
  * Date: 30/07/2015
  * 
@@ -55,18 +67,8 @@ cnt 15
 2
 2
  * 
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.hackathon.countercode2015;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.stream.IntStream;
-
 public class Subset {
 
     static Map<Integer, Integer> M = new HashMap<>();

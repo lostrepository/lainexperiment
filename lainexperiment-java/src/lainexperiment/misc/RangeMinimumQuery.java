@@ -5,28 +5,9 @@
  *
  */
 
-/*
- * Date: 10/07/2016
- * 
- * Problem
- * 
- * Given an array arr[0 .. n-1] implement operation which will 
- * efficiently find the minimum value from the given range [l, r].
- *
- * Input
- * 
-1, 3, 5, 7, 1, 11, 0
-3 - 5
- * 
- * Output
- * 
-1
- * 
- */
-
 package lainexperiment.misc;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.FileNotFoundException;
 import java.util.Arrays;
@@ -100,6 +81,26 @@ class SegmentTree {
     
 }
 
+/**
+ * <pre>{@code
+ * Date: 10/07/2016
+ * 
+ * Problem
+ * 
+ * Given an array arr[0 .. n-1] implement operation which will 
+ * efficiently find the minimum value from the given range [l, r].
+ *
+ * Input
+ * 
+1, 3, 5, 7, 1, 11, 0
+3 - 5
+ * 
+ * Output
+ * 
+1
+ * 
+ * }</pre>
+ */
 public class RangeMinimumQuery {
 
     public static void main(String[] args) throws FileNotFoundException {

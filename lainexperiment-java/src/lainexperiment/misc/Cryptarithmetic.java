@@ -5,7 +5,16 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+/**
+ * <pre>{@code
  * Date: 13/02/2015
  * 
  * Problem
@@ -27,16 +36,8 @@
  * U-6
  * W-3
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static org.junit.Assert.assertEquals;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.stream.Collectors;
-
 public class Cryptarithmetic {
 
     static String add(char[] a, char[] b, char[] c, int i, int carry, int[] s, Map<Character, Integer> m) 

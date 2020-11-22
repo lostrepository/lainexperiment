@@ -5,7 +5,18 @@
  *
  */
 
-/*
+package lainexperiment.codejam.round._1b._2008;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * Code jam
  * Round 1B 2008
  * Problem B. Number Sets
@@ -54,18 +65,8 @@
  * Case #1: 9
  * Case #2: 7
  * 
+ * }</pre>
  */
-
-package lainexperiment.codejam.round._1b._2008;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.stream.IntStream;
-
 public class NumberSets {
 
     @SuppressWarnings({ "unchecked", "serial" })

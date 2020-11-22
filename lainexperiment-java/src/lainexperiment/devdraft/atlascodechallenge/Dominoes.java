@@ -4,7 +4,17 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.devdraft.atlascodechallenge;
+
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * Date: 03/12/2015
  *
  * Atlas Code Challenge
@@ -48,16 +58,8 @@
  * denotes the right cascade distance of the domino at position i, or 0 for positions that do not 
  * have a domino. On the second line, output the same data for left cascade distances.
  * 
+ * }</pre>
  */
-package lainexperiment.devdraft.atlascodechallenge;
-
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.function.Function;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-
 public class Dominoes {
 
     static int N;

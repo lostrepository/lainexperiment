@@ -5,24 +5,6 @@
  *
  */
 
-/*
- * Date: 20/05/2017
- * 
- * Problem
- * 
- * Given input string S arrange it so that there will 
- * be no adjacent equal letters.
- *
- * Input
- * 
-aaaabbbbbcc
- * 
- * Output
- * 
-babababcbca
- * 
- */
-
 package lainexperiment.misc;
 
 import static java.util.stream.Collectors.toCollection;
@@ -38,8 +20,27 @@ import java.util.function.IntPredicate;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import org.junit.Assert;
+import org.junit.jupiter.api.Assertions;
 
+/**
+ * <pre>{@code
+ * Date: 20/05/2017
+ * 
+ * Problem
+ * 
+ * Given input string S arrange it so that there will 
+ * be no adjacent equal letters.
+ *
+ * Input
+ * 
+aaaabbbbbcc
+ * 
+ * Output
+ * 
+babababcbca
+ * 
+ * }</pre>
+ */
 public class Arrange_letters_in_a_chain {
 
     static String arrangeLinearitmic(int[] b, int[] r, int[] y) {
@@ -90,26 +91,26 @@ public class Arrange_letters_in_a_chain {
     }
 
     public static void main(String[] args) {
-        Assert.assertEquals("bababacbabc", arrangeLinearitmic( 
+        Assertions.assertEquals("bababacbabc", arrangeLinearitmic( 
                 new int[]{'a', 4}, new int[]{'b', 5}, new int[]{'c', 2}));
-        Assert.assertEquals("bcbababcb", arrangeLinearitmic( 
+        Assertions.assertEquals("bcbababcb", arrangeLinearitmic( 
                 new int[]{'a', 2}, new int[]{'b', 5}, new int[]{'c', 2}));
-        Assert.assertEquals(null, arrangeLinearitmic( 
+        Assertions.assertEquals(null, arrangeLinearitmic( 
                 new int[]{'a', 1}, new int[]{'b', 5}, new int[]{'c', 2}));
-        Assert.assertEquals("a", arrangeLinearitmic( 
+        Assertions.assertEquals("a", arrangeLinearitmic( 
                 new int[]{'a', 1}, new int[]{'b', 0}, new int[]{'c', 0}));
-        Assert.assertEquals("abababcbabca", arrangeLinearitmic( 
+        Assertions.assertEquals("abababcbabca", arrangeLinearitmic( 
                 new int[]{'a', 5}, new int[]{'b', 5}, new int[]{'c', 2}));
         
-        Assert.assertEquals("babababcbca", arrangeLinear( 
+        Assertions.assertEquals("babababcbca", arrangeLinear( 
                 new int[]{'a', 4}, new int[]{'b', 5}, new int[]{'c', 2}));
-        Assert.assertEquals("bababcbcb", arrangeLinear( 
+        Assertions.assertEquals("bababcbcb", arrangeLinear( 
                 new int[]{'a', 2}, new int[]{'b', 5}, new int[]{'c', 2}));
-        Assert.assertEquals(null, arrangeLinear( 
+        Assertions.assertEquals(null, arrangeLinear( 
                 new int[]{'a', 1}, new int[]{'b', 5}, new int[]{'c', 2}));
-        Assert.assertEquals("a", arrangeLinear( 
+        Assertions.assertEquals("a", arrangeLinear( 
                 new int[]{'a', 1}, new int[]{'b', 0}, new int[]{'c', 0}));
-        Assert.assertEquals("ababababacbc", arrangeLinear( 
+        Assertions.assertEquals("ababababacbc", arrangeLinear( 
                 new int[]{'a', 5}, new int[]{'b', 5}, new int[]{'c', 2}));
     }
 

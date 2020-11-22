@@ -4,7 +4,17 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.hackathon.bookingcom;
+
+import java.io.FileNotFoundException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * 
  * Date: 06/09/2015
  * 
@@ -55,16 +65,8 @@
  * 
 15.91
  * 
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.hackathon.bookingcom;
-
-import java.io.FileNotFoundException;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.util.Scanner;
-import java.util.stream.IntStream;
-
 public class BudgetFriendly {
     
     static BigDecimal[][] S = new BigDecimal[10][100];

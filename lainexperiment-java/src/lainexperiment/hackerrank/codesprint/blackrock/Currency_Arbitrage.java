@@ -4,7 +4,13 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.hackerrank.codesprint.blackrock;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * Date: 12/06/2016
  *
  * Hacker rank
@@ -28,7 +34,6 @@
  * - The first quote is a real number denoting the price quote for (USD/EUR).
  * - The second quote is a real number denoting the price quote for (EUR/GBP).
  * - The third quote is a real number denoting the price quote for (GBP/USD).
-
  * 
  * Output Format
  * 
@@ -47,12 +52,8 @@
 114
 0
  * 
+ * }</pre>
  */
-package lainexperiment.hackerrank.codesprint.blackrock;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Currency_Arbitrage {
     
     public static void main(String[] args) throws FileNotFoundException {

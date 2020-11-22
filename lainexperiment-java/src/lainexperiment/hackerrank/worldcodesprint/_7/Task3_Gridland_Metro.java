@@ -4,7 +4,32 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.worldcodesprint._7;
+
+import static java.util.stream.Collectors.toList;
+import static java.util.stream.IntStream.range;
+
+import java.io.FileNotFoundException;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
+class Ival {
+    long s, e;
+    public Ival(long s, long e) {
+        this.s = s; 
+        this.e = e;
+    }
+    @Override
+    public String toString() {
+        return String.format("%d %d", s, e);
+    }
+}
+
+/**
+ * <pre>{@code
  * 
  * Date: 25/09/2016
  * 
@@ -55,31 +80,8 @@
  * 
 9
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.worldcodesprint._7;
-
-import static java.util.stream.Collectors.toList;
-import static java.util.stream.IntStream.range;
-
-import java.io.FileNotFoundException;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.stream.Collectors;
-
-class Ival {
-    long s, e;
-    public Ival(long s, long e) {
-        this.s = s; 
-        this.e = e;
-    }
-    @Override
-    public String toString() {
-        return String.format("%d %d", s, e);
-    }
-}
-
 public class Task3_Gridland_Metro {
 
     static long COLS, ROWS;

@@ -4,7 +4,16 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.worldcodesprint._5;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 26/07/2016
  * 
@@ -52,15 +61,8 @@ kkkkkkz
 15
  *
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.worldcodesprint._5;
-
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
 public class Short_Palindrome {
     
     static final int LEN = 26;

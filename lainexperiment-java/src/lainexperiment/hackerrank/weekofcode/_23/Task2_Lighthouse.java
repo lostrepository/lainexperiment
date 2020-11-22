@@ -4,7 +4,21 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._23;
+
+import static java.lang.Math.abs;
+import static java.lang.Math.ceil;
+import static java.lang.Math.max;
+import static java.lang.Math.min;
+import static java.util.Arrays.setAll;
+
+import java.awt.Point;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 17/09/2016
  * 
@@ -73,20 +87,8 @@
  * 
 3
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._23;
-
-import static java.lang.Math.abs;
-import static java.lang.Math.ceil;
-import static java.lang.Math.max;
-import static java.lang.Math.min;
-import static java.util.Arrays.setAll;
-
-import java.awt.Point;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Task2_Lighthouse {
 
     static char[][] A;

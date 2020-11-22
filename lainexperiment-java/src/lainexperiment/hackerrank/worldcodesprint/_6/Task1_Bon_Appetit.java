@@ -4,7 +4,17 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.worldcodesprint._6;
+
+import static java.util.Arrays.setAll;
+import static java.util.Arrays.stream;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 27/08/2016
  * 
@@ -56,16 +66,8 @@
  *
 Bon Appetit
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.worldcodesprint._6;
-
-import static java.util.Arrays.setAll;
-import static java.util.Arrays.stream;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Task1_Bon_Appetit {
 
     static int[] C;

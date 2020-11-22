@@ -4,7 +4,18 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.codejam.qualification._2017;
+
+import static java.util.stream.IntStream.range;
+
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.util.Scanner;
+import java.util.function.IntConsumer;
+import java.util.function.IntUnaryOperator;
+
+/**
+ * <pre>{@code
  * Date: 08/04/2017
  *
  * Code jam 2017
@@ -78,17 +89,8 @@ Case #1: 3
 Case #2: 0
 Case #3: IMPOSSIBLE
  * 
+ * }</pre>
  */
-package lainexperiment.codejam.qualification._2017;
-
-import static java.util.stream.IntStream.range;
-
-import java.io.IOException;
-import java.nio.file.Paths;
-import java.util.Scanner;
-import java.util.function.IntConsumer;
-import java.util.function.IntUnaryOperator;
-
 public class ProblemA_Oversized_Pancake_Flipper {
     
     static void solve(char[] a, int k) {

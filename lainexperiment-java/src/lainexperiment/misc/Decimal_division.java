@@ -5,7 +5,15 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.HashSet;
+import java.util.Set;
+
+/**
+ * <pre>{@code
  * Date: 11/01/2015
  * 
  * Problem
@@ -27,15 +35,8 @@
  * 0.(5)
  * 3.(142857)
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static org.junit.Assert.assertEquals;
-
-import java.util.HashSet;
-import java.util.Set;
-
 public class Decimal_division {
 
     private static String decimalDiv(int n, int d, Set<Integer> s, boolean isDec) {

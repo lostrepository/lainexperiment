@@ -1,0 +1,38 @@
+// gradle clean build publishToMavenLocal
+
+plugins {
+    id 'java'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation('org.junit.jupiter:junit-jupiter-api:5.4.2')
+    implementation('org.junit.jupiter:junit-jupiter-params:5.4.2')
+    testRuntime('org.junit.jupiter:junit-jupiter-engine:5.4.2')
+}
+
+java {
+    modularity.inferModulePath = true
+}
+
+sourceCompatibility = '11'
+targetCompatibility = '11'
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+    }
+}
+
+javadoc {
+    options.noTimestamp = true;
+    options.noQualifiers = ["all"];
+    options.noTree = true;
+    options.noIndex = true;
+    options.noNavBar = true;
+}

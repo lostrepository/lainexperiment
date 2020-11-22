@@ -4,7 +4,18 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.hackerrank.misc;
+
+import java.awt.Point;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.function.IntUnaryOperator;
+
+/**
+ * <pre>{@code
  * Date: 02/12/2015
  *
  * Hacker rank
@@ -53,17 +64,8 @@
  * 
 40000
  * 
+ * }</pre>
  */
-package lainexperiment.hackerrank.misc;
-
-import java.awt.Point;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-import java.util.function.IntUnaryOperator;
-
 public class BikeRacers {
 
     static Point[] bikers, bikes;

@@ -4,7 +4,21 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.hackerrank.misc;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.Stack;
+import java.util.function.Consumer;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * Date: 10/12/2015
  *
  * Hacker rank
@@ -52,20 +66,8 @@
 2
 4
  * 
+ * }</pre>
  */
-package lainexperiment.hackerrank.misc;
-
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.Stack;
-import java.util.function.Consumer;
-import java.util.stream.IntStream;
-
 public class ByteLandianTours {
 
     static Set<Integer>[] G;

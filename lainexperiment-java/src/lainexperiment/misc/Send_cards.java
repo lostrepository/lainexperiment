@@ -5,7 +5,22 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static java.util.stream.IntStream.rangeClosed;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import org.junit.jupiter.api.Test;
+
+/**
+ * <pre>{@code
  * Date: 04/04/2017
  * 
  * Problem
@@ -24,22 +39,8 @@
  * 
 1, 2, 3, 1, 2, 1, 7, 3, 4, 7, 12, 2, 11, 3, 1, 13, 9, 23, 18, 5, 15, 26, 21, 4, 17, 28, 3, 20, 7, 6, 2, 31, 23, 34, 52, 33, 22, 42, 39, 27, 11, 40, 25, 17, 49, 48, 15, 45, 19, 2, 21, 29, 7, 1
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static java.util.stream.IntStream.rangeClosed;
-import static org.junit.Assert.assertTrue;
-
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-
-import org.junit.Test;
-
 public class Send_cards {
 
     static int[] prepare(int[] a) {

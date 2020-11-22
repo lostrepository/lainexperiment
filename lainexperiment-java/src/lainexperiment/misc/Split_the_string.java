@@ -5,7 +5,16 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.HashSet;
+import java.util.Set;
+import java.util.Stack;
+
+/**
+ * <pre>{@code
  * Date: 19/04/2015
  * 
  * Problem
@@ -24,16 +33,8 @@
  * 0, 3
  * 0, 3, 4
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static org.junit.Assert.assertEquals;
-
-import java.util.HashSet;
-import java.util.Set;
-import java.util.Stack;
-
 public class Split_the_string {
 
     static String split(char[] a, Set<String> d) {

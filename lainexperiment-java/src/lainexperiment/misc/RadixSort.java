@@ -5,16 +5,6 @@
  *
  */
 
-/*
- * Date: 30/04/2016
- * 
- * Problem
- * 
- * Implement radix sort
- *
- * 
- */
-
 package lainexperiment.misc;
 
 import java.io.FileNotFoundException;
@@ -23,6 +13,17 @@ import java.util.LinkedList;
 import java.util.List;
 
 @SuppressWarnings({ "rawtypes", "unchecked" })
+/**
+ * <pre>{@code
+ * Date: 30/04/2016
+ * 
+ * Problem
+ * 
+ * Implement radix sort
+ *
+ * 
+ * }</pre>
+ */
 public class RadixSort {
 
     static int WIDTH = 32;

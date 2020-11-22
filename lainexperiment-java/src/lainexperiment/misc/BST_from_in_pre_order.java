@@ -5,7 +5,12 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * Date: 14/01/2015
  * 
  * Problem
@@ -30,12 +35,8 @@
  *   9
  *   3
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import java.util.stream.IntStream;
-
 public class BST_from_in_pre_order {
     
     static class Node {

@@ -4,7 +4,18 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._34;
+
+import static java.lang.System.in;
+import static java.lang.System.out;
+import static java.util.stream.IntStream.generate;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 30/07/2017
  * 
@@ -45,17 +56,8 @@
  * 
 555564
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._34;
-
-import static java.lang.System.in;
-import static java.lang.System.out;
-import static java.util.stream.IntStream.generate;
-
-import java.io.IOException;
-import java.util.Scanner;
-
 public class Task1_Once_in_a_tram {
  
     static int sum(int n) {

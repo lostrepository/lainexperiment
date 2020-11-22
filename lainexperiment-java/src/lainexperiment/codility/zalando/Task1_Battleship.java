@@ -4,7 +4,17 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.codility.zalando;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+/**
+ * <pre>{@code
  * 
  * Date: 27/07/2016
  * 
@@ -28,16 +38,8 @@
  * 
 1,1
  * 
+ * }</pre>
  */
-
-package lainexperiment.codility.zalando;
-
-import static org.junit.Assert.assertEquals;
-
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 public class Task1_Battleship {
 
     private static int[] parseCoord(String s) {

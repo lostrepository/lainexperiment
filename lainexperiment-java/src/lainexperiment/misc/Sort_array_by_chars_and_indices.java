@@ -5,7 +5,16 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.function.IntUnaryOperator;
+
+/**
+ * <pre>{@code
  * Date: 26/07/2016
  * 
  * Problem
@@ -23,16 +32,8 @@ abacba
  * 
 025143
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static org.junit.Assert.assertEquals;
-
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.function.IntUnaryOperator;
-
 public class Sort_array_by_chars_and_indices {
 
     interface SwapFunction {

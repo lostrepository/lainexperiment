@@ -4,7 +4,20 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._1;
+
+import static java.lang.Math.max;
+import static java.lang.Math.min;
+import static java.lang.System.in;
+
+import java.io.IOException;
+import java.math.BigInteger;
+import java.util.Scanner;
+import java.util.stream.LongStream;
+
+/**
+ * <pre>{@code
  * 
  * Date: 17/09/2017
  * 
@@ -58,19 +71,8 @@
  * 
 2925
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._1;
-
-import static java.lang.Math.max;
-import static java.lang.Math.min;
-import static java.lang.System.in;
-
-import java.io.IOException;
-import java.math.BigInteger;
-import java.util.Scanner;
-import java.util.stream.LongStream;
-
 public class Task2_Volleyball_Match {
     
     static final int MOD = 1_000_000_007;

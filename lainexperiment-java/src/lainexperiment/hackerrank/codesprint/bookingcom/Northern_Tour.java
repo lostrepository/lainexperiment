@@ -4,7 +4,21 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.codesprint.bookingcom;
+
+import static java.util.Arrays.fill;
+import static java.util.Arrays.setAll;
+import static java.util.Arrays.stream;
+
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 07/08/2016
  * 
@@ -85,20 +99,8 @@ Perugia
 Roma
 Florence
  * 
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.codesprint.bookingcom;
-
-import static java.util.Arrays.fill;
-import static java.util.Arrays.setAll;
-import static java.util.Arrays.stream;
-
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
-
 public class Northern_Tour {
     
     static final String SRC = "Bevagna";

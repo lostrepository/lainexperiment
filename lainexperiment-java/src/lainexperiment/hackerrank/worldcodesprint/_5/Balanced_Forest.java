@@ -4,7 +4,19 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.worldcodesprint._5;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.function.Function;
+import java.util.function.Predicate;
+
+/**
+ * <pre>{@code
  * 
  * Date: 05/08/2016
  * 
@@ -72,18 +84,8 @@
 -1
  *
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.worldcodesprint._5;
-
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-import java.util.function.Function;
-import java.util.function.Predicate;
-
 public class Balanced_Forest {
 
     static Node[] Nodes;

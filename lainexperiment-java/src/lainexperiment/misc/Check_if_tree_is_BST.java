@@ -5,7 +5,16 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.stream.IntStream;
+
+import org.junit.jupiter.api.Test;
+
+/**
+ * <pre>{@code
  * Date: 28/01/2017
  * 
  * Problem
@@ -20,16 +29,8 @@
  * 
 false
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static org.junit.Assert.assertTrue;
-
-import java.util.stream.IntStream;
-
-import org.junit.Test;
-
 public class Check_if_tree_is_BST {
 
     static class Node {

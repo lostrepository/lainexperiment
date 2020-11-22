@@ -4,7 +4,13 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.hackathon.cisco;
+
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * Date: 10/04/2015
  * 
  * Hacker rank
@@ -60,12 +66,8 @@
  * NO
  * YES
  * 
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.hackathon.cisco;
-
-import java.util.Scanner;
-
 public class SecurePasswordSystem {
 
     private static boolean isSecure(int min, int max) {

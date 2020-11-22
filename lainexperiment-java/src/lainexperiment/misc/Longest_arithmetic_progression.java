@@ -5,7 +5,10 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+/**
+ * <pre>{@code
  * Date: 02/01/2015
  * 
  * Problem
@@ -25,10 +28,8 @@
  * 
  * 7 (-3, 0, 3, 6, 9, 12, 15)
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
 public class Longest_arithmetic_progression {
     
     static int count(int[] a, int d, int i) {

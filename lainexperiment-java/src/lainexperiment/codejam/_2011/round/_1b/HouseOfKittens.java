@@ -5,7 +5,21 @@
  *
  */
 
-/*
+package lainexperiment.codejam._2011.round._1b;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * Code jam
  * Round 1B 2011
  * Problem C. House of Kittens
@@ -72,21 +86,8 @@
  * Case #2: 3
  * 1 2 3 1 1 3 2 3
  * 
+ * }</pre>
  */
-
-package lainexperiment.codejam._2011.round._1b;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-
 public class HouseOfKittens {
     
     static class Vertex {

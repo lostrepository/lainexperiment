@@ -5,9 +5,10 @@
  *
  */
 package lainexperiment.utils;
-
 /**
+ * <pre>{@code
  * Interval
+ * }</pre>
  */
 public class Ival {
 

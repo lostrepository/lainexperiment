@@ -5,11 +5,13 @@ package lainexperiment.misc;
  * Description for it can be found in ReadMe.txt.
  *
  */
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import org.junit.jupiter.api.Test;
 
-/*
+/**
+ * <pre>{@code
  * Date: 01/08/2016
  * 
  * Problem
@@ -24,10 +26,8 @@ import static org.junit.Assert.assertTrue;
  * 
 false
  * 
+ * }</pre>
  */
-
-import org.junit.Test;
-
 public class Leap_year {
 
     public static boolean isLeap(int year) {

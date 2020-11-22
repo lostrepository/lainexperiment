@@ -5,7 +5,18 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.function.Predicate;
+
+/**
+ * <pre>{@code
  * Date: 14/02/2015
  * 
  * Problem
@@ -20,18 +31,8 @@
  * 
  * true
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static org.junit.Assert.assertEquals;
-
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.function.Predicate;
-
 public class Is_K_string {
 
     static boolean iskstring(char[] a) {

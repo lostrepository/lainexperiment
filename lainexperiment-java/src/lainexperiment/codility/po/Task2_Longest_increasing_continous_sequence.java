@@ -4,7 +4,13 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.codility.po;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+/**
+ * <pre>{@code
  * 
  * Date: 25/07/2016
  * 
@@ -33,12 +39,8 @@
  * 
 4
  * 
+ * }</pre>
  */
-
-package lainexperiment.codility.po;
-
-import static org.junit.Assert.assertEquals;
-
 public class Task2_Longest_increasing_continous_sequence {
 
     public int solution(int[] A) {

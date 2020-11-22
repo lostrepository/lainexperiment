@@ -4,7 +4,17 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.hackerrank.misc;
+
+import static java.lang.Math.max;
+import static java.lang.Math.min;
+import static java.util.stream.IntStream.range;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * Date: 26/05/2016
  *
  * Hacker rank
@@ -40,16 +50,8 @@
  * 
 14
  * 
+ * }</pre>
  */
-package lainexperiment.hackerrank.misc;
-
-import static java.lang.Math.max;
-import static java.lang.Math.min;
-import static java.util.stream.IntStream.range;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class MrKMarsh {
 
     static char[][] M;

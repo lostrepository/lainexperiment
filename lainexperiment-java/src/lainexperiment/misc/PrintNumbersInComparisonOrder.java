@@ -5,7 +5,10 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+/**
+ * <pre>{@code
  * Date: 17/01/2015
  * 
  * Problem
@@ -20,10 +23,8 @@
  * 
  * 1, 10, 100, 1000, 101, 102, ... 109, 11, 110, ...
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
 public class PrintNumbersInComparisonOrder {
 
     private static void print(int n, int k) {

@@ -5,7 +5,18 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static java.lang.Math.max;
+
+import java.util.Arrays;
+import java.util.Stack;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+/**
+ * <pre>{@code
  * Date: 27/01/2019
  * 
  * Problem
@@ -33,18 +44,8 @@ nums = [1,3,-1,-3,5,3,6,7], and k = 3
  * 
 [3,3,5,5,6,7] 
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static java.lang.Math.max;
-
-import java.util.Arrays;
-import java.util.Stack;
-
-import org.junit.Assert;
-import org.junit.Test;
-
 public class Sliding_window_maximum_linear {
 
     static int K;
@@ -104,6 +105,6 @@ public class Sliding_window_maximum_linear {
 
     @Test
     public void test() {
-        Assert.assertArrayEquals(new int[]{3,3,5,5,6,7}, maxSlidingWindow(new int[]{1,3,-1,-3,5,3,6,7}, 3));
+        Assertions.assertArrayEquals(new int[]{3,3,5,5,6,7}, maxSlidingWindow(new int[]{1,3,-1,-3,5,3,6,7}, 3));
     }
 }

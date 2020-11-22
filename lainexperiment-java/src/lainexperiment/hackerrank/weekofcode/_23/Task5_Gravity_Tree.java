@@ -4,7 +4,44 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._23;
+
+import static java.lang.Math.pow;
+import static java.util.Arrays.setAll;
+import static java.util.stream.IntStream.range;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
+class Node {
+    
+    int i, size, d;
+    Node p;
+    List<Node> adj = new ArrayList<>();
+    long sum, sqrSum;
+    
+    Node(int i) { this.i = i; }
+    
+    static void bind(Node ch, Node p) {
+        ch.p = p;
+        p.adj.add(ch);
+    }
+
+    @Override
+    public String toString() {
+        String adj = this.adj.stream()
+            .map(ch -> "" + ch.i)
+            .collect(Collectors.joining(","));
+        return String.format("index %s, sum %s, sqrsum %s, adj [%s], size %s", i, sum, sqrSum, adj, size);
+    }
+}
+
+/**
+ * <pre>{@code
  * 
  * Date: 24/09/2016
  * 
@@ -77,43 +114,8 @@
 7 
 13
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._23;
-
-import static java.lang.Math.pow;
-import static java.util.Arrays.setAll;
-import static java.util.stream.IntStream.range;
-
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.stream.Collectors;
-
-class Node {
-    
-    int i, size, d;
-    Node p;
-    List<Node> adj = new ArrayList<>();
-    long sum, sqrSum;
-    
-    Node(int i) { this.i = i; }
-    
-    static void bind(Node ch, Node p) {
-        ch.p = p;
-        p.adj.add(ch);
-    }
-
-    @Override
-    public String toString() {
-        String adj = this.adj.stream()
-            .map(ch -> "" + ch.i)
-            .collect(Collectors.joining(","));
-        return String.format("index %s, sum %s, sqrsum %s, adj [%s], size %s", i, sum, sqrSum, adj, size);
-    }
-}
-
 public class Task5_Gravity_Tree {
 
     static Node[] T;

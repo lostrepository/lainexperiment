@@ -4,7 +4,17 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.worldcodesprint._8;
+
+import static java.util.Arrays.binarySearch;
+import static java.util.stream.IntStream.generate;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 17/12/2016
  * 
@@ -72,16 +82,8 @@
 2
 1
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.worldcodesprint._8;
-
-import static java.util.Arrays.binarySearch;
-import static java.util.stream.IntStream.generate;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Task2_Climbing_the_Leaderboard {
 
     static Integer[] P, A;

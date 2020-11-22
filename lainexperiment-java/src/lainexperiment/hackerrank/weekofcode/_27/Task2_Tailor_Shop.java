@@ -4,7 +4,23 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._27;
+
+import static java.util.Arrays.stream;
+import static java.util.function.Function.identity;
+import static java.util.stream.Collectors.groupingBy;
+import static java.util.stream.Collectors.summingInt;
+import static java.util.stream.IntStream.generate;
+
+import java.io.FileNotFoundException;
+import java.util.Comparator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 20/12/2016
  * 
@@ -52,22 +68,8 @@
  * 
 9
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._27;
-
-import static java.util.Arrays.stream;
-import static java.util.function.Function.identity;
-import static java.util.stream.Collectors.groupingBy;
-import static java.util.stream.Collectors.summingInt;
-import static java.util.stream.IntStream.generate;
-
-import java.io.FileNotFoundException;
-import java.util.Comparator;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Scanner;
-
 public class Task2_Tailor_Shop {
  
     static int[] A;

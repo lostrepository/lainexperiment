@@ -4,7 +4,14 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._26;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 04/12/2016
  * 
@@ -35,13 +42,8 @@
  * 
 2
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._26;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Satisfactory_Pairs {
 
     static int N;

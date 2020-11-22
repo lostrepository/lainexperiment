@@ -4,7 +4,26 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.codejam.round._1c._2017;
+
+import static java.lang.Math.PI;
+import static java.lang.Math.min;
+import static java.lang.Math.pow;
+import static java.util.Arrays.sort;
+import static java.util.Arrays.stream;
+import static java.util.Comparator.comparingInt;
+import static java.util.stream.Collectors.toList;
+import static java.util.stream.IntStream.of;
+import static java.util.stream.Stream.generate;
+
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.util.LinkedList;
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * Date: 02/06/2017
  *
  * Code jam 2017
@@ -88,25 +107,8 @@ Case #2: 150796.447372310
 Case #3: 43982.297150257
 Case #4: 625.176938064
  * 
+ * }</pre>
  */
-package lainexperiment.codejam.round._1c._2017;
-
-import static java.lang.Math.PI;
-import static java.lang.Math.min;
-import static java.lang.Math.pow;
-import static java.util.Arrays.sort;
-import static java.util.Arrays.stream;
-import static java.util.Comparator.comparingInt;
-import static java.util.stream.Collectors.toList;
-import static java.util.stream.IntStream.of;
-import static java.util.stream.Stream.generate;
-
-import java.io.IOException;
-import java.nio.file.Paths;
-import java.util.LinkedList;
-import java.util.Scanner;
-import java.util.stream.IntStream;
-
 public class ProblemA_Ample_Syrup {
 
     static double topArea(int r) {

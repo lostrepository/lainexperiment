@@ -4,7 +4,17 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.hackerrank.misc;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.LongStream;
+
+/**
+ * <pre>{@code
  * Date: 31/05/2016
  *
  * Hacker rank
@@ -51,16 +61,8 @@
 2 6  
 2 8
  * 
+ * }</pre>
  */
-package lainexperiment.hackerrank.misc;
-
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-import java.util.stream.LongStream;
-
 public class Points_in_a_plane {
 
     static final int MOD = 1_000_000_007;

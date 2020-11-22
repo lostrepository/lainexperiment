@@ -4,7 +4,25 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.codejam.round._1b._2017;
+
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.IntStream.range;
+import static java.util.stream.Stream.of;
+
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+import java.util.function.IntConsumer;
+import java.util.function.IntPredicate;
+import java.util.function.Predicate;
+import java.util.stream.Collectors;
+
+/**
+ * <pre>{@code
  * Date: 20/05/2017
  *
  * Code jam 2017
@@ -83,24 +101,8 @@ Case #4: IMPOSSIBLE
 Case #5: BRGRBY
 Case #6: YVYV
  * 
+ * }</pre>
  */
-package lainexperiment.codejam.round._1b._2017;
-
-import static java.util.stream.Collectors.joining;
-import static java.util.stream.IntStream.range;
-import static java.util.stream.Stream.of;
-
-import java.io.IOException;
-import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
-import java.util.function.IntConsumer;
-import java.util.function.IntPredicate;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
-
 public class ProblemB_Stable_Neighbors {
     
     static String uniqAdjacentLetters(int[] b, int[] r, int[] y) {

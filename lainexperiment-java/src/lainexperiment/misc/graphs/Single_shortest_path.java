@@ -4,7 +4,19 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.misc.graphs;
+
+import java.io.FileNotFoundException;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.Scanner;
+
+import lainexperiment.utils.G;
+import lainexperiment.utils.V;
+
+/**
+ * <pre>{@code
  * Date: 28/06/2015
  * 
  * Problem
@@ -33,18 +45,8 @@
  * 
 43
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc.graphs;
-
-import java.io.FileNotFoundException;
-import java.util.PriorityQueue;
-import java.util.Queue;
-import java.util.Scanner;
-
-import lainexperiment.utils.G;
-import lainexperiment.utils.V;
-
 public class Single_shortest_path {
 
     int dijkstra(G g, V src)

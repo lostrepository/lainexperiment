@@ -4,7 +4,18 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._28;
+
+import static java.lang.System.out;
+import static java.util.Arrays.stream;
+import static java.util.stream.IntStream.generate;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 09/01/2017
  * 
@@ -46,17 +57,8 @@
  * 
 Yes
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._28;
-
-import static java.lang.System.out;
-import static java.util.Arrays.stream;
-import static java.util.stream.IntStream.generate;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Task1_Boat_Trips {
  
     public static void main(String[] args) throws FileNotFoundException {

@@ -4,7 +4,15 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.hack101._2015.nov;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+
+/**
+ * <pre>{@code
  * 
  * Date: 24/12/2015
  * 
@@ -61,14 +69,8 @@ REREE
 YES
  *
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.hack101._2015.nov;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
-
 public class FallingRocks {
 
     static int W, H;

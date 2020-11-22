@@ -50,7 +50,7 @@ public class G implements Iterable<V> {
     public int size() { return vertices.size(); }
 
     public void color(Color c) { stream().forEach(v -> v.color = c); }
-    
+
     public Stream<V> stream() { return vertices.stream(); }
 
     public void connect(int from, int to, boolean isDirected) {

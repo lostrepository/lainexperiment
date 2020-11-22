@@ -4,7 +4,16 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._28;
+
+import static java.util.stream.IntStream.range;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 10/01/2017
  * 
@@ -51,15 +60,8 @@
 1
 5
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._28;
-
-import static java.util.stream.IntStream.range;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Task2_The_Great_XOR {
  
     static long count(int[] a, int i, boolean isGreater) {

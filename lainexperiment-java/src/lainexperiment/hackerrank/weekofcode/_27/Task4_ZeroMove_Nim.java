@@ -4,7 +4,17 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._27;
+
+import static java.util.Arrays.stream;
+import static java.util.stream.IntStream.generate;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 18/03/2017
  * 
@@ -64,16 +74,8 @@
 W
 L
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._27;
-
-import static java.util.Arrays.stream;
-import static java.util.stream.IntStream.generate;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Task4_ZeroMove_Nim {
  
     static int[] P;

@@ -4,7 +4,15 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.codesprint.bookingcom;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.stream.LongStream;
+
+/**
+ * <pre>{@code
  * 
  * Date: 06/08/2016
  * 
@@ -52,14 +60,8 @@
  * 
 24
  * 
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.codesprint.bookingcom;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-import java.util.stream.LongStream;
-
 public class Destination_Together {
     
     static long factorial(int n) {

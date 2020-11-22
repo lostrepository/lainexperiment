@@ -5,7 +5,15 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+
+/**
+ * <pre>{@code
  * Date: 24/01/2015
  * 
  * Problem
@@ -25,15 +33,8 @@
  * 0126789
  * 02678
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static org.junit.Assert.assertTrue;
-
-import java.util.Iterator;
-import java.util.LinkedHashSet;
-
 public class Arrange_the_letters_K_distance_appart {
 
     static boolean arrange(char[] a, int K) {

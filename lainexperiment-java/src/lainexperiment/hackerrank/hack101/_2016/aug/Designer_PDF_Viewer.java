@@ -4,7 +4,16 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.hack101._2016.aug;
+
+import static java.util.Arrays.setAll;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 24/08/2016
  * 
@@ -48,15 +57,8 @@ abc
 9
  *
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.hack101._2016.aug;
-
-import static java.util.Arrays.setAll;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Designer_PDF_Viewer {
     
     public static void main(String[] args) throws FileNotFoundException {

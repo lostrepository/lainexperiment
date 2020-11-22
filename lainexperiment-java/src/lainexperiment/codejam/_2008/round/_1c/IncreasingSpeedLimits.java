@@ -5,7 +5,18 @@
  *
  */
 
-/*
+package lainexperiment.codejam._2008.round._1c;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.math.BigInteger;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+
+/**
+ * <pre>{@code
  * Date: 10/04/2015
  * 
  * Code jam
@@ -77,18 +88,8 @@
  * Case #1: 15
  * Case #2: 13
  * 
+ * }</pre>
  */
-
-package lainexperiment.codejam._2008.round._1c;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.math.BigInteger;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.stream.IntStream;
-
-
 public class IncreasingSpeedLimits {
 
     static long[] limits(int n, int m, long X, long Y, long Z, long[] A) {

@@ -5,7 +5,14 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * Date: 11/01/2015
  *
  * Problem
@@ -23,14 +30,8 @@
  * 
  * none
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.stream.IntStream;
-
 public class Parking {
     
     static void print(int[] a) {

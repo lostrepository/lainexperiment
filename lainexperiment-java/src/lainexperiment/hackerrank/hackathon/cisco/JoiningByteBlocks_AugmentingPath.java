@@ -4,7 +4,19 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.hackathon.cisco;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * Date: 10/04/2015
  * 
  * Hacker rank
@@ -75,18 +87,8 @@
  * 3
  * 5
  * 
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.hackathon.cisco;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-import java.util.stream.IntStream;
-
 public class JoiningByteBlocks_AugmentingPath {
     
     static boolean isPoly(String s) {

@@ -4,7 +4,22 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.misc;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * 
  * Date: 26/07/2015
  * 
@@ -77,21 +92,8 @@
  * 
 1,2
  * 
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.misc;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.stream.IntStream;
-
 public class FraudPrevention {
 
     static class Order {

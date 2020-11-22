@@ -4,7 +4,22 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.hackathon.bookingcom;
+
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.BitSet;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.TreeMap;
+import java.util.stream.Collectors;
+
+/**
+ * <pre>{@code
  * 
  * Date: 06/09/2015
  * 
@@ -83,21 +98,8 @@ amsterdam,london:architecture,food,museums,nightlife
 berlin,london:architecture,food,monuments,nightlife
 london,paris:architecture,food,monuments,museums
  * 
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.hackathon.bookingcom;
-
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.BitSet;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.TreeMap;
-import java.util.stream.Collectors;
-
 public class SimilarDestinations {
 
     static Map<String, Set<Integer>> cities = new HashMap<>(1000);

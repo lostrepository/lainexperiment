@@ -4,7 +4,17 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.codility.zalando;
+
+import static java.lang.Math.abs;
+import static java.lang.Math.min;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.Arrays;
+
+/**
+ * <pre>{@code
  * 
  * Date: 27/07/2016
  * 
@@ -40,16 +50,8 @@
  * 
 9
  * 
+ * }</pre>
  */
-
-package lainexperiment.codility.zalando;
-
-import static java.lang.Math.abs;
-import static java.lang.Math.min;
-import static org.junit.Assert.assertEquals;
-
-import java.util.Arrays;
-
 public class Task2_Buy_tickets {
 
     static final int PRICE_DAILY = 2;

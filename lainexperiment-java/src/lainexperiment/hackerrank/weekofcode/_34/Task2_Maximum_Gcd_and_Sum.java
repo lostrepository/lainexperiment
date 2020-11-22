@@ -4,7 +4,25 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._34;
+
+import static java.lang.Math.abs;
+import static java.lang.Math.min;
+import static java.lang.System.in;
+import static java.lang.System.out;
+import static java.util.Arrays.binarySearch;
+import static java.util.Arrays.sort;
+import static java.util.stream.IntStream.range;
+import static java.util.stream.IntStream.rangeClosed;
+
+import java.io.IOException;
+import java.util.Comparator;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+/**
+ * <pre>{@code
  * 
  * Date: 30/07/2017
  * 
@@ -47,24 +65,8 @@
  * 
 16
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._34;
-
-import static java.lang.Math.abs;
-import static java.lang.Math.min;
-import static java.lang.System.in;
-import static java.lang.System.out;
-import static java.util.Arrays.binarySearch;
-import static java.util.Arrays.sort;
-import static java.util.stream.IntStream.range;
-import static java.util.stream.IntStream.rangeClosed;
-
-import java.io.IOException;
-import java.util.Comparator;
-import java.util.Scanner;
-import java.util.regex.Pattern;
-
 public class Task2_Maximum_Gcd_and_Sum {
     
     static int[] A, B;

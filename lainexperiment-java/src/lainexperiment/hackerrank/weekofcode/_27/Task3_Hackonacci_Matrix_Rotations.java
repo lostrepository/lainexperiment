@@ -4,7 +4,22 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._27;
+
+import static java.lang.Math.pow;
+import static java.util.Arrays.copyOf;
+import static java.util.Arrays.fill;
+import static java.util.Arrays.setAll;
+import static java.util.stream.IntStream.range;
+
+import java.io.FileNotFoundException;
+import java.math.BigInteger;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
+/**
+ * <pre>{@code
  * 
  * Date: 21/12/2016
  * 
@@ -92,21 +107,8 @@
 6
 10
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._27;
-
-import static java.lang.Math.pow;
-import static java.util.Arrays.copyOf;
-import static java.util.Arrays.fill;
-import static java.util.Arrays.setAll;
-import static java.util.stream.IntStream.range;
-
-import java.io.FileNotFoundException;
-import java.math.BigInteger;
-import java.util.Scanner;
-import java.util.stream.Collectors;
-
 public class Task3_Hackonacci_Matrix_Rotations {
  
     static final BigInteger ZERO = BigInteger.ZERO;

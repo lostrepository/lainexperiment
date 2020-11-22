@@ -5,7 +5,13 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * Date: 16/08/2015
  * 
  * Problem
@@ -24,13 +30,8 @@
 [7,  14, 17, 21, 24]
 [15, 16, 22, 23, 25]
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import java.util.Arrays;
-import java.util.stream.IntStream;
-
 public class Fill_matrixIn_zig_zag_order {
 
     static int C = 1;

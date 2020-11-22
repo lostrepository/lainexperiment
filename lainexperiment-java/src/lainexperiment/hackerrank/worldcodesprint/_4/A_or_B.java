@@ -4,7 +4,15 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.worldcodesprint._4;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * 
  * Date: 21/06/2016
  * 
@@ -71,14 +79,8 @@ A8
 -1
  *
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.worldcodesprint._4;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-import java.util.stream.IntStream;
-
 public class A_or_B {
 
     static int[][][] MK = new int[16][16][16];

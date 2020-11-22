@@ -5,7 +5,15 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * <pre>{@code
  * Date: 18/04/2015
  * 
  * Problem
@@ -21,15 +29,8 @@
  * 
  * false
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static org.junit.Assert.assertEquals;
-
-import java.util.HashMap;
-import java.util.Map;
-
 public class Is_isomorphic {
 
     static boolean isIsomorphic(char[] a1, char[] a2) {

@@ -4,7 +4,16 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.misc;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.Arrays;
+
+import org.junit.jupiter.api.Test;
+
+/**
+ * <pre>{@code
  * Date: 27/10/2020
  * 
  * Problem
@@ -20,15 +29,8 @@
  * 
  * For each new integer we need to return current min
  * 
+ * }</pre>
  */
-package lainexperiment.misc;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.util.Arrays;
-
-import org.junit.jupiter.api.Test;
-
 public class Minheap {
 
     int[] A;

@@ -4,7 +4,14 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.worldcodesprint._8;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 17/12/2016
  * 
@@ -39,13 +46,8 @@ have_a_nice_day
  * Sample Output
 4
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.worldcodesprint._8;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Task1_Snake_Case {
 
     public static void main(String[] args) throws FileNotFoundException {

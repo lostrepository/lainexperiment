@@ -4,7 +4,17 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._25;
+
+import static java.lang.Math.min;
+import static java.util.stream.IntStream.range;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 01/11/2016
  * 
@@ -50,16 +60,8 @@ hackerrank
  * 
 Yes
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._25;
-
-import static java.lang.Math.min;
-import static java.util.stream.IntStream.range;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Task2_Append_and_Delete {
 
     static String S, T;

@@ -5,20 +5,18 @@
  *
  */
 package lainexperiment.utils;
-
-import static org.junit.Assert.assertEquals;
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.LongUnaryOperator;
 import java.util.stream.Stream;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-
 /**
+ * <pre>{@code
  * Set of basic algorithms
+ * }</pre>
  */
 public class Algorithms {
 
@@ -32,13 +30,13 @@ public class Algorithms {
      *  
      *  @return biggest smallest value encountered or -1
      */
-    public static long bisection(long s, long e, LongUnaryOperator oper) {
+    public static long bisection(long s, long e, LongUnaryOperator func) {
         if (s > e) return -1;
         long m = (s + e) / 2;
-        long r = oper.applyAsLong(m);
+        long r = func.applyAsLong(m);
         if (r > 0)
-            return bisection(s, m - 1, oper);
-        long res = bisection(m + 1, e, oper);
+            return bisection(s, m - 1, func);
+        long res = bisection(m + 1, e, func);
         return res == -1? m: res;
     }
     

@@ -4,7 +4,15 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.codejam.qualification._2017;
+
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * Date: 08/04/2017
  *
  * Code jam 2017
@@ -43,14 +51,8 @@ Case #2: 999
 Case #3: 7
 Case #4: 99999999999999999
  * 
+ * }</pre>
  */
-
-package lainexperiment.codejam.qualification._2017;
-
-import java.io.IOException;
-import java.nio.file.Paths;
-import java.util.Scanner;
-
 public class ProblemB_Tidy_Numbers {
     
     static char[] solve(char[] a) {

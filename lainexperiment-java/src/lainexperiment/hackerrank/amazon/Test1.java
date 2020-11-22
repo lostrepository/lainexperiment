@@ -4,7 +4,12 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.hackerrank.amazon;
+
+import java.util.Arrays;
+
+/**
+ * <pre>{@code
  * Date: 01/05/2016
  *
  * Amazon challange
@@ -20,11 +25,8 @@
  * Where w, l width and length of the grid and y and x coordinates of the lockers.
  * Function should return grid where each cell contains a shortest distance to the locker.
  * 
+ * }</pre>
  */
-package lainexperiment.hackerrank.amazon;
-
-import java.util.Arrays;
-
 public class Test1 {
     
     static int[][] A;

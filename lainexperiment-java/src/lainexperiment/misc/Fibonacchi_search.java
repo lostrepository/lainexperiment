@@ -5,7 +5,15 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static java.util.stream.IntStream.range;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
+/**
+ * <pre>{@code
  * Date: 10/02/2017
  * 
  * Problem
@@ -21,15 +29,8 @@
  * 
 7
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static java.util.stream.IntStream.range;
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Test;
-
 public class Fibonacchi_search {
     
     static void update(int[] f) {

@@ -4,7 +4,18 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.worldcodesprint._5;
+
+import static java.util.Arrays.fill;
+
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * 
  * Date: 05/08/2016
  * 
@@ -59,17 +70,8 @@
 20
  *
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.worldcodesprint._5;
-
-import static java.util.Arrays.fill;
-
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.stream.IntStream;
-
 public class Mining {
 
     static long[] D, W;

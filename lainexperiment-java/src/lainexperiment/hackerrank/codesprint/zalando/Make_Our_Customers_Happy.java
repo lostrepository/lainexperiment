@@ -4,7 +4,13 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.hackerrank.codesprint.zalando;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * Date: 04/06/2016
  *
  * Hacker rank
@@ -52,12 +58,8 @@ C,A
  * 
 2
  * 
+ * }</pre>
  */
-package lainexperiment.hackerrank.codesprint.zalando;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Make_Our_Customers_Happy {
 
     static int[] C = new int[8];

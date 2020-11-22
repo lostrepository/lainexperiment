@@ -4,7 +4,17 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.hack101._2016.aug;
+
+import static java.util.Arrays.setAll;
+import static java.util.Arrays.sort;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 21/06/2016
  * 
@@ -61,16 +71,8 @@
 7
  *
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.hack101._2016.aug;
-
-import static java.util.Arrays.setAll;
-import static java.util.Arrays.sort;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Lazy_Mayor_and_Lasers {
     
     static long[] H;

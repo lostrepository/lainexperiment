@@ -4,7 +4,86 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._25;
+
+import static java.lang.Math.min;
+import static java.util.Arrays.fill;
+import static java.util.Arrays.setAll;
+import static java.util.Arrays.sort;
+import static java.util.stream.IntStream.range;
+
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.function.IntConsumer;
+
+class Node {
+    int n;
+    List<Node> adj = new ArrayList<>();
+    Node(int n) { this.n = n; }
+    @Override
+    public String toString() {
+        return String.format("%d: %s", n, 
+                Arrays.toString(adj.stream().map(n -> n.n).toArray()));
+    }
+}
+
+class DagClosure {
+    
+    final int BITS = Long.BYTES * 8;
+    long[][] CLR;
+    
+    public DagClosure(Node[] G) {
+        CLR = new long[G.length][];
+        int s = G.length / BITS + 1;
+        setAll(CLR, i -> new long[s]);
+        for (int v = CLR.length - 1; v >= 0; v--) {
+            reachable(v, v);
+            for (Node a: G[v].adj) merge(v, a.n);
+        }
+    }
+
+    void forAllReachable(int v, IntConsumer f) {
+        int u = v - (v % BITS);
+        for (int i = v / BITS; i < CLR[v].length; ++i) {
+            long b = CLR[v][i];
+            for (int j = 0; j < BITS; ++j) {
+                if ((b & 1) == 1)
+                    f.accept(u);
+                u++;
+                if (u == CLR.length)
+                    return;
+                b >>= 1;
+                if (b == 0) {
+                    u = (u / BITS + 1) * BITS;
+                    break;
+                }
+            }
+        }
+    }
+    
+    // is vertex u reachable from v
+    boolean isReachable(int u, int v) {
+        return (CLR[v][u / BITS] & (1 << (u % BITS))) > 0;
+    }
+    
+    // merge all vertices reachable from v to u
+    private void merge(int v, int u) {
+        range(0, CLR[v].length)
+            .forEach(i -> CLR[v][i] |= CLR[u][i]);
+    }
+    
+    // make u be reachable from v
+    private void reachable(int u, int v) {
+        CLR[v][u / BITS] |= Long.rotateLeft(1, u % BITS);
+    }
+}
+
+/**
+ * <pre>{@code
  * 
  * Date: 16/11/2016
  * 
@@ -90,85 +169,8 @@
 3
 2
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._25;
-
-import static java.lang.Math.min;
-import static java.util.Arrays.fill;
-import static java.util.Arrays.setAll;
-import static java.util.Arrays.sort;
-import static java.util.stream.IntStream.range;
-
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-import java.util.function.IntConsumer;
-
-class Node {
-    int n;
-    List<Node> adj = new ArrayList<>();
-    Node(int n) { this.n = n; }
-    @Override
-    public String toString() {
-        return String.format("%d: %s", n, 
-                Arrays.toString(adj.stream().map(n -> n.n).toArray()));
-    }
-}
-
-class DagClosure {
-    
-    final int BITS = Long.BYTES * 8;
-    long[][] CLR;
-    
-    public DagClosure(Node[] G) {
-        CLR = new long[G.length][];
-        int s = G.length / BITS + 1;
-        setAll(CLR, i -> new long[s]);
-        for (int v = CLR.length - 1; v >= 0; v--) {
-            reachable(v, v);
-            for (Node a: G[v].adj) merge(v, a.n);
-        }
-    }
-
-    void forAllReachable(int v, IntConsumer f) {
-        int u = v - (v % BITS);
-        for (int i = v / BITS; i < CLR[v].length; ++i) {
-            long b = CLR[v][i];
-            for (int j = 0; j < BITS; ++j) {
-                if ((b & 1) == 1)
-                    f.accept(u);
-                u++;
-                if (u == CLR.length)
-                    return;
-                b >>= 1;
-                if (b == 0) {
-                    u = (u / BITS + 1) * BITS;
-                    break;
-                }
-            }
-        }
-    }
-    
-    // is vertex u reachable from v
-    boolean isReachable(int u, int v) {
-        return (CLR[v][u / BITS] & (1 << (u % BITS))) > 0;
-    }
-    
-    // merge all vertices reachable from v to u
-    private void merge(int v, int u) {
-        range(0, CLR[v].length)
-            .forEach(i -> CLR[v][i] |= CLR[u][i]);
-    }
-    
-    // make u be reachable from v
-    private void reachable(int u, int v) {
-        CLR[v][u / BITS] |= Long.rotateLeft(1, u % BITS);
-    }
-}
-
 public class Task6_DAG_Queries {
 
     static class Query {

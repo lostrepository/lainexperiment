@@ -4,7 +4,16 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.codility.po;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.Stack;
+import java.util.function.IntBinaryOperator;
+
+/**
+ * <pre>{@code
  * 
  * Date: 25/07/2016
  * 
@@ -26,15 +35,8 @@
  * 
 76
  * 
+ * }</pre>
  */
-
-package lainexperiment.codility.po;
-
-import static org.junit.Assert.assertEquals;
-
-import java.util.Stack;
-import java.util.function.IntBinaryOperator;
-
 public class Task4_Stack_machine_calculator {
 
     private static final int MAX = 1 << 13;

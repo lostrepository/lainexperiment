@@ -4,7 +4,17 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._1;
+
+import static java.lang.System.in;
+import static java.util.stream.IntStream.range;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 17/09/2017
  * 
@@ -35,16 +45,8 @@
  * 
 7
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._1;
-
-import static java.lang.System.in;
-import static java.util.stream.IntStream.range;
-
-import java.io.IOException;
-import java.util.Scanner;
-
 public class Task1_Maximizing_XOR {
     
     static int MAX_LEN = 32;

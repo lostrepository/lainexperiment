@@ -4,7 +4,14 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.hackerrank.codesprint.blackrock;
+
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * Date: 11/06/2016
  *
  * Hacker rank
@@ -47,13 +54,8 @@
  * 
 46
  * 
+ * }</pre>
  */
-package lainexperiment.hackerrank.codesprint.blackrock;
-
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Scanner;
-
 public class Trade_Analysis {
 
     static long[] G = new long[10_0000];

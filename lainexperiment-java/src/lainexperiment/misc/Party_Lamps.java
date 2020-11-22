@@ -5,7 +5,17 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static java.util.Arrays.fill;
+
+import java.util.BitSet;
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+/**
+ * <pre>{@code
  * Date: 14/02/2017
  * 
  * Problem
@@ -86,17 +96,8 @@
 0101010101
 0000000000
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static java.util.Arrays.fill;
-
-import java.util.BitSet;
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
-
 public class Party_Lamps {
 
     static int N;

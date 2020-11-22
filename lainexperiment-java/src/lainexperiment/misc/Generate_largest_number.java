@@ -5,7 +5,14 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.Arrays;
+
+/**
+ * <pre>{@code
  * Date: 13/06/2015
  * 
  * Problem
@@ -21,14 +28,8 @@
  * 
  * 9, 98, 4
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static org.junit.Assert.assertEquals;
-
-import java.util.Arrays;
-
 public class Generate_largest_number {
 
     static int compare(int a, int b) {

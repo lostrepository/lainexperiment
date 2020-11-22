@@ -4,7 +4,18 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.hackerrank.codesprint.blackrock;
+
+import static java.math.BigInteger.ZERO;
+
+import java.io.FileNotFoundException;
+import java.math.BigInteger;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * Date: 12/06/2016
  *
  * Hacker rank
@@ -72,17 +83,8 @@
  * 
 9
  * 
+ * }</pre>
  */
-package lainexperiment.hackerrank.codesprint.blackrock;
-
-import static java.math.BigInteger.ZERO;
-
-import java.io.FileNotFoundException;
-import java.math.BigInteger;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
-
 public class Portfolio_Manager {
 
     static class Node {

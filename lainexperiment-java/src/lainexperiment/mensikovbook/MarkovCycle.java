@@ -5,38 +5,6 @@
  *
  */
 
-/*
- * Date: 23/06/2016
- * 
- * Problem
- * 
- * Given input string and set of transformations. Apply given
- * transformations until you get a cycle or until no 
- * transformation can be made.
- * Transformations should be applied as follows:
- * 
- * Take first transformation and find first possible substring
- * for it:
- * - If substring not found go to next transformation. If there is
- * no one - stop.
- * - otherwise apply transformation and repeat
- * 
- * Print how many transformations can be done until getting cycle,
- * and length of the cycle (0 - if it is absent).
- * 
- * Input
- *
-aaaa
-a->c
-c->b
-b->a
- * 
- * Output
- * 
-8 3
- * 
- */
-
 package lainexperiment.mensikovbook;
 
 import java.io.FileNotFoundException;
@@ -168,6 +136,39 @@ class SuffixArray {
     }
 }
 
+/**
+ * <pre>{@code
+ * Date: 23/06/2016
+ * 
+ * Problem
+ * 
+ * Given input string and set of transformations. Apply given
+ * transformations until you get a cycle or until no 
+ * transformation can be made.
+ * Transformations should be applied as follows:
+ * 
+ * Take first transformation and find first possible substring
+ * for it:
+ * - If substring not found go to next transformation. If there is
+ * no one - stop.
+ * - otherwise apply transformation and repeat
+ * 
+ * Print how many transformations can be done until getting cycle,
+ * and length of the cycle (0 - if it is absent).
+ * 
+ * Input
+ *
+aaaa
+a->c
+c->b
+b->a
+ * 
+ * Output
+ * 
+8 3
+ * 
+ * }</pre>
+ */
 public class MarkovCycle {
 
     static char[] A;

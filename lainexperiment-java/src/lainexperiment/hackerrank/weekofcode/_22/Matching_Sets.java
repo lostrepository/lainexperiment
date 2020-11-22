@@ -4,7 +4,18 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._22;
+
+import static java.lang.Math.abs;
+import static java.util.Arrays.setAll;
+import static java.util.Arrays.sort;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 17/08/2016
  * 
@@ -53,17 +64,8 @@
  * 
 2
  * 
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._22;
-
-import static java.lang.Math.abs;
-import static java.util.Arrays.setAll;
-import static java.util.Arrays.sort;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Matching_Sets {
     
     static long[] S1;

@@ -5,7 +5,10 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+/**
+ * <pre>{@code
  * Date: 03/02/2015
  * 
  * Problem
@@ -20,10 +23,8 @@
  * 
  * I live on earth
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
 public class Trim_the_string {
 
     static String trim(char[] a) {

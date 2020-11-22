@@ -5,7 +5,16 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static java.util.stream.IntStream.range;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.stream.Collectors;
+
+/**
+ * <pre>{@code
  * Date: 28/05/2016
  * 
  * Problem
@@ -22,16 +31,8 @@
  * 
 (((2/2)-2)*2)
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static java.util.stream.IntStream.range;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
-
-import java.util.stream.Collectors;
-
 public class Make_expression_true {
     
     static int i;

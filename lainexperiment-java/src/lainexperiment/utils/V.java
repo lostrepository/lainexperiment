@@ -44,7 +44,7 @@ public class V implements Iterable<V> {
     public int weight(V u) {
         return adj.get(u);
     }
-    
+
     public int distance() {
         return d;
     }
@@ -60,5 +60,4 @@ public class V implements Iterable<V> {
     public Iterator<V> iterator() {
         return adj.keySet().iterator();
     }
-
 }

@@ -5,7 +5,12 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+/**
+ * <pre>{@code
  * Date: 28/01/2015
  * 
  * Problem
@@ -20,12 +25,8 @@
  * 
  * one thousand two hundred thirty four
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static org.junit.Assert.assertEquals;
-
 public class Print_number_name {
 
     static String name(int i, int base) {

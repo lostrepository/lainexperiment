@@ -4,7 +4,18 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._25;
+
+import static java.util.Arrays.stream;
+import static java.util.stream.IntStream.generate;
+
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 01/11/2016
  * 
@@ -47,17 +58,8 @@
  * 
 3
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._25;
-
-import static java.util.Arrays.stream;
-import static java.util.stream.IntStream.generate;
-
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Scanner;
-
 public class Task1_Between_Two_Sets {
 
     static int[] A, B;

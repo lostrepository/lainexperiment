@@ -5,7 +5,18 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static java.lang.Math.min;
+
+import java.awt.Point;
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
+
+/**
+ * <pre>{@code
  * Date: 28/05/2016
  * 
  * Problem
@@ -25,18 +36,8 @@ B 0 0
 B G G
 B 1 1
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static java.lang.Math.min;
-
-import java.awt.Point;
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
-
 public class Short_path_to_guard {
 
     static int[][] A;

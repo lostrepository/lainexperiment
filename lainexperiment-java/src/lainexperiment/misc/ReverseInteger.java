@@ -5,7 +5,12 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+/**
+ * <pre>{@code
  * Date: 19/04/2015
  * 
  * Problem
@@ -20,12 +25,8 @@
  * 
  * 54321
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static org.junit.Assert.assertEquals;
-
 public class ReverseInteger {
 
     static int reverse(int n) {

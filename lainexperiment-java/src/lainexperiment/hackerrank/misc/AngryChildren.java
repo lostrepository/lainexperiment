@@ -4,7 +4,16 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.hackerrank.misc;
+
+import java.io.FileNotFoundException;
+import java.math.BigInteger;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.function.BiFunction;
+
+/**
+ * <pre>{@code
  * Date: 16/04/2016
  *
  * Hacker rank
@@ -42,15 +51,8 @@
  * 
 40
  * 
+ * }</pre>
  */
-package lainexperiment.hackerrank.misc;
-
-import java.io.FileNotFoundException;
-import java.math.BigInteger;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.function.BiFunction;
-
 public class AngryChildren {
 
     static int K;

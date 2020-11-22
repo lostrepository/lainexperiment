@@ -4,7 +4,14 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._22;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * 
  * Date: 17/08/2016
  * 
@@ -43,13 +50,8 @@
  * 
 1
  * 
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._22;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Cookie_Party {
     
     public static void main(String[] args) throws FileNotFoundException {

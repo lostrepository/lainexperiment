@@ -4,7 +4,15 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+
+package lainexperiment.hackerrank.hackathon.newyorklife;
+
+import org.junit.jupiter.api.Assertions;
+
+
+/**
+ * <pre>{@code
  * 
  * Date: 13/08/2015
  * 
@@ -61,14 +69,8 @@ mot
  *
 dcba
  *
+ * }</pre>
  */
-
-
-package lainexperiment.hackerrank.hackathon.newyorklife;
-
-import org.junit.Assert;
-
-
 public class HideTheWord {
 
     static String[] M = new String[50 * 50 * 2];
@@ -95,7 +97,7 @@ public class HideTheWord {
     }
     
     public static void main(String[] args) {
-        Assert.assertEquals("dcba", encode(new int[]{4, 3, 2, 1}, 5, "abcd"));
+        Assertions.assertEquals("dcba", encode(new int[]{4, 3, 2, 1}, 5, "abcd"));
     }
     
 }

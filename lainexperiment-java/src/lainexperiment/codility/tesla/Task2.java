@@ -4,7 +4,15 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.codility.tesla;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.Arrays;
+
+/**
+ * <pre>{@code
  * 
  * Date: 15/10/2020
  * 
@@ -35,14 +43,8 @@ aabbcc
 3
  * 
  * For first case the final string is "abcbd" and for second it is "abc"
+ * }</pre>
  */
-
-package lainexperiment.codility.tesla;
-
-import static org.junit.Assert.assertEquals;
-
-import java.util.Arrays;
-
 public class Task2 {
 
     private int[] M;

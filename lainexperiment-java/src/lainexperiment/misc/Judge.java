@@ -4,7 +4,14 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.misc;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * Date: 28/06/2015
  * 
  * Problem
@@ -31,13 +38,8 @@
  * 
 0
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Judge {
 
     static boolean M[][];

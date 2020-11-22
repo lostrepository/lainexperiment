@@ -5,7 +5,16 @@
  *
  */
 
-/*
+package lainexperiment.codejam._2010.round._1a;
+
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.stream.IntStream;
+
+
+/**
+ * <pre>{@code
  * Date: 15/05/2016
  * 
  * Code jam
@@ -58,16 +67,8 @@
 Case #1: 4
 Case #2: 17
  * 
+ * }</pre>
  */
-
-package lainexperiment.codejam._2010.round._1a;
-
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.stream.IntStream;
-
-
 public class MakeItSmooth {
 
     static int[] A;

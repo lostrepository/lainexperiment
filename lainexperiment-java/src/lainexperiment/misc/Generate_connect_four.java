@@ -5,7 +5,21 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static java.lang.String.format;
+import static java.lang.System.out;
+import static java.util.Arrays.fill;
+import static java.util.Arrays.stream;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.IntStream.range;
+
+import java.util.Comparator;
+import java.util.Random;
+import java.util.function.Supplier;
+
+/**
+ * <pre>{@code
  * Date: 23/03/2018
  * 
  * Problem
@@ -21,21 +35,8 @@
  * 
 ###x###+++++x#xx+x+x#x+++x+x+xx+xx++xx++xx +
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static java.lang.String.format;
-import static java.lang.System.out;
-import static java.util.Arrays.fill;
-import static java.util.Arrays.stream;
-import static java.util.stream.Collectors.joining;
-import static java.util.stream.IntStream.range;
-
-import java.util.Comparator;
-import java.util.Random;
-import java.util.function.Supplier;
-
 public class Generate_connect_four {
 
     static int COLS = 7;

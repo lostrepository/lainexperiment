@@ -4,7 +4,15 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.weekofcode._23;
+
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
+/**
+ * <pre>{@code
  * 
  * Date: 19/09/2016
  * 
@@ -44,14 +52,8 @@ abc
  * 
 2
  *
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.weekofcode._23;
-
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-import java.util.stream.Collectors;
-
 public class Task4_Unexpected_Problem {
 
     static String S;

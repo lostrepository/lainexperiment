@@ -4,7 +4,21 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.misc;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Scanner;
+import java.util.stream.Stream;
+
+/**
+ * <pre>{@code
  * 
  * Date: 02/09/2015
  * 
@@ -87,20 +101,8 @@ TUNNEL_TO_PORT HOST2 B 0
 PORT_TO_TUNNEL HOST2 1 HOST1 C
 TUNNEL_TO_PORT HOST2 C 1
  * 
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.misc;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Scanner;
-import java.util.stream.Stream;
-
 public class LogicalHubController {
 
     static Map<Character, Map<String, List<Integer>>> tenants = new HashMap<>();

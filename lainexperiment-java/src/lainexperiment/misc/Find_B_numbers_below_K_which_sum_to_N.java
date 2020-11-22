@@ -5,7 +5,15 @@
  *
  */
 
-/*
+package lainexperiment.misc;
+
+import static java.util.stream.IntStream.rangeClosed;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.Arrays;
+
+/**
+ * <pre>{@code
  * Date: 10/09/2017
  * 
  * Problem
@@ -22,15 +30,8 @@ N = 6
  * 
 1, 2, 3
  * 
+ * }</pre>
  */
-
-package lainexperiment.misc;
-
-import static java.util.stream.IntStream.rangeClosed;
-import static org.junit.Assert.assertEquals;
-
-import java.util.Arrays;
-
 public class Find_B_numbers_below_K_which_sum_to_N {
 
     static int[] solve(int b, int k, int n) {

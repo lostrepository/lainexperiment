@@ -4,7 +4,22 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.hackerrank.hackathon.cisco;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.stream.IntStream;
+
+/**
+ * <pre>{@code
  * 
  * Date: 10/04/2015
  * 
@@ -73,21 +88,8 @@
  * 3
  * 2
  * 
+ * }</pre>
  */
-
-package lainexperiment.hackerrank.hackathon.cisco;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.Set;
-import java.util.stream.IntStream;
-
 public class BigFileSystemSearch {
 
     static Map<Integer, List<Integer>> intToFiles = new HashMap<>();

@@ -4,8 +4,16 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
+package lainexperiment.misc;
 
-/*
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+/**
+ * <pre>{@code
  * Date: 03/10/2015
  * 
  * Problem
@@ -23,15 +31,8 @@
  * 
  * 3
  * 
+ * }</pre>
  */
-package lainexperiment.misc;
-
-import static org.junit.Assert.assertEquals;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 public class MatchingUnweightedBipartite_augmenting {
     
     static boolean[] visited;

@@ -4,7 +4,16 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+
+package lainexperiment.mensikovbook;
+
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+
+/**
+ * <pre>{@code
  * 
  * Date: 25/12/2015
  * 
@@ -38,15 +47,8 @@
 0 3 0
  *
  *
+ * }</pre>
  */
-
-package lainexperiment.mensikovbook;
-
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Scanner;
-
-
 public class NearestNumber {
 
     static int N;

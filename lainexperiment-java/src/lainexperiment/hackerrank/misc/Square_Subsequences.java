@@ -4,7 +4,18 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
+package lainexperiment.hackerrank.misc;
+
+import static java.util.stream.IntStream.range;
+import static java.util.stream.LongStream.of;
+import static java.util.stream.Stream.generate;
+
+import java.io.FileNotFoundException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+/**
+ * <pre>{@code
  * Date: 13/04/2017
  *
  * Hacker rank
@@ -45,17 +56,8 @@ baaba
 3
 6
  * 
+ * }</pre>
  */
-package lainexperiment.hackerrank.misc;
-
-import static java.util.stream.IntStream.range;
-import static java.util.stream.LongStream.of;
-import static java.util.stream.Stream.generate;
-
-import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Scanner;
-
 public class Square_Subsequences {
 
     static long add(long... a) {

@@ -4,46 +4,6 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-/*
- * Date: 01/02/2017
- *
- * Hacker rank
- * Problem: String Similarity
- * Status: accepted / timeout
- * 
- * Problem
- * 
- * For two strings A and B, we define the similarity of 
- * the strings to be the length of the longest prefix 
- * common to both strings. For example, the similarity 
- * of strings "abc" and "abd" is 2, while the similarity 
- * of strings "aaa" and "aaab" is 3.
- * 
- * Calculate the sum of similarities of a string S with 
- * each of it's suffixes.
- * 
- * Input Format
- * 
- * The first line contains the number of test cases T. 
- * Each of the next T lines contains a string each.
- * 
- * Output Format
- * 
- * Output T lines containing the answer for the corresponding 
- * test case.
- * 
- * Input
- * 
-2
-ababaa  
-aa
- * 
- * Output
- * 
-11  
-3
- * 
- */
 package lainexperiment.hackerrank.misc;
 
 import static java.util.Arrays.fill;
@@ -133,6 +93,48 @@ class SuffixArray {
 }
 
 @SuppressWarnings("static-access")
+/**
+ * <pre>{@code
+ * Date: 01/02/2017
+ *
+ * Hacker rank
+ * Problem: String Similarity
+ * Status: accepted / timeout
+ * 
+ * Problem
+ * 
+ * For two strings A and B, we define the similarity of 
+ * the strings to be the length of the longest prefix 
+ * common to both strings. For example, the similarity 
+ * of strings "abc" and "abd" is 2, while the similarity 
+ * of strings "aaa" and "aaab" is 3.
+ * 
+ * Calculate the sum of similarities of a string S with 
+ * each of it's suffixes.
+ * 
+ * Input Format
+ * 
+ * The first line contains the number of test cases T. 
+ * Each of the next T lines contains a string each.
+ * 
+ * Output Format
+ * 
+ * Output T lines containing the answer for the corresponding 
+ * test case.
+ * 
+ * Input
+ * 
+2
+ababaa  
+aa
+ * 
+ * Output
+ * 
+11  
+3
+ * 
+ * }</pre>
+ */
 public class String_Similarity {
     
     /**
