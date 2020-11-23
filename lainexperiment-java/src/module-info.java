@@ -79,6 +79,8 @@ module lainexperiment {
     exports lainexperiment.misc.graphs;
     exports lainexperiment.utils;
     exports lainexperiment.utils.tree;
+    
+    exports lainexperiment.codesignal.uber;
 
     requires java.desktop;
     requires org.junit.jupiter.params;
