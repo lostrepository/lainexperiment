@@ -72,6 +72,8 @@ module lainexperiment {
     exports lainexperiment.hackerrank.worldcodesprint._8;
 
     exports lainexperiment.leetcode.misc;
+    exports lainexperiment.leetcode.weeklycontest._215;
+    exports lainexperiment.leetcode.weeklycontest._219;
     
     exports lainexperiment.mensikovbook;
 
