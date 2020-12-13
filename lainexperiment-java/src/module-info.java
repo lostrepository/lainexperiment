@@ -74,6 +74,7 @@ module lainexperiment {
     exports lainexperiment.leetcode.misc;
     exports lainexperiment.leetcode.weeklycontest._215;
     exports lainexperiment.leetcode.weeklycontest._217;
+    exports lainexperiment.leetcode.weeklycontest._218;
     exports lainexperiment.leetcode.weeklycontest._219;
     
     exports lainexperiment.mensikovbook;
