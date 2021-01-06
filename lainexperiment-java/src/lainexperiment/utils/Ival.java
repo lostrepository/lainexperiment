@@ -5,6 +5,7 @@
  *
  */
 package lainexperiment.utils;
+
 /**
  * <pre>{@code
  * Interval
