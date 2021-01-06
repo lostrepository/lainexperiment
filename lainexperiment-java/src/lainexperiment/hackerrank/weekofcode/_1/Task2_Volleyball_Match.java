@@ -9,12 +9,13 @@ package lainexperiment.hackerrank.weekofcode._1;
 
 import static java.lang.Math.max;
 import static java.lang.Math.min;
+
+import lainexperiment.utils.MathUtils;
+
 import static java.lang.System.in;
 
 import java.io.IOException;
-import java.math.BigInteger;
 import java.util.Scanner;
-import java.util.stream.LongStream;
 
 /**
  * <pre>{@code
@@ -77,32 +78,6 @@ public class Task2_Volleyball_Match {
     
     static final int MOD = 1_000_000_007;
     
-    /*
-     * Multiplicative inversion
-     */
-    static long mulInv(long a) {
-        return BigInteger.valueOf(a)
-            .modInverse(BigInteger.valueOf(MOD))
-            .longValue();
-    }
-    
-    /*
-     * Range 0..10^6.
-     * 
-     * O(n)
-     */
-    static long factorial(long s, long e, long acc) {
-        if (e < s) return acc;
-        if (e <= 1) return 1;
-        s = s == 0? 1: s;
-        acc = acc == 0? 1: acc;
-        long l = LongStream.rangeClosed(s, e)
-            .map(i -> i % MOD)
-            .reduce((r, i) -> (r * i) % MOD)
-            .getAsLong();
-        return (l * acc) % MOD;
-    }
-    
     /* 
      * O(log N)
      */
@@ -119,24 +94,6 @@ public class Task2_Volleyball_Match {
         return res == 0? 1: res;
     }
     
-    /*
-     * Unordered combinations of m things out of n.
-     * Range 0..10^6
-     */
-    static long unorderedCombinations(long n, long m) {
-        long[] f = new long[3];
-        if (m < n - m) {
-            f[1] = factorial(0, m, 0);
-            f[2] = factorial(m + 1, n - m, f[1]);
-            f[0] = factorial(n - m + 1, n, f[2]);
-        } else {
-            f[2] = factorial(0, n - m, 0);
-            f[1] = factorial(n - m + 1, m, f[2]);
-            f[0] = factorial(m + 1, n, f[1]);
-        }
-        return (f[0] * mulInv(f[1]) % MOD) * mulInv(f[2]) % MOD;
-    }
-    
     static long solve(long a, long b) {
         long mx = max(a, b);
         long mn = min(a, b);
@@ -145,8 +102,8 @@ public class Task2_Volleyball_Match {
         if (mn >= 24 && mx - mn != 2)
             return 0;
         if (mx == 25)
-            return unorderedCombinations(mx + mn - 1, mn);
-        long c = unorderedCombinations(24 * 2, 24);
+            return MathUtils.unorderedCombinations(mx + mn - 1, mn, MOD);
+        long c = MathUtils.unorderedCombinations(24 * 2, 24, MOD);
         return (c * pow(2, mn - 24)) % MOD;
     }
     
