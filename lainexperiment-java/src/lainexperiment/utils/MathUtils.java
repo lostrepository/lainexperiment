@@ -7,7 +7,12 @@
 package lainexperiment.utils;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.LongStream;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * <p>Set of mahth functions.</p>
@@ -57,5 +62,30 @@ public class MathUtils {
             f[0] = (product(m + 1, n, mod) * f[1]) % mod;
         }
         return (f[0] * mulInv(f[1], mod) % mod) * mulInv(f[2], mod) % mod;
+    }
+
+    /**
+     * Return list of factors of n.
+     * This list is sorted and may contain duplicate values.
+     */
+    public static List<Integer> factors(long n) {
+        int sqrt = (int) Math.sqrt(n);
+        var factors = new ArrayList<Integer>();
+        for (int i = 2; i < sqrt; i++) {
+            if (n < i) break;
+            while (n % i == 0) {
+                factors.add(i);
+                n /= i;
+            }
+        }
+        if (n > 1) factors.add((int) n);
+        return factors;
+    }
+    
+    @Test
+    public void test_factors() {
+        Assertions.assertEquals("[3, 3, 5, 7]", factors(315).toString());
+        Assertions.assertEquals("[2, 2, 5]", factors(20).toString());
+        Assertions.assertEquals("[11]", factors(11).toString());
     }
 }
