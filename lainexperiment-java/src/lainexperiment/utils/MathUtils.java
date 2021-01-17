@@ -47,6 +47,13 @@ public class MathUtils {
     /**
      * Unordered combinations of m things out of n.
      */
+    public static long unorderedCombinations(int n, int m) {
+        return factorial(n) / (factorial(n - m) * factorial(m));
+    }
+
+    /**
+     * Unordered combinations of m things out of n.
+     */
     public static long unorderedCombinations(long n, long m, long mod) {
         if (m == 0) return 0;
         if (n == m) return 1;
@@ -81,11 +88,25 @@ public class MathUtils {
         if (n > 1) factors.add((int) n);
         return factors;
     }
-    
+
+    public static long factorial(int n) {
+        if (n > 20) throw new RuntimeException("Limit exceeded");
+        if (n <= 1) return 1;
+        return LongStream.range(1, n + 1)
+                .reduce((r, i) -> r * i)
+                .getAsLong();
+    }
+
     @Test
     public void test_factors() {
         Assertions.assertEquals("[3, 3, 5, 7]", factors(315).toString());
         Assertions.assertEquals("[2, 2, 5]", factors(20).toString());
         Assertions.assertEquals("[11]", factors(11).toString());
+    }
+    
+    @Test
+    public void test_factorial() {
+        Assertions.assertEquals(2432902008176640000L, factorial(20));
+        Assertions.assertThrows(RuntimeException.class, () -> factorial(30));
     }
 }
