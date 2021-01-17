@@ -6,6 +6,9 @@
  */
 package lainexperiment.utils;
 
+/**
+ * Short name for Pair<Integer, Integer>
+ */
 public class PairInt extends Pair<Integer, Integer> {
 
     public PairInt(int x, int y) {

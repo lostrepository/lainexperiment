@@ -6,6 +6,11 @@
  */
 package lainexperiment.utils;
 
+import java.util.Objects;
+
+/**
+ * Why not just Map.Entry? Because it has no setKey() :(
+ */
 public class Pair<X, Y> {
 
     public X x;
@@ -35,4 +40,15 @@ public class Pair<X, Y> {
         return p1.y.compareTo(p2.y);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
+    }
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (obj.getClass() != getClass()) return false;
+        Pair o = (Pair) obj;
+        return Objects.equals(x, o.x) && Objects.equals(y, o.y);
+    }
 }
