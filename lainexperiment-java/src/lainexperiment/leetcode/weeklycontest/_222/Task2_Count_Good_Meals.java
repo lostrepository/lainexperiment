@@ -22,7 +22,7 @@ import lainexperiment.utils.BitUtils;
 
 /**
  * <pre>{@code
- * Date: 01/02/2021
+ * Date: 02/01/2021
  * 
  * Problem: Count Good Meals
  * Status: accepted
