@@ -60,12 +60,12 @@ public class Task1_Maximum_Units_on_a_Truck {
         int units = 0;
         while (boxNum < truckSize && !l.isEmpty()) {
             PairInt box = l.get(0);
-            if (box.x == 0) {
+            if (box.a == 0) {
                 l.remove(0);
                 continue;
             }
-            units += box.y;
-            box.x--;
+            units += box.b;
+            box.a--;
             boxNum++;
         }
         return units;

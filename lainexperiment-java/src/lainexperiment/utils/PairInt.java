@@ -11,12 +11,12 @@ package lainexperiment.utils;
  */
 public class PairInt extends Pair<Integer, Integer> {
 
-    public PairInt(int x, int y) {
-        super(x, y);
+    public PairInt(int a, int b) {
+        super(a, b);
     }
     
     public PairInt(PairInt p) {
-        super(p.x, p.y);
+        super(p.a, p.b);
     }
 
 }
