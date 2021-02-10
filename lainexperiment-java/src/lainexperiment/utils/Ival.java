@@ -16,25 +16,25 @@ public class Ival {
     /**
      * Start
      */
-    public int s;
+    public long s;
     
     /**
      * End
      */
-    public int e;
+    public long e;
 
-    public Ival(int s, int e) {
+    public Ival(long s, long e) {
         this.s = s;
         this.e = e;
     }
 
-    public Ival(int s) {
+    public Ival(long s) {
         this.s = s;
         this.e = s;
     }
 
     public static int compareByStart(Ival a, Ival b) {
-        return a.s - b.s;
+        return Long.compare(a.s, b.s);
     }
     
     @Override
@@ -42,7 +42,7 @@ public class Ival {
         return String.format("%d-%d", s, e);
     }
 
-    public boolean contains(int n) {
+    public boolean contains(long n) {
         return s <= n && n <= e;
     }
 }

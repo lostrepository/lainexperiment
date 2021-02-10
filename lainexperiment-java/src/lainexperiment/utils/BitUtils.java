@@ -69,14 +69,14 @@ public class BitUtils {
         len = 32 - len;
         int p = (-1 << len);
         int v = n & p;
-        int lo = Arrays.binarySearch(a, r.s, r.e, v);
+        int lo = Arrays.binarySearch(a, (int)r.s, (int)r.e, v);
         if (lo < 0)
             lo = 0 - lo - 1;
         if (lo >= r.e) return Optional.empty();
         if ((a[lo] >> len) != (n >> len))
             return Optional.empty();
         v = v | ~p;
-        int hi = Arrays.binarySearch(a, r.s, r.e, v);
+        int hi = Arrays.binarySearch(a, (int)r.s, (int)r.e, v);
         if (hi < 0)
             hi = 0 - hi - 1;
         else

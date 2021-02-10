@@ -73,8 +73,8 @@ public class Task1_Ordered_Stream {
         var ival = tree.floor(new Ival(ptr));
         if (ival == null || !ival.contains(ptr)) return new String[0];
         int lo = ptr;
-        int hi = ival.e + 1;
-        ptr = ival.e + 1;
+        int hi = (int) (ival.e + 1);
+        ptr = (int) (ival.e + 1);
         return Arrays.copyOfRange(stream, lo, hi);
     }
 

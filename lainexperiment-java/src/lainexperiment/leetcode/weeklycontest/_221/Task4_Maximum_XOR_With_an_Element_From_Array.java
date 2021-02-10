@@ -93,7 +93,7 @@ public class Task4_Maximum_XOR_With_an_Element_From_Array {
             range = r;
         }
         if (range.e - range.s == 1) {
-            return a[range.s] ^ x;
+            return a[(int) range.s] ^ x;
         }
         return -1;
     }
