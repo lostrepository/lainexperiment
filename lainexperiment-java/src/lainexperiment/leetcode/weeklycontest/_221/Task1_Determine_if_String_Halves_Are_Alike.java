@@ -17,7 +17,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * <pre>{@code
- * Date: 12/19/2020
+ * Date: 19/12/2020
  * 
  * Problem: Determine if String Halves Are Alike
  * Status: accepted

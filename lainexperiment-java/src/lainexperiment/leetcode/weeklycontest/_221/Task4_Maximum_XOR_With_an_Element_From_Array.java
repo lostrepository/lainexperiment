@@ -19,7 +19,7 @@ import lainexperiment.utils.Ival;
 
 /**
  * <pre>{@code
- * Date: 12/26/2020
+ * Date: 26/12/2020
  * 
  * Problem: Maximum XOR With an Element From Array
  * Status: accepted

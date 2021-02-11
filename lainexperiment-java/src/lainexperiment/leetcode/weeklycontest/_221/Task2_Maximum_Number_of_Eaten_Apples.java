@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * <pre>{@code
- * Date: 12/26/2020
+ * Date: 26/12/2020
  * 
  * Problem: Maximum Number of Eaten Apples
  * Status: accepted

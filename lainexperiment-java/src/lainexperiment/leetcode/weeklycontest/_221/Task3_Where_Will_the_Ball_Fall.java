@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * <pre>{@code
- * Date: 12/26/2020
+ * Date: 26/12/2020
  * 
  * Problem: Where Will the Ball Fall
  * Status: accepted
