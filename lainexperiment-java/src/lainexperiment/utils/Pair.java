@@ -32,14 +32,19 @@ public class Pair<A, B> {
         return b;
     }
     
-    public static <X extends Comparable<X>> int compareByX(Pair<X, ?> p1, Pair<X, ?> p2) {
+    public static <A extends Comparable<A>> int compareByA(Pair<A, ?> p1, Pair<A, ?> p2) {
         return p1.a.compareTo(p2.a);
     }
     
-    public static <Y extends Comparable<Y>> int compareByY(Pair<?, Y> p1, Pair<?, Y> p2) {
+    public static <B extends Comparable<B>> int compareByB(Pair<?, B> p1, Pair<?, B> p2) {
         return p1.b.compareTo(p2.b);
     }
 
+    public static <A extends Comparable<A>, B extends Comparable<B>> int compareByAB(Pair<A, B> p1, Pair<A, B> p2) {
+        int r = compareByA(p1, p2);
+        return (r == 0)?  compareByB(p1, p2): r;
+    }
+    
     @Override
     public int hashCode() {
         return Objects.hash(a, b);

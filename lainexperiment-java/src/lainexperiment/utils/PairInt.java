@@ -19,4 +19,7 @@ public class PairInt extends Pair<Integer, Integer> {
         super(p.a, p.b);
     }
 
+    public PairInt() {
+        super(0, 0);
+    }
 }
