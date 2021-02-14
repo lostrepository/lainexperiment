@@ -15,7 +15,6 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 import java.util.Arrays;
 import java.util.LinkedList;
-import java.util.Queue;
 
 import org.junit.jupiter.api.Test;
 
@@ -47,7 +46,7 @@ public class Short_path_to_guard {
     static int[][] A;
     static int B = -2, G = -1, X = Integer.MAX_VALUE;
     
-    public static int bfs(int[][] g, PairInt start) {
+    public static int bfsShortestPath(int[][] g, PairInt start) {
         int rows = g.length;
         int cols = g[0].length;
         boolean[][] visited = new boolean[rows][cols];
@@ -83,7 +82,7 @@ public class Short_path_to_guard {
             for (int c = 0; c < A[0].length; c++)
             {
                 if (A[r][c] == G)
-                    bfs(A, new PairInt(r, c));
+                    bfsShortestPath(A, new PairInt(r, c));
             }
         }
         Arrays.stream(A).map(Arrays::toString)
