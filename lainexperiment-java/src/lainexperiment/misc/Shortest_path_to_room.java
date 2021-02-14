@@ -9,11 +9,12 @@ package lainexperiment.misc;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.awt.Point;
 import java.util.LinkedList;
 import java.util.Queue;
 
 import org.junit.jupiter.api.Test;
+
+import lainexperiment.utils.PairInt;
 
 /**
  * <pre>{@code
@@ -40,39 +41,31 @@ room: 1, 3
  */
 public class Shortest_path_to_room {
 
-    public static int bfs(int[][] maze, int rows, int columns, int exitRow, int exitCol)
-    {
-        if (maze[0][0] == 1)
+    public static int bfs(int[][] g, PairInt start, PairInt end) {
+        if (g[0][0] == 1)
             return -1;
-        int[][] M = new int[rows][];
-        for (int i = 0; i < M.length; i++) {
-            M[i] = maze[i].clone();
-        }
-        Queue<Point> q = new LinkedList<>();
-        q.add(new Point(0, 0));
-        M[0][0] = 1;
+        int rows = g.length;
+        int cols = g[0].length;
+        boolean[][] visited = new boolean[rows][cols];
+        var q = new LinkedList<PairInt>();
+        q.add(start);
+        int[] x = {0, 0, 1, -1};
+        int[] y = {1, -1, 0, 0};
         int s = 0;
         while (!q.isEmpty()) {
-            Queue<Point> nq = new LinkedList<>();
+            var nq = new LinkedList<PairInt>();
             while (!q.isEmpty()) {
-                Point p = q.poll();
-                if (p.y == exitRow && p.x == exitCol)
+                var p = q.poll();
+                if (p.equals(end))
                     return s;
-                if (p.x > 0 && M[p.y][p.x - 1] == 0) {
-                    M[p.y][p.x - 1] = 1;
-                    nq.add(new Point(p.x - 1, p.y));
-                }
-                if (p.y > 0 && M[p.y - 1][p.x] == 0) {
-                    nq.add(new Point(p.x, p.y - 1));
-                    M[p.y - 1][p.x] = 1;
-                }
-                if (p.x < columns - 1 && M[p.y][p.x + 1] == 0) {
-                    nq.add(new Point(p.x + 1, p.y));
-                    M[p.y][p.x + 1] = 1;
-                }
-                if (p.y < rows - 1 && M[p.y + 1][p.x] == 0) {
-                    nq.add(new Point(p.x, p.y + 1));
-                    M[p.y + 1][p.x] = 1;
+                if (visited[p.a][p.b]) continue;
+                visited[p.a][p.b] = true;
+                for (int k = 0; k < 4; k++) {
+                    var next = new PairInt(p.a + y[k], p.b + x[k]);
+                    if (next.a < 0 || next.a >= rows || next.b < 0 || next.b >= cols) 
+                        continue;
+                    if (g[next.a][next.b] != 0) continue;
+                    nq.add(next);
                 }
             }
             q = nq;
@@ -80,7 +73,7 @@ public class Shortest_path_to_room {
         }
         return -1;
     }
-
+    
     @Test
     public void test() {
         int[][] maze = {
@@ -88,25 +81,25 @@ public class Shortest_path_to_room {
                 {1, 0, 1, 0},
                 {1, 0, 0, 0},
         };
-        assertEquals(4, bfs(maze, maze.length, maze[0].length, 1, 3));
-        assertEquals(2, bfs(maze, maze.length, maze[0].length, 1, 1));
-        assertEquals(4, bfs(maze, maze.length, maze[0].length, 2, 2));
-        assertEquals(5, bfs(maze, maze.length, maze[0].length, 2, 3));
+        assertEquals(4, bfs(maze, new PairInt(), new PairInt(1, 3)));
+        assertEquals(2, bfs(maze, new PairInt(), new PairInt(1, 1)));
+        assertEquals(4, bfs(maze, new PairInt(), new PairInt(2, 2)));
+        assertEquals(5, bfs(maze, new PairInt(), new PairInt(2, 3)));
         
         maze = new int[][]{
                 {0, 0, 0, 0},
                 {1, 0, 1, 1},
                 {1, 0, 1, 0},
         };
-        assertEquals(-1, bfs(maze, maze.length, maze[0].length, 2, 3));
-        assertEquals(-1, bfs(maze, maze.length, maze[0].length, 2, 2));
+        assertEquals(-1, bfs(maze, new PairInt(), new PairInt(2, 3)));
+        assertEquals(-1, bfs(maze, new PairInt(), new PairInt(2, 2)));
         
         maze = new int[][]{
             {0, 0, 0, 0},
             {1, 0, 1, 1},
             {1, 0, 1, 1},
         };
-        assertEquals(-1, bfs(maze, maze.length, maze[0].length, 2, 3));
+        assertEquals(-1, bfs(maze, new PairInt(), new PairInt(2, 3)));
         
         maze = new int[][]{
             {0, 0, 0, 0},
@@ -114,7 +107,7 @@ public class Shortest_path_to_room {
             {1, 0, 1, 0},
             {1, 0, 0, 0},
         };
-        assertEquals(7, bfs(maze, maze.length, maze[0].length, 2, 3));
+        assertEquals(7, bfs(maze, new PairInt(), new PairInt(2, 3)));
      
         maze = new int[][]{
             {0, 0, 0, 0},
@@ -122,7 +115,7 @@ public class Shortest_path_to_room {
             {1, 0, 1, 0},
             {1, 0, 0, 0},
         };
-        assertEquals(9, bfs(maze, maze.length, maze[0].length, 2, 1));
+        assertEquals(9, bfs(maze, new PairInt(), new PairInt(2, 1)));
         
         maze = new int[][]{
             {0, 0, 0, 0},
@@ -130,7 +123,7 @@ public class Shortest_path_to_room {
             {1, 0, 1, 0},
             {1, 0, 0, 0},
         };
-        assertEquals(3, bfs(maze, maze.length, maze[0].length, 2, 1));
+        assertEquals(3, bfs(maze, new PairInt(), new PairInt(2, 1)));
         
         maze = new int[][]{
             {0, 0, 0, 0},
@@ -138,7 +131,7 @@ public class Shortest_path_to_room {
             {1, 0, 1, 0},
             {1, 0, 0, 0},
         };
-        assertEquals(9, bfs(maze, maze.length, maze[0].length, 2, 1));
+        assertEquals(9, bfs(maze, new PairInt(), new PairInt(2, 1)));
         
         maze = new int[][]{
             {1, 0, 0, 0},
@@ -146,7 +139,7 @@ public class Shortest_path_to_room {
             {1, 0, 1, 0},
             {1, 0, 0, 0},
         };
-        assertEquals(-1, bfs(maze, maze.length, maze[0].length, 2, 1));
+        assertEquals(-1, bfs(maze, new PairInt(), new PairInt(2, 1)));
         
         maze = new int[][]{
             {0, 0, 0, 0},
@@ -155,6 +148,6 @@ public class Shortest_path_to_room {
             {0, 1, 1, 0},
             {0, 0, 0, 0},
         };
-        assertEquals(13, bfs(maze, maze.length, maze[0].length, 2, 1));
+        assertEquals(13, bfs(maze, new PairInt(), new PairInt(2, 1)));
     }
 }

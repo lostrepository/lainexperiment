@@ -9,11 +9,15 @@ package lainexperiment.misc;
 
 import static java.lang.Math.min;
 
-import java.awt.Point;
-import java.io.FileNotFoundException;
+import lainexperiment.utils.PairInt;
+
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
+
+import org.junit.jupiter.api.Test;
 
 /**
  * <pre>{@code
@@ -43,50 +47,43 @@ public class Short_path_to_guard {
     static int[][] A;
     static int B = -2, G = -1, X = Integer.MAX_VALUE;
     
-    public static void bfs(int[][] grid, Point s)
-    {
-        int[][] M = new int[grid.length][];
-        for (int i = 0; i < M.length; i++) {
-            M[i] = grid[i].clone();
-        }
-        Queue<Point> q = new LinkedList<>();
-        q.add(s);
-        M[s.y][s.x] = B;
-        int c = 0;
+    public static int bfs(int[][] g, PairInt start) {
+        int rows = g.length;
+        int cols = g[0].length;
+        boolean[][] visited = new boolean[rows][cols];
+        var q = new LinkedList<PairInt>();
+        q.add(start);
+        int[] x = {0, 0, 1, -1};
+        int[] y = {1, -1, 0, 0};
+        int s = 0;
         while (!q.isEmpty()) {
-            Queue<Point> nq = new LinkedList<>();
+            var nq = new LinkedList<PairInt>();
             while (!q.isEmpty()) {
-                Point p = q.poll();
-                grid[p.y][p.x] = min(grid[p.y][p.x], c);
-                if (p.x > 0 && M[p.y][p.x - 1] > 0) {
-                    M[p.y][p.x - 1] = B;
-                    nq.add(new Point(p.x - 1, p.y));
-                }
-                if (p.y > 0 && M[p.y - 1][p.x] > 0) {
-                    nq.add(new Point(p.x, p.y - 1));
-                    M[p.y - 1][p.x] = B;
-                }
-                if (p.x < grid[0].length - 1 && M[p.y][p.x + 1] > 0) {
-                    nq.add(new Point(p.x + 1, p.y));
-                    M[p.y][p.x + 1] = B;
-                }
-                if (p.y < grid.length - 1 && M[p.y + 1][p.x] > 0) {
-                    nq.add(new Point(p.x, p.y + 1));
-                    M[p.y + 1][p.x] = B;
+                var p = q.poll();
+                g[p.a][p.b] = min(g[p.a][p.b], s);
+                if (visited[p.a][p.b]) continue;
+                visited[p.a][p.b] = true;
+                for (int k = 0; k < 4; k++) {
+                    var next = new PairInt(p.a + y[k], p.b + x[k]);
+                    if (next.a < 0 || next.a >= rows || next.b < 0 || next.b >= cols) 
+                        continue;
+                    if (g[next.a][next.b] < 0) continue;
+                    nq.add(next);
                 }
             }
             q = nq;
-            c++;
+            s++;
         }
+        return -1;
     }
     
     static void solve() {
-        for (int y = 0; y < A.length; y++)
+        for (int r = 0; r < A.length; r++)
         {
-            for (int x = 0; x < A[0].length; x++)
+            for (int c = 0; c < A[0].length; c++)
             {
-                if (A[y][x] == G)
-                    bfs(A, new Point(x, y));
+                if (A[r][c] == G)
+                    bfs(A, new PairInt(r, c));
             }
         }
         Arrays.stream(A).map(Arrays::toString)
@@ -94,13 +91,19 @@ public class Short_path_to_guard {
             .forEach(System.out::println);
     }
     
-    public static void main(String[] args) throws FileNotFoundException {
+    @Test
+    public void test() {
         A = new int[][]{
             {X, X, X, X, X, X},
             {B, G, G, X, X, X},
             {B, X, G, X, X, X},
         };
+        var R = new int[][] {
+            {2, 1, 1, 2, 3, 4},
+            {B, G, G, 1, 2, 3},
+            {B, 1, G, 1, 2, 3}};
         solve();
+        assertArrayEquals(R, A);
         
         A = new int[][]{
             {X, X, X, X, X},
@@ -109,7 +112,14 @@ public class Short_path_to_guard {
             {X, B, B, B, X},
             {X, X, X, X, X},
         };
+        R = new int[][] {
+            {X, X, X, X, X},
+            {X, B, B, B, X},
+            {X, B, G, B, X},
+            {X, B, B, B, X},
+            {X, X, X, X, X}};
         solve();
+        assertArrayEquals(R, A);
         
         A = new int[][]{
             {X, X, X, X, X},
@@ -118,7 +128,14 @@ public class Short_path_to_guard {
             {X, B, X, B, X},
             {X, X, X, X, X},
         };
+        R = new int[][] {
+            {8, 9, 10, 9, 8},
+            {7, B, B, B, 7},
+            {6, B, G, B, 6},
+            {5, B, 1, B, 5},
+            {4, 3, 2, 3, 4}};
         solve();
+        assertArrayEquals(R, A);
     }
 
 }
