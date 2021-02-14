@@ -40,36 +40,6 @@ public class Algorithms {
         long res = bisection(m + 1, e, func);
         return res == -1? m: res;
     }
-    
-    static Stream<int[]> testDataBisection() {
-        return Stream.of(
-            new int[]{1,2,3,4,5,6},
-            new int[]{1,2,3,4,5,6,7},
-            new int[]{1,2,3,4,5,6,7,8},
-            new int[]{1},
-            new int[]{1,2});
-    }
-
-    @ParameterizedTest
-    @MethodSource("testDataBisection")
-    void testBisection(int[] a) {
-        for (int i = 0; i < a.length; i++) {
-            final int v = a[i];
-            assertEquals(i, bisection(0, a.length - 1, k -> a[(int) k] - v));
-        }
-    }
-
-    @Test
-    void testBisection2() {
-        int[] a = new int[]{1,1,3,4,5,10};
-        int[] v = new int[1];
-        v[0] = 3;
-        assertEquals(2, bisection(0, a.length, k -> a[(int) k] - v[0]));
-        v[0] = 7;
-        assertEquals(4, bisection(4, a.length, k -> a[(int) k] - v[0]));
-        v[0] = 0;
-        assertEquals(-1, bisection(4, a.length, k -> a[(int) k] - v[0]));
-    }
 
     /**
      * Merge sort implementation. It uses aux storage and merges everything
@@ -102,6 +72,36 @@ public class Algorithms {
         while (ri < r.size()) {
             a.set(i++, r.get(ri++));
         }
+    }
+    
+    static Stream<int[]> testDataBisection() {
+        return Stream.of(
+            new int[]{1,2,3,4,5,6},
+            new int[]{1,2,3,4,5,6,7},
+            new int[]{1,2,3,4,5,6,7,8},
+            new int[]{1},
+            new int[]{1,2});
+    }
+
+    @ParameterizedTest
+    @MethodSource("testDataBisection")
+    void testBisection(int[] a) {
+        for (int i = 0; i < a.length; i++) {
+            final int v = a[i];
+            assertEquals(i, bisection(0, a.length - 1, k -> a[(int) k] - v));
+        }
+    }
+
+    @Test
+    void testBisection2() {
+        int[] a = new int[]{1,1,3,4,5,10};
+        int[] v = new int[1];
+        v[0] = 3;
+        assertEquals(2, bisection(0, a.length, k -> a[(int) k] - v[0]));
+        v[0] = 7;
+        assertEquals(4, bisection(4, a.length, k -> a[(int) k] - v[0]));
+        v[0] = 0;
+        assertEquals(-1, bisection(4, a.length, k -> a[(int) k] - v[0]));
     }
 
     static Stream<List<List>> testDataMergeSort() {
