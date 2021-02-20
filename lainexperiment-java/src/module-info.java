@@ -72,6 +72,8 @@ module lainexperiment {
     exports lainexperiment.hackerrank.worldcodesprint._8;
 
     exports lainexperiment.leetcode.misc;
+    exports lainexperiment.leetcode.weeklycontest._212;
+    exports lainexperiment.leetcode.weeklycontest._213;
     exports lainexperiment.leetcode.weeklycontest._215;
     exports lainexperiment.leetcode.weeklycontest._217;
     exports lainexperiment.leetcode.weeklycontest._218;
@@ -80,6 +82,9 @@ module lainexperiment {
     exports lainexperiment.leetcode.weeklycontest._221;
     exports lainexperiment.leetcode.weeklycontest._223;
     exports lainexperiment.leetcode.weeklycontest._224;
+    exports lainexperiment.leetcode.weeklycontest._226;
+    exports lainexperiment.leetcode.weeklycontest._227;
+    exports lainexperiment.leetcode.weeklycontest._228;
     
     exports lainexperiment.mensikovbook;
 
