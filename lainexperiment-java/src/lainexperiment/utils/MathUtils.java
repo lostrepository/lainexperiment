@@ -6,6 +6,8 @@
  */
 package lainexperiment.utils;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,10 +17,12 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 /**
- * <p>Set of mahth functions.</p>
+ * <p>Set of math functions.</p>
  */
 public class MathUtils {
 
+    public final long MOD = 1_000_000_007L;
+    
     /*
      * Multiplicative inversion
      */
@@ -42,6 +46,20 @@ public class MathUtils {
             .reduce((r, i) -> (r * i) % mod)
             .getAsLong();
         return l % mod;
+    }
+
+    /**
+     * @return Arithmetic sum from 1 to n modulo mod
+     */
+    public static long sum(int n, long mod) {
+        return sum(1, n, mod);
+    }
+    
+    /**
+     * @return Arithmetic sum from a to b modulo mod
+     */
+    public static long sum(int a, int b, long mod) {
+        return (long) (((b - a + 1) / 2.) * ((a + b) % mod) % mod);
     }
 
     /**
@@ -125,5 +143,11 @@ public class MathUtils {
         Assertions.assertEquals(3, ceilDiv(7, 3));
         Assertions.assertEquals(3, ceilDiv(8, 3));
         Assertions.assertEquals(3, ceilDiv(9, 3));
+    }
+    
+    @Test
+    public void test_sum() {
+        assertEquals(6, sum(3, MOD));
+        assertEquals(3, sum(2, MOD));
     }
 }
