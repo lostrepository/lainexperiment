@@ -97,6 +97,13 @@ public class MathUtils {
                 .getAsLong();
     }
 
+    /**
+     * Returns largest integer value after dividing a to b
+     */
+    public static int ceilDiv(int a, int b) {
+        return (a + b - 1) / b;
+    }
+
     @Test
     public void test_factors() {
         Assertions.assertEquals("[3, 3, 5, 7]", factors(315).toString());
@@ -108,5 +115,15 @@ public class MathUtils {
     public void test_factorial() {
         Assertions.assertEquals(2432902008176640000L, factorial(20));
         Assertions.assertThrows(RuntimeException.class, () -> factorial(30));
+    }
+    
+    @Test
+    public void test_ceilDiv() {
+        Assertions.assertEquals(1, ceilDiv(1, 1));
+        Assertions.assertEquals(2, ceilDiv(2, 1));
+        Assertions.assertEquals(2, ceilDiv(6, 3));
+        Assertions.assertEquals(3, ceilDiv(7, 3));
+        Assertions.assertEquals(3, ceilDiv(8, 3));
+        Assertions.assertEquals(3, ceilDiv(9, 3));
     }
 }
