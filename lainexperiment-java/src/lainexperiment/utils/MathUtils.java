@@ -122,6 +122,25 @@ public class MathUtils {
         return (a + b - 1) / b;
     }
 
+    /**
+     * Return number closest to v or v itself it is present.
+     * If there are two closest numbers return one which is smaller.
+     * For example v = 2, a = [3,2,1] closest number is 1
+     */
+    public static int closest(int v, int...a) {
+        int r = a[0];
+        for (int i = 0; i < a.length; i++) {
+            int d1 = Math.abs(a[i] - v);
+            int d2 = Math.abs(r - v);
+            if (d1  == d2) {
+                r = Math.min(r, a[i]);
+            } else if (d1 < d2) {
+                r = a[i];
+            }
+        }
+        return r;
+    }
+    
     @Test
     public void test_factors() {
         Assertions.assertEquals("[3, 3, 5, 7]", factors(315).toString());
@@ -149,5 +168,11 @@ public class MathUtils {
     public void test_sum() {
         assertEquals(6, sum(3, MOD));
         assertEquals(3, sum(2, MOD));
+    }
+    
+    @Test
+    public void test_closest() {
+        Assertions.assertEquals(1, closest(2, 3, 1));
+        Assertions.assertEquals(4, closest(4, 3, 1, 6, 4, 8));
     }
 }
