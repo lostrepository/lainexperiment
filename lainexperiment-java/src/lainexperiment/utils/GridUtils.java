@@ -8,8 +8,10 @@ package lainexperiment.utils;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.PriorityQueue;
 
 import org.junit.jupiter.api.Test;
@@ -27,6 +29,13 @@ public class GridUtils {
     }
     
     /**
+     * Print 2d array to stdout
+     */
+    public static void print(char[][] a) {
+        System.out.println(Arrays.deepToString(a).replace("],", "]\n"));
+    }
+    
+    /**
      * @param g Grid where to run BFS
      * @param start Coordinates of starting point on the grid
      * @param end Coordinates of finish point on the grid
@@ -37,20 +46,13 @@ public class GridUtils {
         boolean[][] visited = new boolean[rows][cols];
         var q = new LinkedList<PairInt>();
         q.add(start);
-        int[] x = {0, 0, 1, -1};
-        int[] y = {1, -1, 0, 0};
         while (!q.isEmpty()) {
             var p = q.poll();
             if (visited[p.a][p.b]) continue;
             System.out.println(p);
             visited[p.a][p.b] = true;
             if (p.equals(end)) return;
-            for (int k = 0; k < 4; k++) {
-                var next = new PairInt(p.a + y[k], p.b + x[k]);
-                if (next.a < 0 || next.a >= rows || next.b < 0 || next.b >= cols) 
-                    continue;
-                q.add(next);
-            }
+            q.addAll(findJumps(p.a, p.b, rows, cols));
         }
     }
     
@@ -69,8 +71,6 @@ public class GridUtils {
         boolean[][] visited = new boolean[rows][cols];
         var q = new LinkedList<PairInt>();
         q.add(start);
-        int[] x = {0, 0, 1, -1};
-        int[] y = {1, -1, 0, 0};
         int s = 0;
         while (!q.isEmpty()) {
             var nq = new LinkedList<PairInt>();
@@ -80,12 +80,7 @@ public class GridUtils {
                     return s;
                 if (visited[p.a][p.b]) continue;
                 visited[p.a][p.b] = true;
-                for (int k = 0; k < 4; k++) {
-                    var next = new PairInt(p.a + y[k], p.b + x[k]);
-                    if (next.a < 0 || next.a >= rows || next.b < 0 || next.b >= cols) 
-                        continue;
-                    nq.add(next);
-                }
+                nq.addAll(findJumps(p.a, p.b, rows, cols));
             }
             q = nq;
             s++;
@@ -132,6 +127,46 @@ public class GridUtils {
         throw new RuntimeException();
     }
     
+    /**
+     * Generate all possible jumps to left, right, up and down from current
+     * position (r, c) to all adjacent positions with length 1. Where rows/cols
+     * define size of the grid.
+     */
+    public static List<PairInt> findJumps(int r, int c, int rows, int cols) {
+        int[] x = {0, 0, 1, -1};
+        int[] y = {1, -1, 0, 0};
+        var res = new ArrayList<PairInt>();
+        for (int k = 0; k < 4; k++) {
+            var next = new PairInt(r + y[k], c + x[k]);
+            if (next.a < 0 || next.a >= rows || next.b < 0 || next.b >= cols) 
+                continue;
+            res.add(next);
+        }
+        return res;
+    }
+    
+    /**
+     * Generate all possible jumps to left, right, up and down from current
+     * position (r, c) to all other positions with length len. Where rows/cols
+     * define size of the grid.
+     * It also generates jump to current position.
+     */
+    public static List<PairInt> findJumps(int r, int c, int rows, int cols, int len) {
+        var res = new ArrayList<PairInt>();
+        res.add(new PairInt(r, c));
+        int[] x = {0, 0, 1, -1};
+        int[] y = {1, -1, 0, 0};
+        for (int k = 0; k < 4; k++) {
+            for (int i = 1; i <= len; i++) {
+                var next = new PairInt(r + i * y[k], c + i * x[k]);
+                if (next.a < 0 || next.a >= rows || next.b < 0 || next.b >= cols) 
+                    break;
+                res.add(next);
+            }
+        }
+        return res;
+    }
+    
     @Test
     public void test_bfs() {
         var g = new int[][] {
@@ -158,5 +193,11 @@ public class GridUtils {
         assertEquals(7, dijkstra(g, new PairInt(0, 0), new PairInt(2, 1)));
         assertEquals(7, dijkstra(g, new PairInt(0, 0), new PairInt(4, 4)));
         assertEquals(5, dijkstra(g, new PairInt(0, 0), new PairInt(0, 4)));
+    }
+    
+    @Test
+    public void test_findJumps() {
+        assertEquals("[(1, 2), (2, 2), (3, 2), (0, 2), (1, 3), (1, 1), (1, 0)]",
+            findJumps(1, 2, 4, 4, 2).toString());
     }
 }
