@@ -63,7 +63,7 @@ public class Task3_Minimum_Limit_of_Balls_in_a_Bag {
             int i = 1;
             while (i <= maxOperations) {
                 int d = i + 1;
-                int r = ceilDiv(n, d);
+                int r = (int) ceilDiv(n, d);
                 int next = q.peek();
                 if (d != n && r > next) {
                     i++;
@@ -93,7 +93,7 @@ public class Task3_Minimum_Limit_of_Balls_in_a_Bag {
                 n -= r * (d - 2);
             }
             q.add(n / 2);
-            q.add(ceilDiv(n, 2));                    
+            q.add((int) ceilDiv(n, 2));                    
         }
     }
 

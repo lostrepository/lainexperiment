@@ -118,8 +118,8 @@ public class MathUtils {
     /**
      * Returns largest integer value after dividing a to b
      */
-    public static int ceilDiv(int a, int b) {
-        return (a + b - 1) / b;
+    public static long ceilDiv(long l, long b) {
+        return (l + b - 1) / b;
     }
 
     /**
