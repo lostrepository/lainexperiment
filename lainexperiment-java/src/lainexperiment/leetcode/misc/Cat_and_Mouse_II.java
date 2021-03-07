@@ -213,6 +213,18 @@ public class Cat_and_Mouse_II {
     public void test() {
 
         assertEquals(true, canMouseWin(new String[]{
+            "........#",
+            ".M.......",
+            ".........",
+            "....##...",
+            "######..F",
+            "######...",
+            "....##...",
+            ".........",
+            ".C.......",
+            "........#",}, 1, 2));
+
+        assertEquals(true, canMouseWin(new String[]{
             "..#C",
             "...#",
             "..M.",
