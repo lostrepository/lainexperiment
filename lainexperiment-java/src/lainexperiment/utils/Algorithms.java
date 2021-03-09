@@ -7,6 +7,7 @@
 package lainexperiment.utils;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.LongUnaryOperator;
 import java.util.stream.Stream;
@@ -74,6 +75,31 @@ public class Algorithms {
         }
     }
     
+
+    /**
+     * Finds local minimum in the range [s, e) based on comparison
+     * defined in cmp function.
+     */
+    public static long localMin(long s, long e, Comparator<Long> cmp) {
+        //System.out.format("%d-%d\n", s, e);
+        if (s == e) return s;
+        if (e - s == 1) return s;
+        if (e - s == 2) return cmp.compare(s, e - 1) <= 0? s: e - 1;
+        if (cmp.compare(s, s + 1) < 0) return s;
+        if (cmp.compare(e - 1, e - 2) < 0) return e - 1;
+        var m = (s + e) / 2;
+        var d = cmp.compare(m, m + 1);
+        if (d == 0) {
+            var l = localMin(s, m + 1, cmp);
+            var r = localMin(m, e, cmp);
+            return cmp.compare(l, r) <= 0? l: r;
+        }
+        if (d < 0) {
+            return localMin(s, m + 1, cmp);
+        }
+        return localMin(m, e, cmp);
+    }
+    
     static Stream<int[]> testDataBisection() {
         return Stream.of(
             new int[]{1,2,3,4,5,6},
@@ -123,5 +149,39 @@ public class Algorithms {
             mergeSort(l);
             assertEquals(a.get(1), l);
         }
+    }
+    
+    private Comparator<Long> cmp(int[] a) {
+        return (n1, n2) ->
+            a[n1.intValue()] - a[n2.intValue()];
+    }
+    
+    @Test
+    public void test_localMin() {
+        int[] a = new int[] {1,1,1,1,1,1,1,1,1};
+        for (int i = 6; i < a.length; i++) {
+            a[i] = 0;
+            assertEquals(i, localMin(0, a.length, cmp(a)));
+            a[i] = 1;
+        }
+        assertEquals(1, localMin(0, 11, cmp(new int[] {3, 2, 2, 2, 2, 2, 2, 3,3,3,3})));
+        assertEquals(2, localMin(0, 3, cmp(new int[] {4, 1, 0})));
+        assertEquals(1, localMin(0, 3, cmp(new int[] {4, -1, 0})));
+        assertEquals(0, localMin(0, 5, cmp(new int[] {-2, -1, 0, 1, 1})));
+        assertEquals(1, localMin(0, 5, cmp(new int[] {4, -1, 0, 1, 1})));
+        assertEquals(2, localMin(0, 5, cmp(new int[] {4, 3, 0, 1, 1})));
+        assertEquals(3, localMin(0, 5, cmp(new int[] {4, 3, 3, 0, 1})));
+        assertEquals(4, localMin(0, 5, cmp(new int[] {4, 3, 3, 3, 1})));
+        assertEquals(2, localMin(0, 5, cmp(new int[] {4, 3, 2, 3, 4})));
+        assertEquals(0, localMin(0, 5, cmp(new int[] {0, 1, 2, 3, 4})));
+        
+        assertEquals(0, localMin(0, 3, cmp(new int[] {4, 1, 0}).reversed()));
+        assertEquals(1, localMin(0, 3, cmp(new int[] {-1, 4, 0}).reversed()));
+        assertEquals(2, localMin(0, 5, cmp(new int[] {-2, -1, 4, 1, 1}).reversed()));
+        assertEquals(1, localMin(0, 5, cmp(new int[] {-1, 4, 1, 0, -1}).reversed()));
+        assertEquals(2, localMin(0, 5, cmp(new int[] {3, 3, 4, 1, 1}).reversed()));
+        assertEquals(3, localMin(0, 5, cmp(new int[] {2, 3, 3, 4, 1}).reversed()));
+        assertEquals(0, localMin(0, 5, cmp(new int[] {5, 3, 3, 3, 1}).reversed()));
+        assertEquals(3, localMin(0, 5, cmp(new int[] {0, 1, 2, 3, 3}).reversed()));
     }
 }
