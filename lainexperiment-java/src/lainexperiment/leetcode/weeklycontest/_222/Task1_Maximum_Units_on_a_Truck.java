@@ -55,7 +55,7 @@ public class Task1_Maximum_Units_on_a_Truck {
         for (int i = 0; i < boxTypes.length; i++) {
             l.add(new PairInt(boxTypes[i][0], boxTypes[i][1]));
         }
-        l.sort(Comparator.comparingInt(PairInt::getY).reversed());
+        l.sort(Comparator.comparingInt(PairInt::getB).reversed());
         int boxNum = 0;
         int units = 0;
         while (boxNum < truckSize && !l.isEmpty()) {
