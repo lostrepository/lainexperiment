@@ -9,7 +9,8 @@ package lainexperiment.utils;
 import java.util.Objects;
 
 /**
- * Why not just Map.Entry? Because it has no setKey() :(
+ * Why not just Map.Entry? Because it has no setKey only setValue
+ * and so SimpleEntry.
  */
 public class Pair<A, B> {
 
