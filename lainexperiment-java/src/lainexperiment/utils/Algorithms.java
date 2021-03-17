@@ -7,6 +7,7 @@
 package lainexperiment.utils;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.LongUnaryOperator;
@@ -42,6 +43,20 @@ public class Algorithms {
         return res == -1? m: res;
     }
 
+    /**
+     * Binary search which supports multiple elements of the same key.
+     * Java standard Arrays.binarySearch unfortunately does not support that.
+     * @return similar to Arrays.binarySearch except it guarantees to return
+     * index of left most key if there are multiple of them
+     */
+    public static int binarySearch(int[] a, int s, int e, int val) {
+        var p = Arrays.binarySearch(a, s, e, val);
+        if (p < 0) return p;
+        if (s == p) return s;
+        var r = binarySearch(a, s, p, val);
+        return r < 0? p: r;
+    }
+    
     /**
      * Merge sort implementation. It uses aux storage and merges everything
      * inplace into input list.
@@ -183,5 +198,19 @@ public class Algorithms {
         assertEquals(3, localMin(0, 5, cmp(new int[] {2, 3, 3, 4, 1}).reversed()));
         assertEquals(0, localMin(0, 5, cmp(new int[] {5, 3, 3, 3, 1}).reversed()));
         assertEquals(3, localMin(0, 5, cmp(new int[] {0, 1, 2, 3, 3}).reversed()));
+    }
+    
+    @Test
+    public void test_binarySearch() {
+        var a = new int[] {1,1,1,1,3,3,3,5,5,7,7,7,7,9,12,12,12,12};
+        var expected = new int[] {0,0,0,0,4,4,4,7,7,9,9,9,9,13,14,14,14,14};
+        for (int i = 0; i < a.length; i++) {
+            assertEquals(expected[i], binarySearch(a, 0, a.length, a[i]));
+        }
+        assertEquals(-1, binarySearch(a, 0, a.length, 0));
+        assertEquals(-5, binarySearch(a, 0, a.length, 2));
+        assertEquals(-8, binarySearch(a, 0, a.length, 4));
+        assertEquals(-14, binarySearch(a, 0, a.length, 8));
+        assertEquals(-19, binarySearch(a, 0, a.length, 15));
     }
 }
