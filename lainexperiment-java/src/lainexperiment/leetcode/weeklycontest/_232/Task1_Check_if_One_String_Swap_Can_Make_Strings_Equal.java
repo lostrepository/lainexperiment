@@ -25,9 +25,9 @@ import org.junit.jupiter.api.Test;
  * indices in a string (not necessarily different) and
  * swap the characters at these indices.
  * 
- * Return true if it is possible to make both strings equa
- *  by performing at most one string swap on exactly one of
- *  the strings. Otherwise, return false.
+ * Return true if it is possible to make both strings equal
+ * by performing at most one string swap on exactly one of
+ * the strings. Otherwise, return false.
  * 
  * Input 1
  * 

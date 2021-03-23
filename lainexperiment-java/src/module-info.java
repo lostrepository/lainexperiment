@@ -72,6 +72,9 @@ module lainexperiment {
     exports lainexperiment.hackerrank.worldcodesprint._8;
 
     exports lainexperiment.leetcode.misc;
+    exports lainexperiment.leetcode.weeklycontest._209;
+    exports lainexperiment.leetcode.weeklycontest._210;
+    exports lainexperiment.leetcode.weeklycontest._211;
     exports lainexperiment.leetcode.weeklycontest._212;
     exports lainexperiment.leetcode.weeklycontest._213;
     exports lainexperiment.leetcode.weeklycontest._215;
@@ -85,6 +88,11 @@ module lainexperiment {
     exports lainexperiment.leetcode.weeklycontest._226;
     exports lainexperiment.leetcode.weeklycontest._227;
     exports lainexperiment.leetcode.weeklycontest._228;
+    exports lainexperiment.leetcode.weeklycontest._229;
+    exports lainexperiment.leetcode.weeklycontest._230;
+    exports lainexperiment.leetcode.weeklycontest._231;
+    exports lainexperiment.leetcode.weeklycontest._232;
+    exports lainexperiment.leetcode.weeklycontest._233;
     
     exports lainexperiment.mensikovbook;
 
@@ -98,4 +106,5 @@ module lainexperiment {
     requires java.desktop;
     requires org.junit.jupiter.params;
     requires org.junit.jupiter.api;
+    requires java.base;
 }
