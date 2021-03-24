@@ -21,7 +21,7 @@ import org.junit.jupiter.api.Test;
  */
 public class MathUtils {
 
-    public final long MOD = 1_000_000_007L;
+    public static final long MOD = 1_000_000_007L;
     
     /*
      * Multiplicative inversion
@@ -62,6 +62,13 @@ public class MathUtils {
         return (long) (((b - a + 1) / 2.) * ((a + b) % mod) % mod);
     }
 
+    /**
+     * Adds two numbers mod {@link MOD}
+     */
+    public static long sumMod(long a, long b) {
+        return (a + b) % MOD;
+    }
+    
     /**
      * Unordered combinations of m things out of n.
      */
