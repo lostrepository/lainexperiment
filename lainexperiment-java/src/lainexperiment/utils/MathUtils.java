@@ -51,14 +51,14 @@ public class MathUtils {
     /**
      * @return Arithmetic sum from 1 to n modulo mod
      */
-    public static long sum(int n, long mod) {
-        return sum(1, n, mod);
+    public static long sequenceSum(int n, long mod) {
+        return sequenceSum(1, n, mod);
     }
     
     /**
      * @return Arithmetic sum from a to b modulo mod
      */
-    public static long sum(int a, int b, long mod) {
+    public static long sequenceSum(int a, int b, long mod) {
         return (long) (((b - a + 1) / 2.) * ((a + b) % mod) % mod);
     }
 
@@ -166,8 +166,8 @@ public class MathUtils {
     
     @Test
     public void test_sum() {
-        assertEquals(6, sum(3, MOD));
-        assertEquals(3, sum(2, MOD));
+        assertEquals(6, sequenceSum(3, MOD));
+        assertEquals(3, sequenceSum(2, MOD));
     }
     
     @Test
