@@ -52,7 +52,7 @@ public class GridUtils {
             System.out.println(p);
             visited[p.a][p.b] = true;
             if (p.equals(end)) return;
-            q.addAll(findJumps(p.a, p.b, rows, cols));
+            q.addAll(findJumps(p, rows, cols));
         }
     }
     
@@ -80,7 +80,7 @@ public class GridUtils {
                     return s;
                 if (visited[p.a][p.b]) continue;
                 visited[p.a][p.b] = true;
-                nq.addAll(findJumps(p.a, p.b, rows, cols));
+                nq.addAll(findJumps(p, rows, cols));
             }
             q = nq;
             s++;
@@ -132,12 +132,12 @@ public class GridUtils {
      * position (r, c) to all adjacent positions with length 1. Where rows/cols
      * define size of the grid.
      */
-    public static List<PairInt> findJumps(int r, int c, int rows, int cols) {
+    public static List<PairInt> findJumps(PairInt loc, int rows, int cols) {
         int[] x = {0, 0, 1, -1};
         int[] y = {1, -1, 0, 0};
         var res = new ArrayList<PairInt>();
-        for (int k = 0; k < 4; k++) {
-            var next = new PairInt(r + y[k], c + x[k]);
+        for (int k = 0; k < x.length; k++) {
+            var next = new PairInt(loc.a + y[k], loc.b + x[k]);
             if (next.a < 0 || next.a >= rows || next.b < 0 || next.b >= cols) 
                 continue;
             res.add(next);
