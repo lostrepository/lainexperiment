@@ -13,8 +13,8 @@ import java.util.PriorityQueue;
 
 import org.junit.jupiter.api.Test;
 
-import lainexperiment.utils.Pair;
-import lainexperiment.utils.PairInt;
+import lainexperiment.utils.pairs.Pair;
+import lainexperiment.utils.pairs.PairInt;
 
 /**
  * <pre>{@code

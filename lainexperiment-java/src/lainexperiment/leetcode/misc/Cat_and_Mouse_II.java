@@ -16,7 +16,7 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 import lainexperiment.utils.GridUtils;
-import lainexperiment.utils.PairInt;
+import lainexperiment.utils.pairs.PairInt;
 
 /**
  * <pre>{@code

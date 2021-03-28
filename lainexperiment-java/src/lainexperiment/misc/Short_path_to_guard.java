@@ -9,7 +9,7 @@ package lainexperiment.misc;
 
 import static java.lang.Math.min;
 
-import lainexperiment.utils.PairInt;
+import lainexperiment.utils.pairs.PairInt;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 

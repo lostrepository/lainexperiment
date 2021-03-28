@@ -17,7 +17,7 @@ import java.util.stream.IntStream;
 
 import org.junit.jupiter.api.Test;
 
-import lainexperiment.utils.PairInt;
+import lainexperiment.utils.pairs.PairInt;
 
 /**
  * <pre>{@code

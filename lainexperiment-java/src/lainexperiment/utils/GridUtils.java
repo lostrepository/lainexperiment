@@ -16,6 +16,9 @@ import java.util.PriorityQueue;
 
 import org.junit.jupiter.api.Test;
 
+import lainexperiment.utils.pairs.Pair;
+import lainexperiment.utils.pairs.PairInt;
+
 /**
  * Utilities to work with 2d arrays.
  */

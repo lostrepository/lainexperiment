@@ -4,7 +4,7 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-package lainexperiment.utils;
+package lainexperiment.utils.pairs;
 
 import java.util.Objects;
 

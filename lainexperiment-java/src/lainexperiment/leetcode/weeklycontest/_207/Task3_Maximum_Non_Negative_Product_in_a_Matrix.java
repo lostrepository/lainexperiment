@@ -15,7 +15,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import lainexperiment.utils.PairLong;
+import lainexperiment.utils.pairs.PairLong;
 
 /**
  * <pre>{@code

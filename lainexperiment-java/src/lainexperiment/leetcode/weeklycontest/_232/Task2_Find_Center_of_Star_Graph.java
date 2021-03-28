@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import lainexperiment.utils.PairInt;
+import lainexperiment.utils.pairs.PairInt;
 
 /**
  * <pre>{@code
