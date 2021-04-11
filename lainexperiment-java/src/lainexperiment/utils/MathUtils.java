@@ -10,6 +10,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.LongStream;
 
@@ -130,7 +131,7 @@ public class MathUtils {
     }
 
     /**
-     * Return number closest to v or v itself it is present.
+     * Return number closest to v or v itself if it is present.
      * If there are two closest numbers return one which is smaller.
      * For example v = 2, a = [3,2,1] closest number is 1
      */
@@ -148,6 +149,13 @@ public class MathUtils {
         return r;
     }
     
+    /**
+     * @return minimum number
+     */
+    public static int min(int... a) {
+        return Arrays.stream(a).min().getAsInt();
+    }
+
     @Test
     public void test_factors() {
         Assertions.assertEquals("[3, 3, 5, 7]", factors(315).toString());
@@ -181,5 +189,10 @@ public class MathUtils {
     public void test_closest() {
         Assertions.assertEquals(1, closest(2, 3, 1));
         Assertions.assertEquals(4, closest(4, 3, 1, 6, 4, 8));
+    }
+    
+    @Test
+    public void test_min() {
+        Assertions.assertEquals(-11, min(-11, 2, 3, 1));
     }
 }
