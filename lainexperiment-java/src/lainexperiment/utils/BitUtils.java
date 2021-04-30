@@ -21,32 +21,32 @@ import org.junit.jupiter.api.Test;
  */
 public class BitUtils {
 
-    public static boolean isSet(long n, int i) {
-        return (n & (1 << i)) > 0;
+    public static boolean isSet(long bitset, int i) {
+        return (bitset & (1 << i)) > 0;
     }
 
-    public static long set(long n, int i) {
-        return n | (1 << i);
+    public static long set(long bitset, int i) {
+        return bitset | (1 << i);
     }
 
-    public static long unset(long n, int i) {
-        return n & ~(1 << i);
+    public static long unset(long bitset, int i) {
+        return bitset & ~(1 << i);
     }
 
-    public static int getBit(long n, int i) {
-        return isSet(n, i)? 1: 0;
+    public static int getBit(long bitset, int i) {
+        return isSet(bitset, i)? 1: 0;
     }
     
-    public static long setBit(long n, int i, int val) {
+    public static long setBit(long bitset, int i, int val) {
         if (val == 1)
-            return set(n, i);
+            return set(bitset, i);
         else
-            return unset(n, i);
+            return unset(bitset, i);
     }
 
-    public static int length(long n) {
-        if (n < 2) return (int) n;
-        return (int) (Math.log(n) / Math.log(2)) + 1;
+    public static int length(long bitset) {
+        if (bitset < 2) return (int) bitset;
+        return (int) (Math.log(bitset) / Math.log(2)) + 1;
     }
 
     /**
