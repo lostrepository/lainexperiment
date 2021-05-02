@@ -29,6 +29,10 @@ public class BitUtils {
         return bitset | (1 << i);
     }
 
+    public static int set(int bitset, int i) {
+        return (int) set((long)bitset, i);
+    }
+
     public static long unset(long bitset, int i) {
         return bitset & ~(1 << i);
     }
@@ -42,6 +46,10 @@ public class BitUtils {
             return set(bitset, i);
         else
             return unset(bitset, i);
+    }
+
+    public static int setBit(int bitset, int i, int val) {
+        return (int)setBit((long)bitset, i, val);
     }
 
     public static int length(long bitset) {
