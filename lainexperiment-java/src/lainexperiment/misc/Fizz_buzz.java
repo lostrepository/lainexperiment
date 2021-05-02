@@ -1,7 +1,21 @@
+/* 
+ *
+ * This source file is a part of lainexperiment project.
+ * Description for it can be found in ReadMe.txt.
+ *
+ */
+
 package lainexperiment.misc;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-/*
+
+import java.util.Arrays;
+import java.util.stream.Collectors;
+import org.junit.jupiter.api.Test;
+
+/**
+ * <pre>{@code
  * Date: 01/08/2016
  * 
  * Problem
@@ -18,13 +32,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
  * 
 1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz
  * 
+ * }</pre>
  */
-import java.util.Arrays;
-import java.util.stream.Collectors;
-import org.junit.jupiter.api.Test;
 public class Fizz_buzz {
+    
     private static final String FIZZ = "Fizz";
     private static final String BUZZ = "Buzz";
+    
     public static String convert(String s) {
         if (s == null)
             throw new IllegalArgumentException();
@@ -43,6 +57,7 @@ public class Fizz_buzz {
         return Arrays.stream(a)
                 .collect(Collectors.joining(delim));
     }
+    
     @Test
     public void testNull() {
         boolean isThrowed = false;
@@ -53,10 +68,12 @@ public class Fizz_buzz {
         }
         assertTrue(isThrowed);
     }
+    
     @Test
     public void testFizz() {
         assertEquals("one two Fizz", convert("one two three"));
     }
+    
     @Test
     public void testFizzBuzz() {
         assertEquals("1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz", 
@@ -64,12 +81,12 @@ public class Fizz_buzz {
         assertEquals("1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz", 
                 convert("1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15"));
     }
+    
     @Test
     public void testFizzAndBuzz() {
         assertEquals("one two Fizz four Buzz Fizz", convert("one two three four five six"));
         assertEquals("one two Fizz four Buzz", convert("one two three four five"));
         assertEquals("one two Fizz four Buzz Fizz seven eight Fizz Buzz", convert("one two three four five six seven eight nine ten"));
     }
-    public static void main(String[] args) {
-    }
+    
 }
