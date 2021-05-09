@@ -61,7 +61,7 @@ capacity = [6, 5, 8],
  * 
  * }</pre>
  */
-public class Task1 {
+public class Task1_Multivitamin {
 
     public int solution(int[] juice, int[] capacity) {
         return solution(IntStream.of(juice)
@@ -106,7 +106,7 @@ public class Task1 {
     }
 
     public static int solve(int[] juice, int[] capacity) {
-        return new Task1().solution(juice, capacity);
+        return new Task1_Multivitamin().solution(juice, capacity);
     }
     
     @Test

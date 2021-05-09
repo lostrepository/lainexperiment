@@ -40,7 +40,7 @@ import org.junit.jupiter.api.Test;
  * 
  * }</pre>
  */
-public class Task1 {
+public class Task1_Digits_Manipulations {
 
     long digitsManipulations(long n) {
         String s = Long.toString(n);

@@ -27,7 +27,7 @@ import java.util.Arrays;
  * 
  * }</pre>
  */
-public class Test1 {
+public class Test1_Lockers_grid {
     
     static int[][] A;
     static int G = 0, X = Integer.MAX_VALUE;

@@ -45,7 +45,7 @@ baaabbaabbba
  * 
  * }</pre>
  */
-public class Task1 {
+public class Task1_Minimum_Moves {
 
     private int[][][] M;
     
@@ -85,7 +85,7 @@ public class Task1 {
     }
 
     public static int solve(String S) {
-        return new Task1().solution(S);
+        return new Task1_Minimum_Moves().solution(S);
     }
     
     public static void main(String[] args) {

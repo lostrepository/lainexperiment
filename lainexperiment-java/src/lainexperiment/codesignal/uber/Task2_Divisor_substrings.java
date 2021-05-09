@@ -45,7 +45,7 @@ K = 2
  * 
  * }</pre>
  */
-public class Task2 {
+public class Task2_Divisor_substrings {
 
     int divisorSubstrings(long n, int k) {
         if (k > n) return 0;

@@ -59,7 +59,7 @@ aaa
  * 
  * }</pre>
  */
-public class Task3 {
+public class Task3_Text_Editor {
 
     Stack<String> history = new Stack<>();
     String clipboard = "";

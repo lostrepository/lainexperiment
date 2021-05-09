@@ -38,7 +38,7 @@ import java.util.Set;
  * 
  * }</pre>
  */
-public class Test2 {
+public class Test2_Social_network {
     
     static Map<String, Integer> M = new HashMap<>(); 
     static Set<String> visited = new HashSet<>();
