@@ -4,7 +4,7 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-package lainexperiment.hackerrank.nvidia;
+package lainexperiment.leetcode.nvidia;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

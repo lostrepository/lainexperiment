@@ -4,7 +4,7 @@
  * Description for it can be found in ReadMe.txt.
  *
  */
-package lainexperiment.hackerrank.nvidia;
+package lainexperiment.leetcode.nvidia;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -20,7 +20,7 @@ import org.junit.jupiter.api.Test;
  * <pre>{@code
  * Date: 19/04/2021
  *
- * Problem: Find Median from Data Stream  (from leetcode)
+ * Problem: Find Median from Data Stream
  * Status: accepted (my initial version was based on enhanced BST which was
  * sooo lame. Here is a rework of it with two PriorityQueue instead.
  * 
