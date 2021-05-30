@@ -136,7 +136,7 @@ public class MathUtils {
      * For example v = 2, a = [3,2,1] closest number is 1
      */
     public static int closest(int v, int...a) {
-        int r = a[0];
+        var r = a[0];
         for (int i = 0; i < a.length; i++) {
             int d1 = Math.abs(a[i] - v);
             int d2 = Math.abs(r - v);
@@ -148,13 +148,39 @@ public class MathUtils {
         }
         return r;
     }
-    
+
+    /**
+     * Return number closest to v or v itself if it is present.
+     * If there are two closest numbers return one which is smaller.
+     */
+    public static double closest(double v, double...a) {
+        var r = a[0];
+        for (int i = 0; i < a.length; i++) {
+            var d1 = Math.abs(a[i] - v);
+            var d2 = Math.abs(r - v);
+            if (d1  == d2) {
+                r = Math.min(r, a[i]);
+            } else if (d1 < d2) {
+                r = a[i];
+            }
+        }
+        return r;
+    }
+
     /**
      * @return minimum number
      */
     public static int min(int... a) {
         return Arrays.stream(a).min().getAsInt();
     }
+
+    /*
+     * 
+     * 
+     * TESTS
+     * 
+     * 
+     */
 
     @Test
     public void test_factors() {

@@ -33,6 +33,11 @@ public class Ival {
         this.e = s;
     }
 
+    public Ival() {
+        this.s = 0;
+        this.e = 0;
+    }
+
     public static int compareByStart(Ival a, Ival b) {
         return Long.compare(a.s, b.s);
     }
@@ -44,5 +49,11 @@ public class Ival {
 
     public boolean contains(long n) {
         return s <= n && n <= e;
+    }
+    
+    public static boolean intersects(Ival i1, Ival i2) {
+        if (i1.e < i2.s) return false;
+        if (i2.e < i1.s) return false;
+        return true;
     }
 }

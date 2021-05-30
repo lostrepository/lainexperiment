@@ -94,6 +94,8 @@ public class Algorithms {
     /**
      * Finds local minimum in the range [s, e) based on comparison
      * defined in cmp function.
+     * It works with ranges which have only one local minimum. If
+     * range has multiple local minimums the result is undefined.
      */
     public static long localMin(long s, long e, Comparator<Long> cmp) {
         //System.out.format("%d-%d\n", s, e);
@@ -115,6 +117,15 @@ public class Algorithms {
         return localMin(m, e, cmp);
     }
     
+    
+    /*
+     * 
+     * 
+     * TESTS
+     * 
+     * 
+     */
+
     static Stream<int[]> testDataBisection() {
         return Stream.of(
             new int[]{1,2,3,4,5,6},
