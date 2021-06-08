@@ -54,7 +54,7 @@ public class Task2_Count_Number_of_Homogenous_Substrings {
                 l++;
                 continue;
             }
-            c = (c + MathUtils.sequenceSum(l, MOD)) % MOD;
+            c = (c + MathUtils.arithmeticSum(l, MOD)) % MOD;
             p = ch;
             l = 1;
         }

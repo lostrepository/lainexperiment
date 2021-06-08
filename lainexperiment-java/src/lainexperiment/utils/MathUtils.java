@@ -50,17 +50,23 @@ public class MathUtils {
     }
 
     /**
-     * @return Arithmetic sum from 1 to n modulo mod
+     * @return Arithmetic sequence sum from 1 to n modulo mod
      */
-    public static long sequenceSum(int n, long mod) {
-        return sequenceSum(1, n, mod);
+    public static long arithmeticSum(long n, long mod) {
+        long res = n * (n + 1) / 2 % mod;
+        if (res < 0) throw new RuntimeException(String.format("Negative sum %d", res));
+        return res;
     }
     
     /**
-     * @return Arithmetic sum from a to b modulo mod
+     * @return Arithmetic sequence sum from a to b modulo mod
      */
-    public static long sequenceSum(int a, int b, long mod) {
-        return (long) (((b - a + 1) / 2.) * ((a + b) % mod) % mod);
+    public static long arithmeticSum(long a, long b, long mod) {
+        if (a > b) throw new RuntimeException(String.format("%d > %d", a, b));
+        long v = (b - a + 1) * (a + b);
+        // in case overflow
+        if (v < 0) throw new RuntimeException(String.format("Negative sum %d", v));
+        return v / 2 % mod;
     }
 
     /**
@@ -206,9 +212,17 @@ public class MathUtils {
     }
     
     @Test
-    public void test_sum() {
-        assertEquals(6, sequenceSum(3, MOD));
-        assertEquals(3, sequenceSum(2, MOD));
+    public void test_arithmeticSum() {
+        assertEquals(19, arithmeticSum(9, 10, MOD));
+        assertEquals(30, arithmeticSum(9, 11, MOD));
+        assertEquals(18, arithmeticSum(18, 18, MOD));
+        
+        assertEquals(36, arithmeticSum(8, MOD));
+        assertEquals(6, arithmeticSum(3, MOD));
+        assertEquals(3, arithmeticSum(2, MOD));
+        assertEquals(0, arithmeticSum(8, 3));
+        assertEquals(1, arithmeticSum(8, 5));
+        assertEquals(4, arithmeticSum(8, 8));
     }
     
     @Test
