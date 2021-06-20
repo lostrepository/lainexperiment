@@ -180,6 +180,13 @@ public class MathUtils {
         return Arrays.stream(a).min().getAsInt();
     }
 
+    /**
+     * @return minimum number
+     */
+    public static long min(long... a) {
+        return Arrays.stream(a).min().getAsLong();
+    }
+
     /*
      * 
      * 
