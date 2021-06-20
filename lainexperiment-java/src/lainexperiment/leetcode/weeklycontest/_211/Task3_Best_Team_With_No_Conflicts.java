@@ -55,7 +55,7 @@ public class Task3_Best_Team_With_No_Conflicts {
         var l = IntStream.range(0, ages.length)
             .mapToObj(i -> new PairInt(ages[i], scores[i]))
             .collect(toList());
-        l.sort(PairInt::compareByAB);
+        l.sort(PairInt.compareByAB());
         var memo = new TreeMap<Integer, List<Integer>>();
         int max = 0;
         for (var p: l) {

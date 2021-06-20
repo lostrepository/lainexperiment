@@ -60,12 +60,12 @@ public class Task3_Minimum_Absolute_Sum_Difference {
         var mod = 1_000_000_007;
         var l = IntStream.range(0, n1.length)
                 .mapToObj(i -> new PairInt(n1[i], n2[i]))
-                .sorted(PairInt::compareByAB)
+                .sorted(PairInt.compareByAB())
                 .collect(Collectors.toList());
         var total = l.stream().mapToLong(p -> abs(p.a - p.b)).sum();
         var min = Long.MAX_VALUE;
         for (var p: l) {
-            int i = Collections.binarySearch(l, new PairInt(p.b, 0), PairInt::compareByA);
+            int i = Collections.binarySearch(l, new PairInt(p.b, 0), PairInt.compareByA());
             if (i < 0) {
                 i = -i - 2;
                 var t = Integer.MAX_VALUE;

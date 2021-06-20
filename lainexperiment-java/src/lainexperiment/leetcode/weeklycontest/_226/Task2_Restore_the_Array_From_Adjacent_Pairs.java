@@ -73,12 +73,12 @@ public class Task2_Restore_the_Array_From_Adjacent_Pairs {
             pairs.add(new PairInt(a[0], a[1]));
             pairs.add(new PairInt(a[1], a[0]));
         }
-        pairs.sort(Pair::compareByAB);
+        pairs.sort(PairInt.compareByAB());
         var out = new ArrayList<Integer>();
         int cur = ends.get(0);
         var visited = new HashSet<Integer>();
         while (!pairs.isEmpty()) {
-            int p = Collections.binarySearch(pairs, new PairInt(cur, 0), Pair::compareByA);
+            int p = Collections.binarySearch(pairs, new PairInt(cur, 0), PairInt.compareByA());
             if (p < 0) {
                 break;
             }

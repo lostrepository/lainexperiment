@@ -6,6 +6,8 @@
  */
 package lainexperiment.utils.pairs;
 
+import java.util.Comparator;
+import java.util.Map;
 import java.util.Objects;
 
 /**
@@ -19,6 +21,10 @@ public class PairInt {
     public int b;
 
     public PairInt() {
+    }
+
+    public PairInt(Map.Entry<? extends Number, ? extends Number> e) {
+        this.a = e.getKey().intValue(); this.b = e.getValue().intValue();
     }
 
     public PairInt(int a, int b) {
@@ -37,21 +43,16 @@ public class PairInt {
         return b;
     }
     
-    public static int compareByA(PairInt p1, PairInt p2) {
-        return p1.a - p2.a;
+    public static Comparator<PairInt> compareByA() {
+        return (PairInt p1, PairInt p2) -> p1.a - p2.a;
     }
     
-    public static int compareByB(PairInt p1, PairInt p2) {
-        return p1.b - p2.b;
+    public static Comparator<PairInt> compareByB() {
+        return (PairInt p1, PairInt p2) -> p1.b - p2.b;
     }
 
-    public static int compareByAB(PairInt p1, PairInt p2) {
-        int r = compareByA(p1, p2);
-        return (r == 0)?  compareByB(p1, p2): r;
-    }
-    
-    public static int reverseCompareByAB(PairInt p1, PairInt p2) {
-        return -compareByAB(p1, p2);
+    public static Comparator<PairInt> compareByAB() {
+        return compareByA().thenComparing(compareByB());
     }
 
     @Override
