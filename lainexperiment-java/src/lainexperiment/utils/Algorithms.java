@@ -24,23 +24,50 @@ import org.junit.jupiter.params.provider.MethodSource;
 public class Algorithms {
 
     /**
+     * This is special case when function values increase with
+     * respect to its input
+     * 
+     * @see #bisection(long, long, boolean, LongUnaryOperator)
+     */
+    public static long bisection(long s, long e, LongUnaryOperator func) {
+        return bisection(s, e, false, func);
+    }
+
+    /**
+     * If func function is reversed (it grows in opposite direction)
+     * you need to return inverse values (-func should be enough).
+     * You also need set isReversed to true.
+     * 
      * @param func unary function which accepts values in the
      * range [s..e) and returns following codes:
      *  
      *   positive - current number is big - go left
      *   negative or 0 - current value is small so it can be
      *   answer but we try to look for even better - got right
+     *   
+     * @param isReversed use true only if your function is decreasing
+     * Otherwise when your function is increasing (it grows in same 
+     * direction of its inputs) it should be false.
      *  
-     *  @return biggest smallest value encountered or -1
+     * @return input value on the given range [s, e) for which function
+     * returns biggest smallest result. If no such values exist it
+     * returns -1.
      */
-    public static long bisection(long s, long e, LongUnaryOperator func) {
+    public static long bisection(long s, long e, boolean isReversed, LongUnaryOperator func) {
         if (s > e) return -1;
         long m = (s + e) / 2;
         long r = func.applyAsLong(m);
-        if (r > 0)
-            return bisection(s, m - 1, func);
-        long res = bisection(m + 1, e, func);
-        return res == -1? m: res;
+        if (!isReversed) {
+            if (r > 0)
+                return bisection(s, m - 1, isReversed, func);
+            long res = bisection(m + 1, e, isReversed, func);
+            return res == -1? m: res;
+        } else {
+            if (r < 0)
+                return bisection(m + 1, e, isReversed, func);
+            long res = bisection(s, m - 1, isReversed, func);
+            return res == -1? m: res;
+        }
     }
 
     /**
@@ -137,7 +164,7 @@ public class Algorithms {
 
     @ParameterizedTest
     @MethodSource("testDataBisection")
-    void testBisection(int[] a) {
+    void test_bisection(int[] a) {
         for (int i = 0; i < a.length; i++) {
             final int v = a[i];
             assertEquals(i, bisection(0, a.length - 1, k -> a[(int) k] - v));
@@ -145,7 +172,7 @@ public class Algorithms {
     }
 
     @Test
-    void testBisection2() {
+    void test_bisection2() {
         int[] a = new int[]{1,1,3,4,5,10};
         int[] v = new int[1];
         v[0] = 3;
@@ -154,6 +181,28 @@ public class Algorithms {
         assertEquals(4, bisection(4, a.length, k -> a[(int) k] - v[0]));
         v[0] = 0;
         assertEquals(-1, bisection(4, a.length, k -> a[(int) k] - v[0]));
+    }
+    
+    @Test
+    void test_bisection_reverse_function() {
+        int[] a = new int[]{6, 5, 4, 3, 2, 1};
+        int[] v = new int[1];
+        v[0] = 4;
+        assertEquals(2, bisection(0, a.length, true, k -> v[0] - a[(int) k]));
+        v[0] = 2;
+        assertEquals(4, bisection(0, a.length, true, k -> v[0] - a[(int) k]));
+        v[0] = 6;
+        assertEquals(0, bisection(0, a.length, true, k -> v[0] - a[(int) k]));
+    }
+
+    @Test
+    void test_bisection_reverse_function2() {
+        int[] a = new int[]{16, 12, 9, 5, 2, 0};
+        int[] v = new int[1];
+        v[0] = 4;
+        assertEquals(4, bisection(0, a.length, true, k -> v[0] - a[(int) k]));
+        v[0] = 15;
+        assertEquals(1, bisection(0, a.length, true, k -> v[0] - a[(int) k]));
     }
 
     static Stream<List<List>> testDataMergeSort() {
@@ -169,7 +218,7 @@ public class Algorithms {
 
     @ParameterizedTest
     @MethodSource("testDataMergeSort")
-    void testMergeSort(List<List> a) {
+    void test_mergeSort(List<List> a) {
         for (int i = 0; i < a.size(); i++) {
             ArrayList<Integer> l = new ArrayList<Integer>(a.get(0));
             mergeSort(l);
