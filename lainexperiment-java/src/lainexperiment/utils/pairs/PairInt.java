@@ -14,6 +14,9 @@ import java.util.Objects;
  * Unfortunately {@code Pair<Integer, Integer> } is not an
  * option because it would not be safe to compare elements of
  * two different pairs with == instead you will need to use equals().
+ * 
+ * And using int[2] instead will not work good with Java collections
+ * due to equals.
  */
 public class PairInt {
 
