@@ -17,7 +17,7 @@ import org.junit.jupiter.api.Test;
 
 import static java.lang.Math.abs;
 
-import lainexperiment.utils.pairs.PairInt;
+import lainexperiment.utils.tuples.TupleInt;
 
 /**
  * <pre>{@code
@@ -59,25 +59,25 @@ public class Task3_Minimum_Absolute_Sum_Difference {
     public int minAbsoluteSumDiff(int[] n1, int[] n2) {
         var mod = 1_000_000_007;
         var l = IntStream.range(0, n1.length)
-                .mapToObj(i -> new PairInt(n1[i], n2[i]))
-                .sorted(PairInt.compareByAB())
+                .mapToObj(i -> new TupleInt(n1[i], n2[i]))
+                .sorted(TupleInt.compareByAB())
                 .collect(Collectors.toList());
-        var total = l.stream().mapToLong(p -> abs(p.a - p.b)).sum();
+        var total = l.stream().mapToLong(p -> abs(p.a() - p.b())).sum();
         var min = Long.MAX_VALUE;
         for (var p: l) {
-            int i = Collections.binarySearch(l, new PairInt(p.b, 0), PairInt.compareByA());
+            int i = Collections.binarySearch(l, new TupleInt(p.b(), 0), TupleInt.compareByA());
             if (i < 0) {
                 i = -i - 2;
                 var t = Integer.MAX_VALUE;
                 if (i >= 0) {
-                    t = Math.abs(l.get(i).a - p.b);
+                    t = Math.abs(l.get(i).a() - p.b());
                 }
-                if (i + 1 < l.size() && t > abs(l.get(i + 1).a - p.b)) {
+                if (i + 1 < l.size() && t > abs(l.get(i + 1).a() - p.b())) {
                     i++;
                 }
             }
             var pj = l.get(i);
-            var t = total - abs(p.a - p.b) + abs(pj.a - p.b);
+            var t = total - abs(p.a() - p.b()) + abs(pj.a() - p.b());
             if (t < min) {
                 min = t;
             }

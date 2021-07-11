@@ -16,7 +16,7 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 import lainexperiment.utils.GridUtils;
-import lainexperiment.utils.pairs.PairInt;
+import lainexperiment.utils.tuples.TupleInt;
 
 /**
  * <pre>{@code
@@ -91,8 +91,8 @@ public class Cat_and_Mouse_II {
     private int cols;
     private int rows;
     private char[][] G;
-    private PairInt cat;
-    private PairInt mouse;
+    private TupleInt cat;
+    private TupleInt mouse;
     private int mlen, clen;
     private Boolean[][][][][][] M;
     private int step;
@@ -114,10 +114,10 @@ public class Cat_and_Mouse_II {
             for (int c = 0; c < grid[r].length(); c++) {
                 G[r][c] = grid[r].charAt(c);
                 if (G[r][c] == 'M') {
-                    mouse = new PairInt(r, c);
+                    mouse = new TupleInt(r, c);
                 }
                 if (G[r][c] == 'C') {
-                    cat = new PairInt(r, c);
+                    cat = new TupleInt(r, c);
                 }
             }
         }
@@ -126,19 +126,19 @@ public class Cat_and_Mouse_II {
         return canWin(true);
     }
 
-    List<PairInt> findJumps(char[][] g, int r, int c, int len) {
+    List<TupleInt> findJumps(char[][] g, int r, int c, int len) {
         var cols = g[0].length;
         var rows = g.length;
-        var res = new ArrayList<PairInt>();
-        res.add(new PairInt(r, c));
+        var res = new ArrayList<TupleInt>();
+        res.add(new TupleInt(r, c));
         int[] x = {0, 0, 1, -1};
         int[] y = {1, -1, 0, 0};
         for (int k = 0; k < 4; k++) {
             for (int i = 1; i <= len; i++) {
-                var next = new PairInt(r + i * y[k], c + i * x[k]);
-                if (next.a < 0 || next.a >= rows || next.b < 0 || next.b >= cols) 
+                var next = new TupleInt(r + i * y[k], c + i * x[k]);
+                if (next.a() < 0 || next.a() >= rows || next.b() < 0 || next.b() >= cols) 
                     break;
-                if (g[next.a][next.b] == '#') break;
+                if (g[next.a()][next.b()] == '#') break;
                 res.add(next);
             }
         }
@@ -146,8 +146,8 @@ public class Cat_and_Mouse_II {
     }
     
     boolean canWin(boolean isMouse) {
-        if (M[mouse.a][mouse.b][cat.a][cat.b][step][isMouse? 0: 1] != null)
-            return M[mouse.a][mouse.b][cat.a][cat.b][step][isMouse? 0: 1];
+        if (M[mouse.a()][mouse.b()][cat.a()][cat.b()][step][isMouse? 0: 1] != null)
+            return M[mouse.a()][mouse.b()][cat.a()][cat.b()][step][isMouse? 0: 1];
         if (isDebug ) {
             System.out.println("Step " + step);
             GridUtils.print(G);
@@ -157,36 +157,36 @@ public class Cat_and_Mouse_II {
             return false;
         }
         step++;
-        PairInt pos = isMouse? mouse: cat;
-        G[pos.a][pos.b] = '.';
+        TupleInt pos = isMouse? mouse: cat;
+        G[pos.a()][pos.b()] = '.';
         boolean canMouseWin = false;
-        List<PairInt> jumps = null;
-        jumps = findJumps(G, pos.a, pos.b, isMouse? mlen: clen);
+        List<TupleInt> jumps = null;
+        jumps = findJumps(G, pos.a(), pos.b(), isMouse? mlen: clen);
         for (var jump: jumps) {
             // if cat finds food - mouse lose
             // if mouse finds food - it wins
-            if (G[jump.a][jump.b] == 'F') {
+            if (G[jump.a()][jump.b()] == 'F') {
                 canMouseWin = isMouse;
                 break;
             }
             // if there is a cat then it is mouse turn and it lose
-            if (G[jump.a][jump.b] == 'C') {
+            if (G[jump.a()][jump.b()] == 'C') {
                 continue;
             }
             // if there is a mouse then it is cat turn and it wins
-            if (G[jump.a][jump.b] == 'M') {
+            if (G[jump.a()][jump.b()] == 'M') {
                 canMouseWin = false;
                 break;
             }
             // free spot - let's try
-            if (G[jump.a][jump.b] == '.') {
+            if (G[jump.a()][jump.b()] == '.') {
                 if (isMouse)
                     mouse = jump;
                 else
                     cat = jump;
-                G[jump.a][jump.b] = isMouse? 'M': 'C';
+                G[jump.a()][jump.b()] = isMouse? 'M': 'C';
                 canMouseWin = canWin(!isMouse);
-                G[jump.a][jump.b] = '.';
+                G[jump.a()][jump.b()] = '.';
                 if (isMouse)
                     mouse = pos;
                 else
@@ -197,7 +197,7 @@ public class Cat_and_Mouse_II {
                     break;
             }
         }
-        G[pos.a][pos.b] = isMouse? 'M': 'C';
+        G[pos.a()][pos.b()] = isMouse? 'M': 'C';
         if (isDebug) {
             System.out.println();
             System.out.println("Terminal step " + step);
@@ -205,7 +205,7 @@ public class Cat_and_Mouse_II {
             System.out.println("canMouseWin: " + canMouseWin);
         }
         step--;
-        M[mouse.a][mouse.b][cat.a][cat.b][step][isMouse? 0: 1] = canMouseWin;
+        M[mouse.a()][mouse.b()][cat.a()][cat.b()][step][isMouse? 0: 1] = canMouseWin;
         return canMouseWin;
     }
 

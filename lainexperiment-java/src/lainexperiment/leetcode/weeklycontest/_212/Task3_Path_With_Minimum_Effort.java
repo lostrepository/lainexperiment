@@ -14,7 +14,7 @@ import java.util.PriorityQueue;
 import org.junit.jupiter.api.Test;
 
 import lainexperiment.utils.pairs.Pair;
-import lainexperiment.utils.pairs.PairInt;
+import lainexperiment.utils.tuples.TupleInt;
 
 /**
  * <pre>{@code
@@ -56,23 +56,23 @@ public class Task3_Path_With_Minimum_Effort {
     }
     
     int dijkstra(int[][] h) {
-        var q = new PriorityQueue<Pair<Integer, PairInt>>(Pair::compareByA);
-        q.add(new Pair<>(0, new PairInt()));
+        var q = new PriorityQueue<Pair<Integer, TupleInt>>(Pair::compareByA);
+        q.add(new Pair<>(0, new TupleInt(0, 0)));
         int rows = h.length;
         int cols = h[0].length;
         boolean[][] visited = new boolean[rows][cols];
         while (!q.isEmpty()) {
             var p = q.poll();
             var c = p.b;
-            if (c.a == rows - 1 && c.b == cols -1) return p.a;
-            if (visited[c.a][c.b]) continue;
-            visited[c.a][c.b] = true;
+            if (c.a() == rows - 1 && c.b() == cols -1) return p.a;
+            if (visited[c.a()][c.b()]) continue;
+            visited[c.a()][c.b()] = true;
             int[] x = {0, 0, 1, -1};
             int[] y = {1, -1, 0, 0};
             for (int k = 0; k < 4; k++) {
-                var next = new PairInt(c.a + y[k], c.b + x[k]);
-                if (next.a >= 0 && next.a < rows && next.b >= 0 && next.b < cols) {
-                    int m = Math.abs(h[c.a][c.b] - h[next.a][next.b]);
+                var next = new TupleInt(c.a() + y[k], c.b() + x[k]);
+                if (next.a() >= 0 && next.a() < rows && next.b() >= 0 && next.b() < cols) {
+                    int m = Math.abs(h[c.a()][c.b()] - h[next.a()][next.b()]);
                     q.add(new Pair<>(Math.max(p.a, m), next));
                 }
             }

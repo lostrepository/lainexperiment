@@ -22,7 +22,7 @@ import java.util.stream.Stream;
 import org.junit.jupiter.api.Test;
 
 import lainexperiment.utils.pairs.Pair;
-import lainexperiment.utils.pairs.PairInt;
+import lainexperiment.utils.tuples.TupleInt;
 
 /**
  * <pre>{@code
@@ -68,21 +68,21 @@ public class Task2_Restore_the_Array_From_Adjacent_Pairs {
             .filter(e -> e.getValue() == 1)
             .map(Entry::getKey)
             .collect(toList());
-        var pairs = new ArrayList<PairInt>();
+        var pairs = new ArrayList<TupleInt>();
         for (var a: adjacentPairs) {
-            pairs.add(new PairInt(a[0], a[1]));
-            pairs.add(new PairInt(a[1], a[0]));
+            pairs.add(new TupleInt(a[0], a[1]));
+            pairs.add(new TupleInt(a[1], a[0]));
         }
-        pairs.sort(PairInt.compareByAB());
+        pairs.sort(TupleInt.compareByAB());
         var out = new ArrayList<Integer>();
         int cur = ends.get(0);
         var visited = new HashSet<Integer>();
         while (!pairs.isEmpty()) {
-            int p = Collections.binarySearch(pairs, new PairInt(cur, 0), PairInt.compareByA());
+            int p = Collections.binarySearch(pairs, new TupleInt(cur, 0), TupleInt.compareByA());
             if (p < 0) {
                 break;
             }
-            int next = pairs.remove(p).b;
+            int next = pairs.remove(p).b();
             if (visited.contains(next)) continue;
             out.add(cur);
             visited.add(cur);

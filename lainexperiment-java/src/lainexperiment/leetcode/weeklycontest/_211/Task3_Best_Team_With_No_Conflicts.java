@@ -17,7 +17,7 @@ import java.util.stream.IntStream;
 
 import org.junit.jupiter.api.Test;
 
-import lainexperiment.utils.pairs.PairInt;
+import lainexperiment.utils.tuples.TupleInt;
 
 /**
  * <pre>{@code
@@ -53,24 +53,24 @@ public class Task3_Best_Team_With_No_Conflicts {
 
     public int bestTeamScore(int[] scores, int[] ages) {
         var l = IntStream.range(0, ages.length)
-            .mapToObj(i -> new PairInt(ages[i], scores[i]))
+            .mapToObj(i -> new TupleInt(ages[i], scores[i]))
             .collect(toList());
-        l.sort(PairInt.compareByAB());
+        l.sort(TupleInt.compareByAB());
         var memo = new TreeMap<Integer, List<Integer>>();
         int max = 0;
         for (var p: l) {
-            if (!memo.containsKey(p.b)) {
-                memo.put(p.b, new ArrayList<Integer>());
+            if (!memo.containsKey(p.b())) {
+                memo.put(p.b(), new ArrayList<Integer>());
             }
             for (var e: memo.entrySet()) {
-                if (e.getKey() > p.b) break;
-                var score = p.b;
+                if (e.getKey() > p.b()) break;
+                var score = p.b();
                 for (var s: e.getValue()) {
-                    if (s > p.b) continue;
+                    if (s > p.b()) continue;
                     score += s;
                 }
                 max = Math.max(max, score);
-                e.getValue().add(p.b);
+                e.getValue().add(p.b());
             }
             System.out.println();
         }

@@ -17,7 +17,7 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 import lainexperiment.utils.QuickFindSet;
-import lainexperiment.utils.pairs.PairInt;
+import lainexperiment.utils.tuples.TupleInt;
 
 /**
  * <pre>{@code
@@ -62,16 +62,16 @@ public class Task3_Minimize_Hamming_Distance_After_Swap_Operations {
             qf.join(allowedSwaps[i][0], allowedSwaps[i][1]);
         }
         int d = 0;
-        List<PairInt> s = new ArrayList<>();
-        List<PairInt> t = new ArrayList<>();
+        List<TupleInt> s = new ArrayList<>();
+        List<TupleInt> t = new ArrayList<>();
         for (int i = 0; i < source.length; i++) {
             var l = qf.getId(i);
             if (l == -1) {
                 if (source[i] != target[i]) d++;
                 continue;
             }
-            s.add(new PairInt(l, source[i]));
-            t.add(new PairInt(l, target[i]));
+            s.add(new TupleInt(l, source[i]));
+            t.add(new TupleInt(l, target[i]));
         }
         var sm = s.stream()
             .collect(groupingBy(i -> i, counting()));

@@ -14,7 +14,7 @@ import java.util.Comparator;
 
 import org.junit.jupiter.api.Test;
 
-import lainexperiment.utils.pairs.PairInt;
+import lainexperiment.utils.tuples.TupleInt;
 
 /**
  * <pre>{@code
@@ -51,21 +51,21 @@ boxTypes = [[1,3],[2,2],[3,1]], truckSize = 4
 public class Task1_Maximum_Units_on_a_Truck {
 
     public int maximumUnits(int[][] boxTypes, int truckSize) {
-        var l = new ArrayList<PairInt>();
+        var l = new ArrayList<TupleInt>();
         for (int i = 0; i < boxTypes.length; i++) {
-            l.add(new PairInt(boxTypes[i][0], boxTypes[i][1]));
+            l.add(new TupleInt(boxTypes[i][0], boxTypes[i][1]));
         }
-        l.sort(Comparator.comparingInt(PairInt::getB).reversed());
+        l.sort(TupleInt.compareByB().reversed());
         int boxNum = 0;
         int units = 0;
         while (boxNum < truckSize && !l.isEmpty()) {
-            PairInt box = l.get(0);
-            if (box.a == 0) {
+            TupleInt box = l.get(0);
+            if (box.a() == 0) {
                 l.remove(0);
                 continue;
             }
-            units += box.b;
-            box.a--;
+            units += box.b();
+            box.a[0]--;
             boxNum++;
         }
         return units;

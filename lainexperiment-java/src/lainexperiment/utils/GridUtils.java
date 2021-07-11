@@ -17,7 +17,7 @@ import java.util.PriorityQueue;
 import org.junit.jupiter.api.Test;
 
 import lainexperiment.utils.pairs.Pair;
-import lainexperiment.utils.pairs.PairInt;
+import lainexperiment.utils.tuples.TupleInt;
 
 /**
  * Utilities to work with 2d arrays.
@@ -43,17 +43,17 @@ public class GridUtils {
      * @param start Coordinates of starting point on the grid
      * @param end Coordinates of finish point on the grid
      */
-    public static void bfs(int[][] g, PairInt start, PairInt end) {
+    public static void bfs(int[][] g, TupleInt start, TupleInt end) {
         int rows = g.length;
         int cols = g[0].length;
         boolean[][] visited = new boolean[rows][cols];
-        var q = new LinkedList<PairInt>();
+        var q = new LinkedList<TupleInt>();
         q.add(start);
         while (!q.isEmpty()) {
             var p = q.poll();
-            if (visited[p.a][p.b]) continue;
+            if (visited[p.a()][p.b()]) continue;
             System.out.println(p);
-            visited[p.a][p.b] = true;
+            visited[p.a()][p.b()] = true;
             if (p.equals(end)) return;
             q.addAll(findJumps(p, rows, cols));
         }
@@ -68,21 +68,21 @@ public class GridUtils {
      * @param end Coordinates of finish point on the grid
      * @return shortest path between start and end
      */
-    public static int bfsShortestPath(int[][] g, PairInt start, PairInt end) {
+    public static int bfsShortestPath(int[][] g, TupleInt start, TupleInt end) {
         int rows = g.length;
         int cols = g[0].length;
         boolean[][] visited = new boolean[rows][cols];
-        var q = new LinkedList<PairInt>();
+        var q = new LinkedList<TupleInt>();
         q.add(start);
         int s = 0;
         while (!q.isEmpty()) {
-            var nq = new LinkedList<PairInt>();
+            var nq = new LinkedList<TupleInt>();
             while (!q.isEmpty()) {
                 var p = q.poll();
                 if (p.equals(end))
                     return s;
-                if (visited[p.a][p.b]) continue;
-                visited[p.a][p.b] = true;
+                if (visited[p.a()][p.b()]) continue;
+                visited[p.a()][p.b()] = true;
                 nq.addAll(findJumps(p, rows, cols));
             }
             q = nq;
@@ -98,9 +98,9 @@ public class GridUtils {
      * @param end
      * @return shortest path from start to end
      */
-    public static int dijkstra(int[][] g, PairInt start, PairInt end) {
-        var q = new PriorityQueue<Pair<Integer, PairInt>>(Pair::compareByA);
-        q.add(new Pair<>(0, new PairInt()));
+    public static int dijkstra(int[][] g, TupleInt start, TupleInt end) {
+        var q = new PriorityQueue<Pair<Integer, TupleInt>>(Pair::compareByA);
+        q.add(new Pair<>(0, new TupleInt(0, 0)));
         int rows = g.length;
         int cols = g[0].length;
         boolean[][] visited = new boolean[rows][cols];
@@ -111,18 +111,18 @@ public class GridUtils {
         while (!q.isEmpty()) {
             var p = q.poll();
             var c = p.b;
-            if (c.equals(end)) return distance[c.a][c.b];
-            if (visited[c.a][c.b]) continue;
-            visited[c.a][c.b] = true;
+            if (c.equals(end)) return distance[c.a()][c.b()];
+            if (visited[c.a()][c.b()]) continue;
+            visited[c.a()][c.b()] = true;
             int[] x = {0, 0, 1, -1};
             int[] y = {1, -1, 0, 0};
             for (int k = 0; k < 4; k++) {
-                var next = new PairInt(c.a + y[k], c.b + x[k]);
+                var next = new TupleInt(c.a() + y[k], c.b() + x[k]);
                 // relax
-                if (next.a >= 0 && next.a < rows && next.b >= 0 && next.b < cols) {
-                    int d = p.a + g[next.a][next.b];
-                    if (distance[next.a][next.b] <= d) continue;
-                    distance[next.a][next.b] = d;
+                if (next.a() >= 0 && next.a() < rows && next.b() >= 0 && next.b() < cols) {
+                    int d = p.a + g[next.a()][next.b()];
+                    if (distance[next.a()][next.b()] <= d) continue;
+                    distance[next.a()][next.b()] = d;
                     q.add(new Pair<>(d, next));
                 }
             }
@@ -135,13 +135,13 @@ public class GridUtils {
      * position (r, c) to all adjacent positions with length 1. Where rows/cols
      * define size of the grid.
      */
-    public static List<PairInt> findJumps(PairInt loc, int rows, int cols) {
+    public static List<TupleInt> findJumps(TupleInt loc, int rows, int cols) {
         int[] x = {0, 0, 1, -1};
         int[] y = {1, -1, 0, 0};
-        var res = new ArrayList<PairInt>();
+        var res = new ArrayList<TupleInt>();
         for (int k = 0; k < x.length; k++) {
-            var next = new PairInt(loc.a + y[k], loc.b + x[k]);
-            if (next.a < 0 || next.a >= rows || next.b < 0 || next.b >= cols) 
+            var next = new TupleInt(loc.a() + y[k], loc.b() + x[k]);
+            if (next.a() < 0 || next.a() >= rows || next.b() < 0 || next.b() >= cols) 
                 continue;
             res.add(next);
         }
@@ -154,15 +154,15 @@ public class GridUtils {
      * define size of the grid.
      * It also generates jump to current position.
      */
-    public static List<PairInt> findJumps(int r, int c, int rows, int cols, int len) {
-        var res = new ArrayList<PairInt>();
-        res.add(new PairInt(r, c));
+    public static List<TupleInt> findJumps(int r, int c, int rows, int cols, int len) {
+        var res = new ArrayList<TupleInt>();
+        res.add(new TupleInt(r, c));
         int[] x = {0, 0, 1, -1};
         int[] y = {1, -1, 0, 0};
         for (int k = 0; k < 4; k++) {
             for (int i = 1; i <= len; i++) {
-                var next = new PairInt(r + i * y[k], c + i * x[k]);
-                if (next.a < 0 || next.a >= rows || next.b < 0 || next.b >= cols) 
+                var next = new TupleInt(r + i * y[k], c + i * x[k]);
+                if (next.a() < 0 || next.a() >= rows || next.b() < 0 || next.b() >= cols) 
                     break;
                 res.add(next);
             }
@@ -179,9 +179,9 @@ public class GridUtils {
             {1,0,0,0,1},
             {1,1,1,0,1}};
         
-        bfs(g, new PairInt(0, 0), new PairInt(2, 1));
+        bfs(g, new TupleInt(0, 0), new TupleInt(2, 1));
         
-        assertEquals(3, bfsShortestPath(g, new PairInt(0, 0), new PairInt(2, 1)));
+        assertEquals(3, bfsShortestPath(g, new TupleInt(0, 0), new TupleInt(2, 1)));
     }
     
     @Test
@@ -193,14 +193,14 @@ public class GridUtils {
             {1,5,5,1,5},
             {1,1,1,0,1}};
         
-        assertEquals(7, dijkstra(g, new PairInt(0, 0), new PairInt(2, 1)));
-        assertEquals(7, dijkstra(g, new PairInt(0, 0), new PairInt(4, 4)));
-        assertEquals(5, dijkstra(g, new PairInt(0, 0), new PairInt(0, 4)));
+        assertEquals(7, dijkstra(g, new TupleInt(0, 0), new TupleInt(2, 1)));
+        assertEquals(7, dijkstra(g, new TupleInt(0, 0), new TupleInt(4, 4)));
+        assertEquals(5, dijkstra(g, new TupleInt(0, 0), new TupleInt(0, 4)));
     }
     
     @Test
     public void test_findJumps() {
-        assertEquals("[(1, 2), (2, 2), (3, 2), (0, 2), (1, 3), (1, 1), (1, 0)]",
+        assertEquals("[[1, 2], [2, 2], [3, 2], [0, 2], [1, 3], [1, 1], [1, 0]]",
             findJumps(1, 2, 4, 4, 2).toString());
     }
 }

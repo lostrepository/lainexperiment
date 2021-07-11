@@ -9,7 +9,7 @@ package lainexperiment.misc;
 
 import static java.lang.Math.min;
 
-import lainexperiment.utils.pairs.PairInt;
+import lainexperiment.utils.tuples.TupleInt;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
@@ -46,27 +46,27 @@ public class Short_path_to_guard {
     static int[][] A;
     static int B = -2, G = -1, X = Integer.MAX_VALUE;
     
-    public static int bfsShortestPath(int[][] g, PairInt start) {
+    public static int bfsShortestPath(int[][] g, TupleInt start) {
         int rows = g.length;
         int cols = g[0].length;
         boolean[][] visited = new boolean[rows][cols];
-        var q = new LinkedList<PairInt>();
+        var q = new LinkedList<TupleInt>();
         q.add(start);
         int[] x = {0, 0, 1, -1};
         int[] y = {1, -1, 0, 0};
         int s = 0;
         while (!q.isEmpty()) {
-            var nq = new LinkedList<PairInt>();
+            var nq = new LinkedList<TupleInt>();
             while (!q.isEmpty()) {
                 var p = q.poll();
-                g[p.a][p.b] = min(g[p.a][p.b], s);
-                if (visited[p.a][p.b]) continue;
-                visited[p.a][p.b] = true;
+                g[p.a()][p.b()] = min(g[p.a()][p.b()], s);
+                if (visited[p.a()][p.b()]) continue;
+                visited[p.a()][p.b()] = true;
                 for (int k = 0; k < 4; k++) {
-                    var next = new PairInt(p.a + y[k], p.b + x[k]);
-                    if (next.a < 0 || next.a >= rows || next.b < 0 || next.b >= cols) 
+                    var next = new TupleInt(p.a() + y[k], p.b() + x[k]);
+                    if (next.a() < 0 || next.a() >= rows || next.b() < 0 || next.b() >= cols) 
                         continue;
-                    if (g[next.a][next.b] < 0) continue;
+                    if (g[next.a()][next.b()] < 0) continue;
                     nq.add(next);
                 }
             }
@@ -82,7 +82,7 @@ public class Short_path_to_guard {
             for (int c = 0; c < A[0].length; c++)
             {
                 if (A[r][c] == G)
-                    bfsShortestPath(A, new PairInt(r, c));
+                    bfsShortestPath(A, new TupleInt(r, c));
             }
         }
         Arrays.stream(A).map(Arrays::toString)

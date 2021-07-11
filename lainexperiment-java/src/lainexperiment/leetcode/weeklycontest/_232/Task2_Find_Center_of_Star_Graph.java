@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import lainexperiment.utils.pairs.PairInt;
+import lainexperiment.utils.tuples.TupleInt;
 
 /**
  * <pre>{@code
@@ -47,14 +47,14 @@ public class Task2_Find_Center_of_Star_Graph {
             c[edges[i][0]]++;
             c[edges[i][1]]++;
         }
-        var p = new PairInt();
+        var p = new TupleInt(0, 0);
         for (int i = 0; i < c.length; i++) {
-            if (p.a < c[i]) {
-                p.a = c[i];
-                p.b = i;
+            if (p.a() < c[i]) {
+                p.a[0] = c[i];
+                p.a[1] = i;
             }
         }
-        return p.b;
+        return p.b();
     }
 
     @Test
