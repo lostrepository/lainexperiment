@@ -83,7 +83,15 @@ public class Algorithms {
         var r = binarySearch(a, s, p, val);
         return r < 0? p: r;
     }
-    
+
+    public static int binarySearch(char[] a, int s, int e, char val) {
+        var p = Arrays.binarySearch(a, s, e, val);
+        if (p < 0) return p;
+        if (s == p) return s;
+        var r = binarySearch(a, s, p, val);
+        return r < 0? p: r;
+    }
+
     /**
      * Merge sort implementation. It uses aux storage and merges everything
      * inplace into input list.
