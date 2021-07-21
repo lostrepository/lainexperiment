@@ -56,8 +56,16 @@ public class TupleInt {
         return (TupleInt p1, TupleInt p2) -> p1.a[1] - p2.a[1];
     }
 
+    public static Comparator<TupleInt> compareByC() {
+        return (TupleInt p1, TupleInt p2) -> p1.a[2] - p2.a[2];
+    }
+    
     public static Comparator<TupleInt> compareByAB() {
         return compareByA().thenComparing(compareByB());
+    }
+    
+    public static Comparator<TupleInt>  compareByABC() {
+        return compareByA().thenComparing(compareByB()).thenComparing(compareByC());
     }
 
     @Override
@@ -76,4 +84,5 @@ public class TupleInt {
     public String toString() {
         return Arrays.toString(a);
     }
+
 }
