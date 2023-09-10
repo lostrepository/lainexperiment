@@ -51,6 +51,8 @@ import java.util.function.BiFunction;
  * 
 40
  * 
+ * |10 - 20| + |20 - 30| + |10 - 30| = 40
+ * 
  * }</pre>
  */
 public class AngryChildren {
